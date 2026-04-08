@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Interpolation",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/AugmentedSurfaceInterpolation",
+      "args": ["data/Interpolation_SCAPE_frontback.yaml"],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
+}

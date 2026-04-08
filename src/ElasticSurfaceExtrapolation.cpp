@@ -271,9 +271,9 @@ int main( int argc, char *argv[] ) {
     //                                                   Config.Optimization.minStepsize,
     //                                                   Config.Optimization.maxStepsize );
     NewtonMethod<DefaultConfigurator> Solver( F, DF, Config.Optimization.maxNumIterations, 1e-8,
-        NEWTON_OPTIMAL, SHOW_ALL, 0.1,
-        Config.Optimization.minStepsize,
-        Config.Optimization.maxStepsize );
+                                              NEWTON_OPTIMAL, SHOW_ALL, 0.1,
+                                              Config.Optimization.minStepsize,
+                                              Config.Optimization.maxStepsize );
     Solver.setBoundaryMask( Config.dirichletVertices );
 
     t_start = std::chrono::high_resolution_clock::now();

@@ -1,10 +1,10 @@
 Data:
-  startFile: ./data/Humanoid/Rigging_SCAPE_rm_5.ply
-  endFile: ./data/Humanoid/Rigging_SCAPE_rm_6.ply
-  initFile: ./data/Humanoid/Rigging_SCAPE_rm_ref.ply
-#  startFile: ./data/Humanoid/new5.ply
-#  endFile: ./data/Humanoid/new6n.ply
-#  initFile: ./data/Humanoid/new.ply
+  # startFile: ./data/Humanoid/Rigging_SCAPE_rm_5.ply
+  # endFile: ./data/Humanoid/Rigging_SCAPE_rm_6.ply
+  # initFile: ./data/Humanoid/Rigging_SCAPE_rm_ref.ply
+  startFile: ./data/Humanoid/new5.ply
+  endFile: ./data/Humanoid/new6n.ply
+  initFile: ./data/Humanoid/new.ply
   dirichletVertices: [1248,1290,1149,1076,1247] # rm + new
   decimationFactor: -1.
 

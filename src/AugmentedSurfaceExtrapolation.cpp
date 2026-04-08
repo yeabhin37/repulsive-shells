@@ -1,3 +1,4 @@
+// 1. include + 기본 타입 정의 
 #include <yaml-cpp/yaml.h>
 #include <boost/filesystem.hpp>
 #include <boost/iostreams/tee.hpp>
@@ -26,7 +27,8 @@ using RealType = DefaultConfigurator::RealType;
 
 using ShellDeformationType = ShellDeformation<DefaultConfigurator, NonlinearMembraneDeformation<DefaultConfigurator>, SimpleBendingDeformation<DefaultConfigurator> >;
 
-
+// 2. Solver용 선형 연산자 
+// 2-1. ShermanMorrisonOperator 
 template<typename ConfiguratorType>
 class ShermanMorrisonOperator final : public LinearOperator<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -74,6 +76,7 @@ public:
   }
 };
 
+// 2-2. InverseMatrixOperator 
 template<typename ConfiguratorType>
 class InverseMatrixOperator final : public LinearOperator<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -114,6 +117,8 @@ public:
   }
 };
 
+// 3. Energy 정의 
+// 3-1. DifferenceExp2Energy : exponential map 조건 유지 
 template<typename ConfiguratorType>
 class DifferenceExp2Energy final : public BaseOp<typename ConfiguratorType::VectorType> {
 
@@ -142,7 +147,6 @@ public:
     _constRealPart = 4 * m_V( _shape1 ) - 2 * m_V( _shape0 );
   }
 
-
   //! The vertex positions of S_2 are given as argument.
   void apply( const VectorType &shape2, VectorType &Dest ) const override {
     if ( shape2.size() != _numDofs )
@@ -155,9 +159,7 @@ public:
   }
 };
 
-
-
-
+// 3-2. BarycenterExp2Energy : 전체 이동 제거 (translation invariance)
 template<typename ConfiguratorType>
 class BarycenterExp2Energy final : public BaseOp<typename ConfiguratorType::VectorType> {
 
@@ -219,6 +221,7 @@ public:
   }
 };
 
+// 3-3. DirichletExp2Energy : 특정 vertex 고정 
 template<typename ConfiguratorType>
 class DirichletExp2Energy final : public BaseOp<typename ConfiguratorType::VectorType> {
 
@@ -271,7 +274,8 @@ public:
   }
 };
 
-
+// 4. Gradient / Hessian 정의 
+// 4-1. InverseCombinedExp2Gradient : Hessian inverse 구성 
 template<typename ConfiguratorType>
 class InverseCombinedExp2Gradient final : public MapToLinOp<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -368,7 +372,7 @@ public:
 
 };
 
-
+// 4-2. CombinedExp2Gradient : 실제 Hessian 구성 
 template<typename ConfiguratorType>
 class CombinedExp2Gradient final : public MapToLinOp<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -445,7 +449,7 @@ public:
 
 };
 
-
+// 4-3. OperatorExp2Gradient : elastic-only gradient 
 template<typename ConfiguratorType>
 class OperatorExp2Gradient final : public MapToLinOp<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -477,6 +481,7 @@ public:
 
 };
 
+// 4-4. InverseExp2Gradient : elastic-only inverse 
 template<typename ConfiguratorType>
 class InverseExp2Gradient : public MapToLinOp<ConfiguratorType> {
   using VectorType = typename ConfiguratorType::VectorType;
@@ -506,19 +511,22 @@ public:
 
 };
 
-
+// 5. main 함수 
 int main( int argc, char *argv[] ) {
-  //region Config
+  /* [region Config] */
+  // Repulsive Energy 계산의 효율성과 정밀도 옵션 
   enum TPEType {
-    SPOOKY,
-    SCARY
+    SPOOKY,         // 멀리 떨어진 점들을 묶어서 근사. 빠르지만 SCARY에 비해서 부정확함. 대규모 mesh에 필수. 
+    SCARY           // 모든 점 쌍을 고려하여 계산. 정확하지만 계산량이 많아서 느림. 
   };
 
+  // YAML 파일에 정의된 string을 TPEType으로 대응하기 위한 map 
   std::unordered_map<std::string, TPEType> const TPETypeTable = {
     { "Spooky", TPEType::SPOOKY },
     { "Scary",    TPEType::SCARY },
   };
 
+  // Config struct 
   struct {
     std::string outputFolder = "./";
     bool timestampOutput = true;
@@ -527,14 +535,14 @@ int main( int argc, char *argv[] ) {
     std::string startFile;
     std::string secondFile;
     std::string initFile;
-    std::vector<int> dirichletVertices;
+    std::vector<int> dirichletVertices;     // 위치를 고정해놓은 vertices 
 
     int numSteps = 6;
 
     struct {
-      int maxNumIterations = 50000;
-      RealType minStepsize = 1.e-12;
-      RealType maxStepsize = 10.;
+      int maxNumIterations = 50000;         // Newton method 최대 반복 횟수 
+      RealType minStepsize = 1.e-12;        
+      RealType maxStepsize = 10.;           // step size가 너무 크면 수렴 X. 너무 작으면 계산량 증가 
     } Optimization;
 
     struct {
@@ -549,22 +557,23 @@ int main( int argc, char *argv[] ) {
     } TPE;
 
     struct {
-      RealType bendingWeight = 1.;
-      RealType elasticWeight = 1.;
-      RealType tpeWeight = 1.e-3;
+      RealType bendingWeight = 1.; 
+      RealType elasticWeight = 1.;          // 메시가 구부러지거나 늘어날 때 발생하는 저항력 조절. 이 값이 클수록 부드러운 애니메이션 효과 
+      RealType tpeWeight = 1.e-3;           // self-intersection 방지 위한 반발력 강도 
       RealType dirichletWeight = 0.;
-      RealType barycenterWeight = 1.;
+      RealType barycenterWeight = 1.;       // 여러 형상의 중간 지점(Barycenter)을 계산할 때 각 형상이 갖는 영향력 조절 or 전체적인 질량 중심 유지하는 데 사용됨 
     } Energy;
   } Config;
-  //endregion
+  /* endregion */ 
 
-  //region Read config
+  /* region Read config */ 
+  // YAML 파일에 있는 내용을 변수에 매칭해서 저장 
   if ( argc == 2 ) {
     YAML::Node config = YAML::LoadFile( argv[1] );
 
     Config.startFile = config["Data"]["startFile"].as<std::string>();
     Config.secondFile = config["Data"]["secondFile"].as<std::string>();
-    if ( config["Data"]["initFile"] )
+    if ( config["Data"]["initFile"] )                                       // initMesh는 옵션. 정의되어 있지 않으면, initMesh = startMesh; 사용
       Config.initFile = config["Data"]["initFile"].as<std::string>();
     Config.dirichletVertices = config["Data"]["dirichletVertices"].as<std::vector<int>>();
 
@@ -596,15 +605,18 @@ int main( int argc, char *argv[] ) {
     Config.Optimization.minStepsize = config["Optimization"]["minStepsize"].as<RealType>();
     Config.Optimization.maxStepsize = config["Optimization"]["maxStepsize"].as<RealType>();
   }
-  //endregion
+  /* endregion */ 
 
-  //region Output path
+  /* region Output path */
+  // output 폴더 경로가 /로 끝나지 않으면 / 추가. 
   if ( Config.outputFolder.compare( Config.outputFolder.length() - 1, 1, "/" ) != 0 )
     Config.outputFolder += "/";
 
+  // 실행 파일 이름 execName 추출 -> output 폴더명에 추가하기 위함 
   std::string execName( argv[0] );
   execName = execName.substr( execName.find_last_of( '/' ) + 1 );
 
+  // 폴더명에 timestamp를 추가하기 위함 
   if ( Config.timestampOutput ) {
     std::time_t t = std::time( nullptr );
     std::stringstream ss;
@@ -618,13 +630,16 @@ int main( int argc, char *argv[] ) {
 
   std::string outputPrefix = Config.outputFolder + Config.outputFilePrefix;
 
+  // 사용한 config 파일을 복사해서 output 폴더 내부에 저장 
   if ( argc == 2 ) {
     boost::filesystem::copy_file( argv[1], Config.outputFolder + "_parameters.conf",
                                   boost::filesystem::copy_options::overwrite_existing );
   }
-  //endregion
+  /* endregion */ 
 
-  //region Logging
+  /* region Logging */ 
+  // _output.log 로그 파일 열기 
+  // cout -> [파일 + 콘솔]
   std::ofstream logFile;
   logFile.open( Config.outputFolder + "/_output.log" );
 
@@ -641,11 +656,12 @@ int main( int argc, char *argv[] ) {
 
   std::cout.rdbuf( split_cout.rdbuf());
   std::cerr.rdbuf( split_cerr.rdbuf());
-  //endregion
+  /* endregion */
 
   std::chrono::time_point<std::chrono::high_resolution_clock> t_start, t_end;
 
-  // Read meshes
+  /* Read meshes */
+  // startMesh, secondMesh, initMesh 
   TriMesh startMesh, secondMesh, initMesh;
   if ( !OpenMesh::IO::read_mesh( startMesh, Config.startFile ))
     throw std::runtime_error( "Failed to read file: " + Config.startFile );
@@ -659,18 +675,25 @@ int main( int argc, char *argv[] ) {
     initMesh = startMesh;
   }
 
-  // Topology of the mesh
-  MeshTopologySaver Topology( startMesh );
-  int numVertices = Topology.getNumVertices();
+  /* Topology of the mesh */
+  MeshTopologySaver Topology( startMesh );            // Mesh의 연결 상태 정보를 Topology에 저장 
+  int numVertices = Topology.getNumVertices();        // startMesh의 vertex 개수 
 
-  // Geometry of the mesh
-  VectorType Vertices_Start, Vertices_Second, Vertices_Init;
+  /* Geometry of the mesh */
+  VectorType Vertices_Start, Vertices_Second, Vertices_Init;      // start, second, init의 vertex 개수 계산 
   getGeometry( startMesh, Vertices_Start );
   getGeometry( secondMesh, Vertices_Second );
   getGeometry( initMesh, Vertices_Init );
 
   std::cout << " .. numVertices = " << numVertices << std::endl;
 
+  // DirichletVertices와 non-DirichletVertices 분류 
+  // [Memory Layout] 
+      // x좌표들 [x1, x2, ..., xn] : Index 0 ~ N-1 
+      // y좌표들 [y1, y2, ..., yn] : Index N ~ 2*N-1 
+      // z좌표들 [z1, z2, ..., zn] : Index 2*N ~ 3*N-1 
+  // dirichletIndices, nonDirichletIndices 저장 형태 
+      // [x1, x2, ..., xn, y1, y2, .., yn, z1, z2, ..., zn] where n = #(vertices)
   std::vector<int> dirichletIndices, nonDirichletIndices;
 
   dirichletIndices = Config.dirichletVertices;
@@ -685,24 +708,28 @@ int main( int argc, char *argv[] ) {
       nonDirichletIndices.push_back( vertexIdx );
   }
 
+  // elastic shell energy W 
   ShellDeformationType W( Topology, Config.Energy.bendingWeight );
 
-  std::cout << " .. W = " << W( Vertices_Start, Vertices_Second ) << std::endl;
+  std::cout << " .. W = " << W( Vertices_Start, Vertices_Second ) << std::endl;       // start -> second shape의 변형 비용 
 
+  // Scary TPE 
   ScaryTPE::TangentPointEnergy<DefaultConfigurator> scTPE( Topology,
                                                            Config.TPE.alpha,
                                                            Config.TPE.beta,
                                                            Config.TPE.innerWeight,
-                                                           Config.TPE.useAdaptivity,
+                                                           Config.TPE.useAdaptivity,        // 차이 : adaptive 계산 여부 
                                                            Config.TPE.theta,
-                                                           Config.TPE.thetaNear );
+                                                           Config.TPE.thetaNear );          // 차이 : near-field 기준 
 
+  // Spooky TPE 
   SpookyTPE::FastMultipoleTangentPointEnergy<DefaultConfigurator> spTPE( Topology,
                                                                          Config.TPE.alpha,
                                                                          Config.TPE.beta,
                                                                          Config.TPE.innerWeight,
                                                                          Config.TPE.theta );
 
+  // FMM(Fast Multipole Method)를 사용하여 멀리 있는 면들 사잉의 연산을 근사 처리 -> 빠른 근사 
   SpookyTPE::AdaptiveFastMultipoleTangentPointEnergy<DefaultConfigurator> adspTPE( Topology,
                                                                                    Config.TPE.alpha,
                                                                                    Config.TPE.beta,
@@ -710,28 +737,36 @@ int main( int argc, char *argv[] ) {
                                                                                    Config.TPE.theta,
                                                                                    Config.TPE.thetaNear );
 
+  // 3가지 TPE 
+    // SCARY : 정확도 높음. 속도 느림 
+    // SPOOKY : 정확도 중간. 속도 빠름 
+    // Adaptive : 정확도 높음. 속도 중간 
   ObjectiveFunctional<DefaultConfigurator> *chosenTPE = nullptr;
 
   if ( Config.TPE.Type == SCARY ) {
-    chosenTPE = &scTPE;
+    chosenTPE = &scTPE;                       // ScaryTPE 
   }
   else if ( Config.TPE.Type == SPOOKY ) {
     if ( Config.TPE.useAdaptivity ) {
-      chosenTPE = &adspTPE;
+      chosenTPE = &adspTPE;                   // AdaptiveFastMultipoleTPE 
     }
     else {
-      chosenTPE = &spTPE;
+      chosenTPE = &spTPE;                     // SpookyTPE 
     }
   }
 
-  ObjectiveWrapper TPE( *chosenTPE );
-  ObjectiveGradientWrapper TPG( *chosenTPE );
+  // TPE 객체를 실제 계산 가능한 함수 형태로 감싸기 (wrapping)
+  ObjectiveWrapper TPE( *chosenTPE );               // 에너지 
+  ObjectiveGradientWrapper TPG( *chosenTPE );       // 에너지 그래디언트(기울기) 
 
+  // start, second Mesh의 TPE 초기값 출력 
   std::cout << " .. TPE(1) = " << TPE( Vertices_Start ) << std::endl;
   std::cout << " .. TPE(2) = " << TPE( Vertices_Second ) << std::endl;
 
+  // Newton method 계산을 위한 shape 3개 초기화 : s0, s1, s2 
   VectorType s0 = Vertices_Start, s1 = Vertices_Second, s2 = Vertices_Second;
 
+  // Topology(연결 정보)와 현재 VectorType 좌표 데이터를 합쳐서 .ply 파일로 저장 
   saveAsPLY<VectorType>( Topology, s0, outputPrefix + "comb_exp_0.ply" );
   saveAsPLY<VectorType>( Topology, s1, outputPrefix + "comb_exp_1.ply" );
 
@@ -742,19 +777,28 @@ int main( int argc, char *argv[] ) {
     if ( !Config.initFile.empty())
       s2 = Vertices_Init;
 
-    // Vector-Valued Equation (confusingly called energy)
-    Exp2Energy<DefaultConfigurator> Felast( W, s0, s1 );
-    DifferenceExp2Energy<DefaultConfigurator> Ftpe( TPE, TPG, s0, s1 );
-    BarycenterExp2Energy<DefaultConfigurator> Fbary( s0, s1, nonDirichletIndices );
-    DirichletExp2Energy<DefaultConfigurator> Fdir( s0, s1, dirichletIndices );
+    /* Vector-Valued Equation (confusingly called energy) */
+    // s2가 만족해야 할 물리 방정식을 정의 
+    // Goal: find s2 s.t. F(s2) = 0 where F = Weights * (Felast, Ftpe, Fbary, Fdir) 
+    // Exp2Energy (scalar 에너지 X. gradient 벡터 에너지 i.e. Jacobian Matrix)
+        // Exp: Exponential Map (현재 상태와 속도로부터 다음 상태를 예측하는 기하학적 연산) 
+        // 2: 이전 두 프레임을 사용하는 2차(2nd-order) 예측 방식 
+        // Energy: 예측 경로가 물리적 관성 및 반발력과 얼마나 일치하는지 수치화한 값 
+    Exp2Energy<DefaultConfigurator> Felast( W, s0, s1 );                                // Elastic Inertia (탄성 관성)
+    DifferenceExp2Energy<DefaultConfigurator> Ftpe( TPE, TPG, s0, s1 );                 // 충돌 회피를 위한 메트릭 왜곡 
+    BarycenterExp2Energy<DefaultConfigurator> Fbary( s0, s1, nonDirichletIndices );     // 질량중심을 유지하여 엉뚱한 방향으로 회전하지 않도록 
+    DirichletExp2Energy<DefaultConfigurator> Fdir( s0, s1, dirichletIndices );          // 고정점. 정해진 궤적을 벗어나지 않도록 강한 복원력을 줌 
 
+    // 가중치 벡터 Weights 정의: [elasticWeight, tpeWeight, dirichletWeight, barycenterWeight] 
     VectorType Weights( 4 );
     Weights << Config.Energy.elasticWeight, Config.Energy.tpeWeight, Config.Energy.dirichletWeight,
         Config.Energy.barycenterWeight;
 
+    // F = Weights * (Felast, Ftpe, Fbary, Fdir) 
     AdditionGradient<DefaultConfigurator> F( Weights, Felast, Ftpe, Fdir, Fbary );
 
-    // Derivatives (matrix valued) and its inverse
+    /* Derivatives (matrix valued) and its inverse */
+    // DF: Hessian Matrix 
     CombinedExp2Gradient<DefaultConfigurator> DF( W, TPE, TPG, s0, s1,
                                                   Config.dirichletVertices, nonDirichletIndices,
                                                   Config.Energy.elasticWeight,
@@ -762,6 +806,7 @@ int main( int argc, char *argv[] ) {
                                                   Config.Energy.dirichletWeight,
                                                   Config.Energy.barycenterWeight );
 
+    // inverse of DF 
     InverseCombinedExp2Gradient<DefaultConfigurator> invDF( W, TPE, TPG, s0, s1,
                                                             Config.dirichletVertices, nonDirichletIndices,
                                                             Config.Energy.elasticWeight,
@@ -769,15 +814,17 @@ int main( int argc, char *argv[] ) {
                                                             Config.Energy.dirichletWeight,
                                                             Config.Energy.barycenterWeight );
 
+    // Newton Method 
+        // s2 <- s2-(DF)^(-1)*F 
     NewOpt::NewtonMethod<DefaultConfigurator> Solver( F, DF, invDF, Config.Optimization.maxNumIterations, 1e-8,
                                                       NEWTON_OPTIMAL, SHOW_ALL, 0.1,
                                                       Config.Optimization.minStepsize,
                                                       Config.Optimization.maxStepsize );
     if ( Config.Energy.dirichletWeight == 0. )
-      Solver.setBoundaryMask( Config.dirichletVertices );
+      Solver.setBoundaryMask( Config.dirichletVertices );     // 정점들을 고정 
 
     t_start = std::chrono::high_resolution_clock::now();
-    Solver.solve( s2, s2 );
+    Solver.solve( s2, s2 );                                   // find s2 s.t. F(s2)=0 
     t_end = std::chrono::high_resolution_clock::now();
 
     std::cout << " .... Time: " << std::chrono::duration<double, std::ratio<1> >( t_end - t_start ).count()

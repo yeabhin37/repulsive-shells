@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "",
+  "python.terminal.activateEnvironment": false,
+  "python.analysis.disabled": true,
+  "code-runner.runInTerminal": false,
+  "code-runner.executorMap": {}
+}

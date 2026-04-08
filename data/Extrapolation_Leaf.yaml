@@ -1,6 +1,8 @@
 Data:
   startFile: ./data/Leaf/sbdv_step0.ply
   secondFile: ./data/Leaf/sbdv_step1.ply
+  # startFile: ./data/Leaf/sbdv_step0_tri_2600_2705.ply
+  # secondFile: ./data/Leaf/sbdv_step1_tri_2600_2699.ply
   dirichletVertices: [136, 590, 954]
 
 Output:
@@ -11,13 +13,15 @@ Output:
 numSteps: 450
 
 TPE:
-  Type: Scary
+  # Type: Scary
+  Type: Spooky
   alpha: 6
   beta: 12
   innerWeight: 1.e-4
   theta: 0.5
   thetaNear: 10.
-  useAdaptivity: True
+  # useAdaptivity: True
+  useAdaptivity: False
 
 Energy:
   bendingWeight: 1.e-3
