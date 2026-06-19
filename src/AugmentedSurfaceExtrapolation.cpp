@@ -11,7 +11,10 @@
 #include <goast/external/vtkIO.h>
 #include <SpookyTPE/FastMultipoleEnergy.h>
 
+#include "BoundaryUtils.h"
+
 #include "ScaryTPE/TangentPointEnergy.h"
+#include "ScaryTPE/BoundaryCurveTangentPointEnergy.h"
 #include "SpookyTPE/AdaptiveEnergy.h"
 
 #include "Optimization/LineSearchNewtonCG.h"
@@ -563,6 +566,23 @@ int main( int argc, char *argv[] ) {
       RealType dirichletWeight = 0.;
       RealType barycenterWeight = 1.;       // 여러 형상의 중간 지점(Barycenter)을 계산할 때 각 형상이 갖는 영향력 조절 or 전체적인 질량 중심 유지하는 데 사용됨 
     } Energy;
+
+    struct {
+      bool inspect = false;
+      bool saveVisualization = false;
+    } Boundary;
+
+    struct {
+      bool enabled = false;
+      RealType weight = 0.;
+      bool useInObjective = false;
+      RealType alpha = 6.;
+      RealType beta = 12.;
+
+      bool checkGradient = false;
+      int checkCurveIndex = -1;
+      RealType fdStep = 1.e-6;
+    } BoundaryTPE;
   } Config;
   /* endregion */ 
 
@@ -601,6 +621,32 @@ int main( int argc, char *argv[] ) {
     Config.Energy.barycenterWeight = config["Energy"]["barycenterWeight"].as<RealType>();
     Config.Energy.dirichletWeight = config["Energy"]["dirichletWeight"].as<RealType>();
 
+    if (config["Boundary"]) {
+      if (config["Boundary"]["inspect"])
+        Config.Boundary.inspect = config["Boundary"]["inspect"].as<bool>();
+      if (config["Boundary"]["saveVisualization"])
+        Config.Boundary.saveVisualization = config["Boundary"]["saveVisualization"].as<bool>();
+    }
+
+    if ( config["BoundaryTPE"] ) {
+      if ( config["BoundaryTPE"]["enabled"] )
+        Config.BoundaryTPE.enabled = config["BoundaryTPE"]["enabled"].as<bool>();
+      if ( config["BoundaryTPE"]["weight"] )
+        Config.BoundaryTPE.weight = config["BoundaryTPE"]["weight"].as<RealType>();
+      if ( config["BoundaryTPE"]["useInObjective"] )
+        Config.BoundaryTPE.useInObjective = config["BoundaryTPE"]["useInObjective"].as<bool>();
+      if ( config["BoundaryTPE"]["alpha"] )
+        Config.BoundaryTPE.alpha = config["BoundaryTPE"]["alpha"].as<RealType>();
+      if ( config["BoundaryTPE"]["beta"] )
+        Config.BoundaryTPE.beta = config["BoundaryTPE"]["beta"].as<RealType>();
+      if ( config["BoundaryTPE"]["checkGradient"] )
+        Config.BoundaryTPE.checkGradient = config["BoundaryTPE"]["checkGradient"].as<bool>();
+      if ( config["BoundaryTPE"]["checkCurveIndex"] )
+        Config.BoundaryTPE.checkCurveIndex = config["BoundaryTPE"]["checkCurveIndex"].as<int>();
+      if ( config["BoundaryTPE"]["fdStep"] )
+        Config.BoundaryTPE.fdStep = config["BoundaryTPE"]["fdStep"].as<RealType>();
+    }
+      
     Config.Optimization.maxNumIterations = config["Optimization"]["maxNumIterations"].as<int>();
     Config.Optimization.minStepsize = config["Optimization"]["minStepsize"].as<RealType>();
     Config.Optimization.maxStepsize = config["Optimization"]["maxStepsize"].as<RealType>();
@@ -678,6 +724,50 @@ int main( int argc, char *argv[] ) {
   /* Topology of the mesh */
   MeshTopologySaver Topology( startMesh );            // Mesh의 연결 상태 정보를 Topology에 저장 
   int numVertices = Topology.getNumVertices();        // startMesh의 vertex 개수 
+
+  /* Boundary Data */
+  BoundaryUtils::BoundaryData boundaryData;
+
+  const bool needBoundaryData =
+      Config.Boundary.inspect ||
+      Config.Boundary.saveVisualization ||
+      Config.BoundaryTPE.enabled;
+
+  if ( needBoundaryData ) {
+    boundaryData = BoundaryUtils::extractBoundaryData( startMesh );
+
+    if ( Config.Boundary.inspect || Config.BoundaryTPE.enabled ) {
+      BoundaryUtils::printBoundaryInfo(
+          boundaryData,
+          std::cout,
+          Config.startFile);
+    }
+
+    if ( Config.Boundary.saveVisualization ) {
+      BoundaryUtils::writeBoundaryDebugFiles(
+          startMesh,
+          boundaryData,
+          outputPrefix,
+          "start");
+
+      std::cout << " .. [Boundary] Saved boundary visualization files."
+                << std::endl;
+    }
+  }
+
+  const bool boundaryTPEAvailable =
+      Config.BoundaryTPE.enabled && boundaryData.hasBoundary();
+
+  const bool useBoundaryTPE =
+      boundaryTPEAvailable &&
+      Config.BoundaryTPE.useInObjective &&
+      Config.BoundaryTPE.weight != 0.0;
+
+  std::cout << " .. [BoundaryTPE] enabled        = " << Config.BoundaryTPE.enabled << std::endl;
+  std::cout << " .. [BoundaryTPE] weight         = " << Config.BoundaryTPE.weight << std::endl;
+  std::cout << " .. [BoundaryTPE] available      = " << boundaryTPEAvailable << std::endl;
+  std::cout << " .. [BoundaryTPE] useInObjective = " << Config.BoundaryTPE.useInObjective << std::endl;
+  std::cout << " .. [BoundaryTPE] active         = " << useBoundaryTPE << std::endl;
 
   /* Geometry of the mesh */
   VectorType Vertices_Start, Vertices_Second, Vertices_Init;      // start, second, init의 vertex 개수 계산 
@@ -759,6 +849,31 @@ int main( int argc, char *argv[] ) {
   ObjectiveWrapper TPE( *chosenTPE );               // 에너지 
   ObjectiveGradientWrapper TPG( *chosenTPE );       // 에너지 그래디언트(기울기) 
 
+  std::unique_ptr<
+      ScaryTPE::BoundaryCurveTangentPointEnergy<DefaultConfigurator>
+  > BoundaryTPE;
+
+  std::unique_ptr<ObjectiveWrapper<DefaultConfigurator>> Ebdry;
+  std::unique_ptr<ObjectiveGradientWrapper<DefaultConfigurator>> DEbdry;
+
+  if ( boundaryTPEAvailable ) {
+    BoundaryTPE =
+        std::make_unique<
+            ScaryTPE::BoundaryCurveTangentPointEnergy<DefaultConfigurator>
+        >(
+            Topology,
+            boundaryData.edges,
+            Config.BoundaryTPE.alpha,
+            Config.BoundaryTPE.beta
+        );
+
+    Ebdry = std::make_unique<ObjectiveWrapper<DefaultConfigurator>>( *BoundaryTPE );
+    DEbdry = std::make_unique<ObjectiveGradientWrapper<DefaultConfigurator>>( *BoundaryTPE );
+
+    std::cout << " .. [BoundaryTPE] boundary single-shape energy object created."
+              << std::endl;
+  }
+
   // start, second Mesh의 TPE 초기값 출력 
   std::cout << " .. TPE(1) = " << TPE( Vertices_Start ) << std::endl;
   std::cout << " .. TPE(2) = " << TPE( Vertices_Second ) << std::endl;
@@ -789,13 +904,41 @@ int main( int argc, char *argv[] ) {
     BarycenterExp2Energy<DefaultConfigurator> Fbary( s0, s1, nonDirichletIndices );     // 질량중심을 유지하여 엉뚱한 방향으로 회전하지 않도록 
     DirichletExp2Energy<DefaultConfigurator> Fdir( s0, s1, dirichletIndices );          // 고정점. 정해진 궤적을 벗어나지 않도록 강한 복원력을 줌 
 
-    // 가중치 벡터 Weights 정의: [elasticWeight, tpeWeight, dirichletWeight, barycenterWeight] 
-    VectorType Weights( 4 );
-    Weights << Config.Energy.elasticWeight, Config.Energy.tpeWeight, Config.Energy.dirichletWeight,
-        Config.Energy.barycenterWeight;
+    // 가중치 벡터 Weights 정의
+    std::unique_ptr<AdditionGradient<DefaultConfigurator>> F;
+    VectorType Weights;
+    if ( useBoundaryTPE ) {
+      Weights.resize( 5 );
+      Weights << Config.Energy.elasticWeight,
+                Config.Energy.tpeWeight,
+                Config.Energy.dirichletWeight,
+                Config.Energy.barycenterWeight,
+                Config.BoundaryTPE.weight;
 
-    // F = Weights * (Felast, Ftpe, Fbary, Fdir) 
-    AdditionGradient<DefaultConfigurator> F( Weights, Felast, Ftpe, Fdir, Fbary );
+      F = std::make_unique<AdditionGradient<DefaultConfigurator>>(
+          Weights,
+          Felast,
+          Ftpe,
+          Fdir,
+          Fbary,
+          *DEbdry
+      );
+    }
+    else {
+      Weights.resize( 4 );
+      Weights << Config.Energy.elasticWeight,
+                Config.Energy.tpeWeight,
+                Config.Energy.dirichletWeight,
+                Config.Energy.barycenterWeight;
+
+      F = std::make_unique<AdditionGradient<DefaultConfigurator>>(
+          Weights,
+          Felast,
+          Ftpe,
+          Fdir,
+          Fbary
+      );
+    }
 
     /* Derivatives (matrix valued) and its inverse */
     // DF: Hessian Matrix 
@@ -816,10 +959,14 @@ int main( int argc, char *argv[] ) {
 
     // Newton Method 
         // s2 <- s2-(DF)^(-1)*F 
-    NewOpt::NewtonMethod<DefaultConfigurator> Solver( F, DF, invDF, Config.Optimization.maxNumIterations, 1e-8,
-                                                      NEWTON_OPTIMAL, SHOW_ALL, 0.1,
-                                                      Config.Optimization.minStepsize,
-                                                      Config.Optimization.maxStepsize );
+    NewOpt::NewtonMethod Solver( *F, DF, invDF,
+                                Config.Optimization.maxNumIterations,
+                                1e-8,
+                                NEWTON_OPTIMAL,
+                                SHOW_ALL,
+                                0.1,
+                                Config.Optimization.minStepsize,
+                                Config.Optimization.maxStepsize );
     if ( Config.Energy.dirichletWeight == 0. )
       Solver.setBoundaryMask( Config.dirichletVertices );     // 정점들을 고정 
 
@@ -829,6 +976,14 @@ int main( int argc, char *argv[] ) {
 
     std::cout << " .... Time: " << std::chrono::duration<double, std::ratio<1> >( t_end - t_start ).count()
               << " seconds." << std::endl;
+
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .... Ebdry(s2)       = "
+                << (*Ebdry)( s2 ) << std::endl;
+      std::cout << " .... DEbdry(s2).norm = "
+                << (*DEbdry)( s2 ).norm() << std::endl;
+    }
+
     saveAsPLY<VectorType>( Topology, s2, outputPrefix + "comb_exp_" + std::to_string(t) + ".ply" );
 
     s0 = s1;

@@ -10,12 +10,19 @@
 #include <goast/Optimization.h>
 #include <goast/external/vtkIO.h>
 
+#include <csignal>    // 외부 신호 처리 -> Ctrl+C 인터럽트 감지
+#include <stdexcept>  // 예외 처리
+#include <memory>     // 스마트 포인터 사용 
+
+#include "BoundaryUtils.h"
 
 #include "GraphManifold/DifferencePathEnergy.h"
 
 #include "ScaryTPE/TangentPointEnergy.h"
 #include "ScaryTPE/TPObstacleEnergy.h"
 #include "ScaryTPE/SobolevSlobodeckij.h"
+#include "ScaryTPE/BoundaryCurveTangentPointEnergy.h"
+#include "ScaryTPE/BoundaryCurvePathEnergy.h"
 
 #include "SpookyTPE/FastMultipoleEnergy.h"
 #include "SpookyTPE/AdaptiveEnergy.h"
@@ -35,6 +42,14 @@
 
 #pragma omp declare reduction (merge : std::vector<DefaultConfigurator::TripletType> : omp_out.insert(omp_out.end(), omp_in.begin(), omp_in.end()))
 
+namespace {
+  volatile std::sig_atomic_t g_interruptRequested = 0;
+
+  void handleInterrupt( int ) {
+    g_interruptRequested = 1;
+  }
+}
+
 using VectorType = DefaultConfigurator::VectorType;
 using VecType = DefaultConfigurator::VecType;
 using RealType = DefaultConfigurator::RealType;
@@ -44,6 +59,8 @@ using ShellDeformationType = ShellDeformation<DefaultConfigurator, NonlinearMemb
 
 
 int main( int argc, char *argv[] ) {
+  std::signal( SIGINT, handleInterrupt );
+
   //region Config
   enum TPEType {
     SPOOKY,
@@ -94,6 +111,10 @@ int main( int argc, char *argv[] ) {
     bool timestampOutput = true;
     std::string outputFilePrefix;
 
+    bool saveIntermediate = false;
+    int intermediateEvery = 100;
+    std::string intermediateFolder = "intermediate";
+
     std::string startFile;
     std::string endFile;
     std::string obstacleFile;
@@ -125,6 +146,23 @@ int main( int argc, char *argv[] ) {
       RealType barycenterWeight = 0.;
       RealType rotationWeight = 0.;
     } Energy;
+
+    struct {
+      bool inspect = false; 
+      bool saveVisualization = false; 
+    } Boundary; 
+
+    struct {
+      bool enabled = false;
+      RealType weight = 0.;
+      bool useInObjective = false;
+      RealType alpha = 6.;
+      RealType beta = 12.;
+
+      bool checkGradient = false;
+      int checkCurveIndex = -1;
+      RealType fdStep = 1.e-6;
+    } BoundaryTPE;
 
     struct {
       int maxNumIterations = 50000;
@@ -165,6 +203,15 @@ int main( int argc, char *argv[] ) {
     Config.outputFolder = config["Output"]["outputFolder"].as<std::string>();
     Config.timestampOutput = config["Output"]["timestampOutput"].as<bool>();
 
+    if ( config["Output"]["saveIntermediate"] )
+      Config.saveIntermediate = config["Output"]["saveIntermediate"].as<bool>();
+
+    if ( config["Output"]["intermediateEvery"] )
+      Config.intermediateEvery = config["Output"]["intermediateEvery"].as<int>();
+
+    if ( config["Output"]["intermediateFolder"] )
+      Config.intermediateFolder = config["Output"]["intermediateFolder"].as<std::string>();
+
     Config.TPE.alpha = config["TPE"]["alpha"].as<int>();
     Config.TPE.beta = config["TPE"]["beta"].as<int>();
     Config.TPE.useAdaptivity = config["TPE"]["useAdaptivity"].as<bool>();
@@ -189,6 +236,32 @@ int main( int argc, char *argv[] ) {
       Config.Energy.barycenterWeight = config["Energy"]["barycenterWeight"].as<RealType>();
     if ( config["Energy"]["rotationWeight"] )
       Config.Energy.rotationWeight = config["Energy"]["rotationWeight"].as<RealType>();
+
+    if ( config["Boundary"] ) {
+      if ( config["Boundary"]["inspect"] )
+        Config.Boundary.inspect = config["Boundary"]["inspect"].as<bool>();
+      if ( config["Boundary"]["saveVisualization"] )
+        Config.Boundary.saveVisualization = config["Boundary"]["saveVisualization"].as<bool>();
+    }
+
+    if (config["BoundaryTPE"]) {
+      if (config["BoundaryTPE"]["enabled"])
+        Config.BoundaryTPE.enabled = config["BoundaryTPE"]["enabled"].as<bool>();
+      if (config["BoundaryTPE"]["weight"])
+        Config.BoundaryTPE.weight = config["BoundaryTPE"]["weight"].as<RealType>();
+      if (config["BoundaryTPE"]["useInObjective"])
+        Config.BoundaryTPE.useInObjective = config["BoundaryTPE"]["useInObjective"].as<bool>();
+      if (config["BoundaryTPE"]["alpha"])
+        Config.BoundaryTPE.alpha = config["BoundaryTPE"]["alpha"].as<RealType>();
+      if (config["BoundaryTPE"]["beta"])
+        Config.BoundaryTPE.beta = config["BoundaryTPE"]["beta"].as<RealType>();
+      if (config["BoundaryTPE"]["checkGradient"])
+        Config.BoundaryTPE.checkGradient = config["BoundaryTPE"]["checkGradient"].as<bool>();
+      if (config["BoundaryTPE"]["checkCurveIndex"])
+        Config.BoundaryTPE.checkCurveIndex = config["BoundaryTPE"]["checkCurveIndex"].as<int>();
+      if (config["BoundaryTPE"]["fdStep"])
+        Config.BoundaryTPE.fdStep = config["BoundaryTPE"]["fdStep"].as<RealType>();
+    }
 
     Config.Optimization.maxNumIterations = config["Optimization"]["maxNumIterations"].as<int>();
     Config.Optimization.minStepsize = config["Optimization"]["minStepsize"].as<RealType>();
@@ -289,6 +362,55 @@ int main( int argc, char *argv[] ) {
 
   std::cout << " .. numVertices = " << numVertices << std::endl;
 
+  // Boundary data extraction and visualization 
+  BoundaryUtils::BoundaryData boundaryData;
+
+  const bool needBoundaryData =
+      Config.Boundary.inspect ||
+      Config.Boundary.saveVisualization ||
+      Config.BoundaryTPE.enabled;
+
+  if ( needBoundaryData ) {
+    boundaryData = BoundaryUtils::extractBoundaryData( startMesh );
+
+    if ( Config.Boundary.inspect || Config.BoundaryTPE.enabled ) {
+      BoundaryUtils::printBoundaryInfo(
+          boundaryData,
+          std::cout,
+          Config.startFile);
+    }
+
+    if ( Config.Boundary.saveVisualization ) {
+      BoundaryUtils::writeBoundaryDebugFiles(
+          startMesh,
+          boundaryData,
+          outputPrefix,
+          "start");
+
+      std::cout << " .. [Boundary] Saved boundary visualization files."
+                << std::endl;
+    }
+  }
+
+  const bool boundaryTPEAvailable = Config.BoundaryTPE.enabled && boundaryData.hasBoundary();
+  const bool useBoundaryTPE = boundaryTPEAvailable && Config.BoundaryTPE.useInObjective && Config.BoundaryTPE.weight != 0.0;
+
+  std::cout << " .. [BoundaryTPE] enabled        = " << Config.BoundaryTPE.enabled << std::endl;
+  std::cout << " .. [BoundaryTPE] weight         = " << Config.BoundaryTPE.weight << std::endl;
+  std::cout << " .. [BoundaryTPE] available      = " << boundaryTPEAvailable << std::endl;
+  std::cout << " .. [BoundaryTPE] useInObjective = " << Config.BoundaryTPE.useInObjective << std::endl;
+  std::cout << " .. [BoundaryTPE] active         = " << useBoundaryTPE << std::endl;
+  std::cout << " .. [BoundaryTPE] checkGradient   = " << Config.BoundaryTPE.checkGradient << std::endl;
+  std::cout << " .. [BoundaryTPE] checkCurveIndex = " << Config.BoundaryTPE.checkCurveIndex << std::endl;
+  std::cout << " .. [BoundaryTPE] fdStep         = " << Config.BoundaryTPE.fdStep << std::endl;
+
+  if ( Config.BoundaryTPE.enabled && !boundaryData.hasBoundary() ) {
+    std::cout << " .. [BoundaryTPE] skipped: no boundary detected." << std::endl;
+  }
+  if ( Config.BoundaryTPE.enabled && Config.BoundaryTPE.weight == 0.0 ) {
+    std::cout << " .. [BoundaryTPE] skipped: weight is zero." << std::endl;
+  }
+
   // Geometry of the mesh
   VectorType Vertices_Start, Vertices_End, Vertices_Obstacle;
   std::vector<VectorType> Vertices_Init( Config.numSteps - 1 );
@@ -299,6 +421,13 @@ int main( int argc, char *argv[] ) {
     getGeometry( initMeshes[k], Vertices_Init[k] );
 
   // Registration
+    // dirichletIndices와 nonDirichletIndices 벡터 생성 
+    // 변수명 구분 
+      // dirichletIndices : 원래 vertex index 목록 
+      // Config.dirichletVertices : vertex index 목록이 3배로 늘어난 목록 (x,y,z 각각에 대해 원래 vertex index가 numVertices씩 offset되어 추가됨)
+        // x_i : i 
+        // y_i : numVertices + i
+        // z_i : 2*numVertices + i 
   std::vector<int> dirichletIndices = Config.dirichletVertices;
   std::vector<int> nonDirichletIndices;
   const auto numDirichletVertices = Config.dirichletVertices.size();
@@ -317,16 +446,22 @@ int main( int argc, char *argv[] ) {
     std::cout << idx << ", ";
   std::cout << "}" << std::endl;
 
+  // localMask를 globalMask로 변환하는 함수 fillPathMask를 이용하여 fixedVariables 벡터 생성
   std::vector<int> fixedVariables;
   fillPathMask( Config.numSteps - 1, 3 * numVertices, Config.dirichletVertices, fixedVariables );
   //endregion
 
   //region Basic energies
   // Elastic energy
+    // Wmem, Wbend, Welast 정의 
+      // Wmem : 표면이 얼마나 늘어나거나 찢어지는지에 관한 에너지 (membrane energy)
+      // Wbend : 표면이 얼마나 구부러지는지(접히거나 휘어지는지)에 관한 에너지 (bending energy)
+      // Welast : Wmem + bendingWeight * Wbend, 표면의 전체적인 탄성 에너지
   NonlinearMembraneDeformation<DefaultConfigurator> Wmem( Topology, 1. );
   SimpleBendingDeformation<DefaultConfigurator> Wbend( Topology, 1. );
   CombinedDeformation<DefaultConfigurator> Welast( Wmem, Config.Energy.bendingWeight, Wbend );
 
+    // Start와 End 사이의 Wmem, Wbend, Welast 계산 및 출력
   std::cout << " .. Wmem = " << Wmem( Vertices_Start, Vertices_End ) << std::endl;
   std::cout << " .. Wbend = " << Wbend( Vertices_Start, Vertices_End ) << std::endl;
   std::cout << " .. W = " << Welast( Vertices_Start, Vertices_End ) << std::endl;
@@ -336,6 +471,9 @@ int main( int argc, char *argv[] ) {
   OperatorHessianMetric<DefaultConfigurator> opElasticMetric( Welast, Config.dirichletVertices );
 
   // Tangent Point Energy and SobolevSlobodeckijMetric
+    // ScaryTPE와 SpookyTPE의 객체 생성
+      // YAML 파일에서 SCARY를 선택 -> scTPE 
+      // YAML 파일에서 SPOOKY를 선택 -> spTPE 또는 adspTPE (useAdaptivity 여부에 따라, useAdaptivity가 true면 adspTPE, false면 spTPE)
   ScaryTPE::TangentPointEnergy<DefaultConfigurator> scTPE( Topology,
                                                            Config.TPE.alpha,
                                                            Config.TPE.beta,
@@ -371,9 +509,12 @@ int main( int argc, char *argv[] ) {
     }
   }
 
+    // TPE : TPE를 계산하는 wrapper 
+    // TPG : TPE의 gradient를 계산하는 wrapper
   ObjectiveWrapper TPE( *chosenTPE );
   ObjectiveGradientWrapper TPG( *chosenTPE );
 
+    // ??? 
   ScaryTPE::SurfaceSobolevSlobodeckijOperatorMap<DefaultConfigurator> SSMop( Topology,
                                                                              Config.TPE.alpha,
                                                                              Config.TPE.beta,
@@ -383,6 +524,12 @@ int main( int argc, char *argv[] ) {
                                                                              Config.TPE.useAdaptivity );
   //endregion
 
+    // Path : 최적화 과정에서 intermediate shapes (s_1, ..., s_{K-1})의 geometry를 벡터 형태로 저장하는 변수. 크기는 (K-1) * 3 * numVertices.
+      // Here, K is the number of steps (Config.numSteps) in the path
+      // s_k : 하나의 mesh geometry vector. 크기는 3*numVertices  
+        // s_0 = start shape 
+        // s_K = end shape
+        // s_1, ..., s_{K-1} : intermediate shapes, 최적화 과정에서 업데이트되는 변수. 
   VectorType Path;
   for ( int level = 0; level < Config.numLevels; level++ ) {
     std::cout << std::endl;
@@ -395,11 +542,14 @@ int main( int argc, char *argv[] ) {
     fillPathMask( Config.numSteps - 1, 3 * numVertices, Config.dirichletVertices, fixedVariables );
 
     //region Path energies
+      // Weights = weighted sum에서 각각의 에너지 항에 곱해지는 가중치 벡터 (elastic, barycenter, dirichlet, obstacle, tpe, rotation)
     VectorType Weights( 6 );
     Weights << Config.Energy.elasticWeight, Config.Energy.barycenterWeight, Config.Energy.dirichletWeight,
         Config.Energy.obstacleWeight, Config.Energy.tpeWeight, Config.Energy.rotationWeight;
 
-    // Elasticity
+    // [E-1] Elasticity
+      // Emem, Ebend : 최적화 후에 step별 energy 항의 값을 출력하기 위한 객체 
+      // Eelast : 실제 objective에 들어가는 elastic energy 항 
     DiscretePathEnergy<DefaultConfigurator> Emem( Wmem, Config.numSteps, Vertices_Start, Vertices_End );
     DiscretePathEnergy<DefaultConfigurator> Ebend( Wbend, Config.numSteps, Vertices_Start, Vertices_End );
 
@@ -410,7 +560,9 @@ int main( int argc, char *argv[] ) {
                                                           Config.dirichletVertices );
 
 
-    // TPE
+    // [E-2] TPE
+      // TPDE : Tangent Point Difference Energy 
+      // YAML에서 정의한 TPE type에 따라서 choseTPDE 객체가 scTPE, spTPE, adspTPE 중 하나로 생성됨.
     std::unique_ptr<ObjectiveFunctional<DefaultConfigurator>> chosenTPDE;
     // ObjectiveFunctional<DefaultConfigurator> *chosenTPDE = &spTPDEn;
 
@@ -455,13 +607,20 @@ int main( int argc, char *argv[] ) {
         );
       }
     }
-
+      // Etpe : TPE path energy 값 
+      // DEtpe : TPE path energy의 gradient
+      // RD2Etpe : TPE path energy의 Hessian (matrix 형태)
+      // opRD2Etpe : TPE path energy의 Hessian (operator 형태)
     ObjectiveWrapper Etpe( *chosenTPDE );
     ObjectiveGradientWrapper DEtpe( *chosenTPDE );
     ObjectiveHessianWrapper RD2Etpe( *chosenTPDE );
     ObjectiveHessianOperatorWrapper opRD2Etpe( *chosenTPDE );
 
-    // RBM
+    // [E-3] RBM : Rigid Body Motion을 고정시키는 에너지 항 -> tracking energy 라고도 불림. 
+      // Edir : dirichlet vertices가 path를 따라 부드럽게 이동하도록 유도하는 에너지 항
+      // dirichlet weight 값에 따라서  
+        // w 값이 크면, dirichlet vertices가 start에서 end로 거의 고정된 채로 움직이게 됨 (즉, rigid하게 움직이게 됨)
+        // w 값이 작으면, dirichlet vertices가 path를 따라 자유롭게 움직
     TrackingPathEnergy<DefaultConfigurator> Edir( dirichletIndices, Config.numSteps, Vertices_Start, Vertices_End );
     TrackingPathEnergyGradient<DefaultConfigurator> DEdir( dirichletIndices, Config.numSteps, Vertices_Start,
                                                            Vertices_End );
@@ -470,12 +629,15 @@ int main( int argc, char *argv[] ) {
     TrackingPathEnergyHessianOperator<DefaultConfigurator> opD2Edir( dirichletIndices, Config.numSteps, Vertices_Start,
                                                                      Vertices_End );
 
-    // Obstacle (only available in scary)
+    // [E-4] Obstacle (only available in scary)
+      // Eobs를 정의할 때 TPODE가 parameter로 들어감. 
+      /* Etpoe는 코드 상에서 사용되고 있지 않아서 주석처리 함 
     ScaryTPE::TangentPointObstacleEnergy<DefaultConfigurator> Etpoe( Topology, obstacleTopology, Vertices_Obstacle,
                                                                      Config.TPE.alpha, Config.TPE.beta,
                                                                      Config.TPE.innerWeight, Config.TPE.useObstacleAdaptivity,
                                                                      Config.TPE.theta, Config.TPE.thetaNear );
-
+      */
+      // ??? 여기서 입력 parameter 5의 의미가 뭐지 
     DifferencePathEnergy<DefaultConfigurator, ScaryTPE::TangentPointObstacleEnergy> TPODE(
       Config.numSteps, Vertices_Start, Vertices_End, Topology, obstacleTopology, Vertices_Obstacle, Config.TPE.alpha,
       Config.TPE.beta, Config.TPE.innerWeight, Config.TPE.useObstacleAdaptivity, Config.TPE.theta, Config.TPE.thetaNear,
@@ -487,7 +649,9 @@ int main( int argc, char *argv[] ) {
     ObjectiveHessianWrapper D2Eobs( TPODE );
     ObjectiveHessianOperatorWrapper opD2Eobs( TPODE );
 
-    // Barycenter
+    // [E-5] Barycenter
+      // BarycenterPathEnergy는 path를 따라 mesh의 무게중심이 갑자기 이동하는 것을 막는 에너지 항
+      // nonDirichletIndices가 parameter로 들어감.
     BarycenterPathEnergy BPE( Topology, nonDirichletIndices, Config.numSteps, Vertices_Start, Vertices_End );
 
     ObjectiveWrapper Ebary( BPE );
@@ -495,7 +659,9 @@ int main( int argc, char *argv[] ) {
     ObjectiveHessianWrapper D2Ebary( BPE );
     ObjectiveHessianOperatorWrapper opD2Ebary( BPE );
 
-    // Rotation
+    // [E-6] Rotation
+      // RotationPathEnergy는 path를 따라 mesh가 갑자기 회전하는 것을 막는 에너지 항
+      // nonDirichletIndices가 parameter로 들어감.
     RotationPathEnergy RPE( Topology, nonDirichletIndices, Config.numSteps, Vertices_Start, Vertices_End );
 
     ObjectiveWrapper Erot( RPE );
@@ -503,8 +669,86 @@ int main( int argc, char *argv[] ) {
     ObjectiveHessianWrapper D2Erot( RPE );
     ObjectiveHessianOperatorWrapper opD2Erot( RPE );
 
-    AdditionOp<DefaultConfigurator> E( Weights, Eelast, Ebary, Edir, Eobs, Etpe, Erot );
-    AdditionGradient<DefaultConfigurator> DE( Weights, DEelast, DEbary, DEdir, DEobs, DEtpe, DErot );
+    // [E-7] Boundary Curve TPE (optional, currently zero-energy dummy)
+    std::unique_ptr<
+        ScaryTPE::BoundaryCurveTangentPointEnergy<DefaultConfigurator>
+    > BoundaryTPE;
+
+    std::unique_ptr<
+        ScaryTPE::BoundaryCurvePathEnergy<DefaultConfigurator>
+    > BoundaryTPDE;
+
+    std::unique_ptr<ObjectiveWrapper<DefaultConfigurator>> Ebdry;
+    std::unique_ptr<ObjectiveGradientWrapper<DefaultConfigurator>> DEbdry;
+
+    if ( boundaryTPEAvailable ) {
+      BoundaryTPE =
+          std::make_unique<
+              ScaryTPE::BoundaryCurveTangentPointEnergy<DefaultConfigurator>
+          >(
+              Topology,
+              boundaryData.edges,
+              Config.BoundaryTPE.alpha,
+              Config.BoundaryTPE.beta
+          );
+
+      BoundaryTPDE =
+        std::make_unique<
+            ScaryTPE::BoundaryCurvePathEnergy<DefaultConfigurator>
+        >(
+            Config.numSteps,
+            Topology,
+            boundaryData.edges,
+            Config.BoundaryTPE.alpha,
+            Config.BoundaryTPE.beta
+        );
+
+      Ebdry = std::make_unique<ObjectiveWrapper<DefaultConfigurator>>( *BoundaryTPDE );
+      DEbdry = std::make_unique<ObjectiveGradientWrapper<DefaultConfigurator>>( *BoundaryTPDE );
+
+      std::cout << " .. [BoundaryTPE] boundary energy object created."
+                << std::endl;
+    }
+
+    // [E] : 최종적으로 optimization에서 minimize하려는 전체 energy 항. 
+      // 6개의 energy 항 (elastic, barycenter, dirichlet, obstacle, tpe, rotation)을 Weights 벡터에 정의된 가중치에 따라서 선형 결합한 형태.
+      // Optimizer는 E(Path)와 DE(Path)를 이용해서 Path를 업데이트함.
+    std::unique_ptr<AdditionOp<DefaultConfigurator>> E;
+    std::unique_ptr<AdditionGradient<DefaultConfigurator>> DE;
+
+    VectorType BoundaryWeights;
+
+    if ( useBoundaryTPE ) {
+      BoundaryWeights.resize( 7 );
+      BoundaryWeights << Config.Energy.elasticWeight,
+                        Config.Energy.barycenterWeight,
+                        Config.Energy.dirichletWeight,
+                        Config.Energy.obstacleWeight,
+                        Config.Energy.tpeWeight,
+                        Config.BoundaryTPE.weight,
+                        Config.Energy.rotationWeight;
+
+      E = std::make_unique<AdditionOp<DefaultConfigurator>>(
+          BoundaryWeights,
+          Eelast, Ebary, Edir, Eobs, Etpe, *Ebdry, Erot
+      );
+
+      DE = std::make_unique<AdditionGradient<DefaultConfigurator>>(
+          BoundaryWeights,
+          DEelast, DEbary, DEdir, DEobs, DEtpe, *DEbdry, DErot
+      );
+    }
+    else {
+      E = std::make_unique<AdditionOp<DefaultConfigurator>>(
+          Weights,
+          Eelast, Ebary, Edir, Eobs, Etpe, Erot
+      );
+
+      DE = std::make_unique<AdditionGradient<DefaultConfigurator>>(
+          Weights,
+          DEelast, DEbary, DEdir, DEobs, DEtpe, DErot
+      );
+    }
     //endregion
 
     //region 2nd order quadratic models (= Hessian approximations)
@@ -570,11 +814,238 @@ int main( int argc, char *argv[] ) {
       Path = newPath;
     }
 
+    auto printBoundaryMaxPairs = [&](const std::string &stageLabel) {
+      if (!boundaryTPEAvailable) {
+        return;
+      }
+
+      const std::string csvFile =
+          outputPrefix
+          + "boundary_max_pairs_"
+          + stageLabel
+          + "_level_"
+          + std::to_string(level)
+          + ".csv";
+
+      std::ofstream csv(csvFile);
+
+      csv << std::scientific << std::setprecision(16);
+
+      csv << "stage,level,curve,curveIndex,valid,"
+          << "edgeI,edgeI_v0,edgeI_v1,"
+          << "edgeJ,edgeJ_v0,edgeJ_v1,"
+          << "midDist,kernel,contribution"
+          << std::endl;
+
+      auto printOne = [&](const std::string &curveName,
+                          int curveIndex,
+                          const VectorType &geometry) {
+        auto info = BoundaryTPE->maxPairInfo(geometry);
+
+        if (!info.valid) {
+          std::cout << " .. [BoundaryTPE] max pair ["
+                    << stageLabel << "][" << curveName
+                    << "]: none" << std::endl;
+
+          csv << stageLabel << ","
+              << level << ","
+              << curveName << ","
+              << curveIndex << ","
+              << 0 << ","
+              << -1 << "," << -1 << "," << -1 << ","
+              << -1 << "," << -1 << "," << -1 << ","
+              << 0.0 << ","
+              << 0.0 << ","
+              << 0.0
+              << std::endl;
+
+          return;
+        }
+
+        std::cout << " .. [BoundaryTPE] max pair ["
+                  << stageLabel << "][" << curveName << "] "
+                  << "edgeI=" << info.edgeI
+                  << "(" << info.edgeI_v0 << "," << info.edgeI_v1 << "), "
+                  << "edgeJ=" << info.edgeJ
+                  << "(" << info.edgeJ_v0 << "," << info.edgeJ_v1 << "), "
+                  << "midDist=" << info.midpointDistance << ", "
+                  << "kernel=" << info.kernel << ", "
+                  << "contribution=" << info.contribution
+                  << std::endl;
+
+        csv << stageLabel << ","
+            << level << ","
+            << curveName << ","
+            << curveIndex << ","
+            << 1 << ","
+            << info.edgeI << ","
+            << info.edgeI_v0 << ","
+            << info.edgeI_v1 << ","
+            << info.edgeJ << ","
+            << info.edgeJ_v0 << ","
+            << info.edgeJ_v1 << ","
+            << info.midpointDistance << ","
+            << info.kernel << ","
+            << info.contribution
+            << std::endl;
+      };
+
+      printOne("curve_0", 0, Vertices_Start);
+
+      for (int k = 0; k < Config.numSteps - 1; ++k) {
+        VectorType curveGeometry =
+            Path.segment(k * 3 * numVertices, 3 * numVertices);
+
+        printOne(
+            "curve_" + std::to_string(k + 1),
+            k + 1,
+            curveGeometry
+        );
+      }
+
+      printOne(
+          "curve_" + std::to_string(Config.numSteps),
+          Config.numSteps,
+          Vertices_End
+      );
+
+      csv.close();
+
+      std::cout << " .. [BoundaryTPE] max pair CSV saved: "
+                << csvFile << std::endl;
+    };
+
+    auto getCurveGeometry = [&](int curveIndex) -> VectorType {
+      if (curveIndex <= 0) {
+        return Vertices_Start;
+      }
+
+      if (curveIndex >= Config.numSteps) {
+        return Vertices_End;
+      }
+
+      return Path.segment(
+          (curveIndex - 1) * 3 * numVertices,
+          3 * numVertices
+      );
+    };
+
+    auto findMaxBoundaryTPECurveIndex = [&]() -> int {
+      int bestIndex = 0;
+      RealType bestValue = -1.;
+
+      for (int curveIndex = 0; curveIndex <= Config.numSteps; ++curveIndex) {
+        VectorType geometry = getCurveGeometry(curveIndex);
+        RealType value = (*BoundaryTPE)(geometry);
+
+        if (value > bestValue) {
+          bestValue = value;
+          bestIndex = curveIndex;
+        }
+      }
+
+      return bestIndex;
+    };
+
+    auto printBoundaryPathEnergyCheck = [&](const std::string &stageLabel) {
+      if (!boundaryTPEAvailable) {
+        return;
+      }
+
+      RealType manualSum = 0.;
+
+      for (int k = 0; k < Config.numSteps - 1; ++k) {
+        VectorType curve =
+            Path.segment(k * 3 * numVertices, 3 * numVertices);
+
+        manualSum += (*BoundaryTPE)(curve);
+      }
+
+      const RealType pathEnergy = (*Ebdry)(Path);
+
+      std::cout << " .. [BoundaryTPE] path energy check ["
+                << stageLabel << "] "
+                << "manualSumIntermediate=" << manualSum
+                << ", Ebdry=" << pathEnergy
+                << ", diff=" << pathEnergy - manualSum
+                << std::endl;
+    };
+
+    auto checkBoundaryGradient = [&](const std::string &stageLabel) {
+      if (!boundaryTPEAvailable) {
+        return;
+      }
+
+      if (!Config.BoundaryTPE.checkGradient) {
+        return;
+      }
+
+      int curveIndex = Config.BoundaryTPE.checkCurveIndex;
+
+      if (curveIndex < 0 || curveIndex > Config.numSteps) {
+        curveIndex = findMaxBoundaryTPECurveIndex();
+      }
+
+      VectorType geometry = getCurveGeometry(curveIndex);
+
+      RealType energy = (*BoundaryTPE)(geometry);
+
+      VectorType analyticGradient;
+      VectorType finiteDiffGradient;
+
+      BoundaryTPE->evaluateGradient(
+          geometry,
+          analyticGradient
+      );
+
+      BoundaryTPE->evaluateFiniteDifferenceGradient(
+          geometry,
+          finiteDiffGradient,
+          Config.BoundaryTPE.fdStep
+      );
+
+      VectorType diff = analyticGradient - finiteDiffGradient;
+
+      RealType analyticNorm = analyticGradient.norm();
+      RealType finiteDiffNorm = finiteDiffGradient.norm();
+      RealType diffNorm = diff.norm();
+
+      RealType denominator = finiteDiffNorm;
+      if (denominator < 1.) {
+        denominator = 1.;
+      }
+
+      RealType relativeError = diffNorm / denominator;
+
+      std::cout << " .. [BoundaryTPE] gradient check ["
+                << stageLabel
+                << "][curve_" << curveIndex << "]"
+                << std::endl;
+
+      std::cout << " .... energy           = "
+                << energy << std::endl;
+
+      std::cout << " .... fdStep           = "
+                << Config.BoundaryTPE.fdStep << std::endl;
+
+      std::cout << " .... analyticNorm     = "
+                << analyticNorm << std::endl;
+
+      std::cout << " .... finiteDiffNorm   = "
+                << finiteDiffNorm << std::endl;
+
+      std::cout << " .... differenceNorm   = "
+                << diffNorm << std::endl;
+
+      std::cout << " .... relativeError    = "
+                << relativeError << std::endl;
+    };
+
     {
       std::cout << " .. Profiling: " << std::endl;
       // -- Energy --
       t_start = std::chrono::high_resolution_clock::now();
-      RealType Eval = E( Path );
+      RealType Eval = (*E)( Path );
       t_end = std::chrono::high_resolution_clock::now();
       std::cout << " .... Energy evaluation: "
                 << std::chrono::duration<double, std::milli>( t_end - t_start ).count() << "ms" << std::endl;
@@ -617,7 +1088,7 @@ int main( int argc, char *argv[] ) {
 
       // -- Gradient --
       t_start = std::chrono::high_resolution_clock::now();
-      VectorType DEval = DE( Path );
+      VectorType DEval = (*DE)( Path );
       t_end = std::chrono::high_resolution_clock::now();
       std::cout << " .... Gradient evaluation: "
                 << std::chrono::duration<double, std::milli>( t_end - t_start ).count() << "ms" << std::endl;
@@ -737,24 +1208,45 @@ int main( int argc, char *argv[] ) {
     for ( int k = 0; k < Config.numSteps - 1; k++ )
       std::cout << TPE( Path.segment( k * 3 * numVertices, 3 * numVertices )) << " ";
     std::cout << TPE( Vertices_End ) << " )" << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. BoundaryTPE  = ( ";
+      std::cout << (*BoundaryTPE)( Vertices_Start ) << " ";
+      for ( int k = 0; k < Config.numSteps - 1; k++ ) {
+        std::cout << (*BoundaryTPE)(
+            Path.segment( k * 3 * numVertices, 3 * numVertices )
+        ) << " ";
+      }
+      std::cout << (*BoundaryTPE)( Vertices_End ) << " )" << std::endl;
+    }
+
+    printBoundaryMaxPairs("initial");
+    printBoundaryPathEnergyCheck("initial");
+    checkBoundaryGradient("initial");
+    
     std::cout << " ................................................ " << std::endl;
-    std::cout << " .. E            = " << E( Path ) << std::endl;
+    std::cout << " .. E            = " << (*E)( Path ) << std::endl;
     std::cout << " .. Eelast       = " << Eelast( Path ) << std::endl;
     std::cout << " .. Etpe         = " << Etpe( Path ) << std::endl;
     std::cout << " .. Eobs         = " << Eobs( Path ) << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. Ebdry        = " << (*Ebdry)( Path ) << std::endl;
+    }
     std::cout << " .. Edir         = " << Edir( Path ) << std::endl;
     std::cout << " .. Ebary        = " << Ebary( Path ) << std::endl;
     std::cout << " .. Erot         = " << Erot( Path ) << std::endl;
     std::cout << " ................................................ " << std::endl;
-    std::cout << " .. DE.norm      = " << DE( Path ).norm() << std::endl;
+    std::cout << " .. DE.norm      = " << (*DE)( Path ).norm() << std::endl;
     std::cout << " .. DEelast.norm = " << DEelast( Path ).norm() << std::endl;
     std::cout << " .. DEtpe.norm   = " << DEtpe( Path ).norm() << std::endl;
     std::cout << " .. DEobs.norm   = " << DEobs( Path ).norm() << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. DEbdry.norm  = " << (*DEbdry)( Path ).norm() << std::endl;
+    }
     std::cout << " .. DEdir.norm   = " << DEdir( Path ).norm() << std::endl;
     std::cout << " .. DEbary.norm  = " << DEbary( Path ).norm() << std::endl;
     std::cout << " .. DErot.norm   = " << DErot( Path ).norm() << std::endl;
     std::cout << " ................................................ " << std::endl;
-    VectorType pathGradient = -DE( Path );
+    VectorType pathGradient = -(*DE)( Path );
     applyMaskToVector( fixedVariables, pathGradient );
 
     {
@@ -794,9 +1286,37 @@ int main( int argc, char *argv[] ) {
 
     //endregion
 
+    auto savePathAsPLY = [&]( const VectorType &x,
+                              const boost::filesystem::path &folder ) {
+      boost::filesystem::create_directories( folder );
+
+      // start mesh
+      saveAsPLY<VectorType>(
+        Topology,
+        Vertices_Start,
+        ( folder / "curve_0.ply" ).string()
+      );
+
+      // intermediate meshes
+      for ( int k = 0; k < Config.numSteps - 1; k++ ) {
+        saveAsPLY<VectorType>(
+          Topology,
+          x.segment( k * 3 * numVertices, 3 * numVertices ),
+          ( folder / ( "curve_" + std::to_string( k + 1 ) + ".ply" ) ).string()
+        );
+      }
+
+      // end mesh
+      saveAsPLY<VectorType>(
+        Topology,
+        Vertices_End,
+        ( folder / ( "curve_" + std::to_string( Config.numSteps ) + ".ply" ) ).string()
+      );
+    };
+
     //region Optimization
     if ( Config.Optimization.Type == GRADIENT_DESCENT ) {
-      GradientDescent<DefaultConfigurator> Solver( E, DE, Config.Optimization.maxNumIterations, 1.e-8, ARMIJO, SHOW_ALL,
+      GradientDescent<DefaultConfigurator> Solver( *E, *DE, Config.Optimization.maxNumIterations, 1.e-8, ARMIJO, SHOW_ALL,
                                                    0.1, Config.Optimization.minStepsize,
                                                    Config.Optimization.maxStepsize );
 
@@ -809,7 +1329,7 @@ int main( int argc, char *argv[] ) {
                 << " seconds." << std::endl;
     }
     else if ( Config.Optimization.Type == BFGS ) {
-      QuasiNewtonBFGS<DefaultConfigurator> Solver( E, DE, Config.Optimization.maxNumIterations, 1.e-8, ARMIJO, 50,
+      QuasiNewtonBFGS<DefaultConfigurator> Solver( *E, *DE, Config.Optimization.maxNumIterations, 1.e-8, ARMIJO, 50,
                                                    SHOW_ALL, 0.1, Config.Optimization.minStepsize,
                                                    Config.Optimization.maxStepsize );
 
@@ -834,7 +1354,7 @@ int main( int argc, char *argv[] ) {
         Preconditioner = &EH_RD2Etp;
       }
 
-      LineSearchNewton<DefaultConfigurator> Solver( E, DE, *Preconditioner, 1.e-8, Config.Optimization.maxNumIterations,
+      LineSearchNewton<DefaultConfigurator> Solver( *E, *DE, *Preconditioner, 1.e-8, Config.Optimization.maxNumIterations,
                                                     SHOW_ALL );
       Solver.setParameter( "minimal_stepsize", Config.Optimization.minStepsize );
       Solver.setParameter( "maximal_stepsize", Config.Optimization.maxStepsize );
@@ -871,7 +1391,7 @@ int main( int argc, char *argv[] ) {
         Hess = &opEH_RD2Etp;
       }
 
-      NewOpt::LineSearchNewtonCG<DefaultConfigurator> Solver( E, DE, *Hess, Pre, 1.e-8,
+      NewOpt::LineSearchNewtonCG<DefaultConfigurator> Solver( *E, *DE, *Hess, Pre, 1.e-8,
                                                            Config.Optimization.maxNumIterations,
                                                            SHOW_ALL );
       Solver.setParameter( "cg_iterations", 2000 );
@@ -928,7 +1448,7 @@ int main( int argc, char *argv[] ) {
       DiscretePathEnergyHessian<DefaultConfigurator>::resetTimers();
       OperatorPathEnergyHessian<DefaultConfigurator>::resetTimers();
 
-      NewOpt::TrustRegionNewton<DefaultConfigurator> Solver( E, DE, *Hess, 1., 100., 1e-8,
+      NewOpt::TrustRegionNewton<DefaultConfigurator> Solver( *E, *DE, *Hess, 1., 100., 1e-8,
                                                           Config.Optimization.maxNumIterations,
                                                           5000 );
       Solver.setParameter( "minimal_reduction", Config.Optimization.minReduction );
@@ -939,30 +1459,77 @@ int main( int argc, char *argv[] ) {
       if ( Config.Energy.dirichletWeight == 0. )
         Solver.setBoundaryMask( fixedVariables );
 
-      std::function callbackFct = [&]( int i, const VectorType &x, const RealType &F, const VectorType &grad_F ) {
-        if ( i % 100 == 0 ) {
-          saveAsPLY<VectorType>( Topology, Vertices_Start,
-                                 outputPrefix + "comb_level_" + std::to_string( level ) + "_I" + std::to_string( i ) +
-                                 "_0.ply" );
+      std::function<void( int, const VectorType &, const RealType &, const VectorType & )> callbackFct =
+      [&]( int i, const VectorType &x, const RealType &F, const VectorType &grad_F ) {
 
-          for ( int k = 0; k < Config.numSteps - 1; k++ ) {
-            saveAsPLY<VectorType>( Topology, x.segment( k * 3 * numVertices, 3 * numVertices ),
-                                   outputPrefix + "comb_level_" + std::to_string( level ) + "_I" + std::to_string( i ) +
-                                   "_" +
-                                   std::to_string( k + 1 ) + ".ply" );
-          }
+        // Ctrl+C가 들어온 경우: intermediateEvery와 무관하게 즉시 저장
+        if ( g_interruptRequested ) {
+          boost::filesystem::path interruptFolder =
+            boost::filesystem::path( Config.outputFolder )
+            / Config.intermediateFolder
+            / ( "level_" + std::to_string( level ) )
+            / ( "interrupted_iter_" + std::to_string( i ) );
 
-          saveAsPLY<VectorType>( Topology, Vertices_End,
-                                 outputPrefix + "comb_level_" + std::to_string( level ) + "_I" + std::to_string( i ) +
-                                 "_" +
-                                 std::to_string( Config.numSteps ) + ".ply" );
+          savePathAsPLY( x, interruptFolder );
+
+          std::ofstream infoFile( ( interruptFolder / "_info.txt" ).string() );
+          infoFile << "level: " << level << std::endl;
+          infoFile << "iteration: " << i << std::endl;
+          infoFile << "energy: " << F << std::endl;
+          infoFile << "gradient_norm: " << grad_F.norm() << std::endl;
+          infoFile << "reason: interrupted by SIGINT" << std::endl;
+
+          std::cout << std::endl;
+          std::cout << " .. Interrupt requested. Saved current path: "
+                    << interruptFolder.string() << std::endl;
+
+          Path = x;
+
+          throw std::runtime_error( "USER_INTERRUPT" );
         }
+
+        // 일반 intermediate 저장을 꺼둔 경우에는 여기서 return
+        if ( !Config.saveIntermediate )
+          return;
+
+        if ( Config.intermediateEvery <= 0 )
+          return;
+
+        if ( i % Config.intermediateEvery != 0 )
+          return;
+
+        boost::filesystem::path checkpointFolder =
+          boost::filesystem::path( Config.outputFolder )
+          / Config.intermediateFolder
+          / ( "level_" + std::to_string( level ) )
+          / ( "iter_" + std::to_string( i ) );
+
+        savePathAsPLY( x, checkpointFolder );
+
+        std::ofstream infoFile( ( checkpointFolder / "_info.txt" ).string() );
+        infoFile << "level: " << level << std::endl;
+        infoFile << "iteration: " << i << std::endl;
+        infoFile << "energy: " << F << std::endl;
+        infoFile << "gradient_norm: " << grad_F.norm() << std::endl;
+
+        std::cout << " .. Saved intermediate path: "
+                  << checkpointFolder.string() << std::endl;
       };
 
-//      Solver.addCallbackFunction( callbackFct );
+      Solver.addCallbackFunction( callbackFct );
 
       t_start = std::chrono::high_resolution_clock::now();
-      Solver.solve( Path, Path );
+      try {
+        Solver.solve( Path, Path );
+      }
+      catch ( const std::runtime_error &e ) {
+        if ( std::string( e.what() ) == "USER_INTERRUPT" ) {
+          std::cout << " .. Optimization stopped by user interrupt." << std::endl;
+        }
+        else {
+          throw;
+        }
+      }
       t_end = std::chrono::high_resolution_clock::now();
       std::cout << " .. Total time: " << std::chrono::duration<double, std::ratio<1> >( t_end - t_start ).count()
                 << " seconds." << std::endl;
@@ -1010,6 +1577,20 @@ int main( int argc, char *argv[] ) {
     for ( int k = 0; k < Config.numSteps - 1; k++ )
       std::cout << TPE( Path.segment( k * 3 * numVertices, 3 * numVertices )) << " ";
     std::cout << TPE( Vertices_End ) << " )" << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. BoundaryTPE  = ( ";
+      std::cout << (*BoundaryTPE)( Vertices_Start ) << " ";
+      for ( int k = 0; k < Config.numSteps - 1; k++ ) {
+        std::cout << (*BoundaryTPE)(
+            Path.segment( k * 3 * numVertices, 3 * numVertices )
+        ) << " ";
+      }
+      std::cout << (*BoundaryTPE)( Vertices_End ) << " )" << std::endl;
+    }
+
+    printBoundaryMaxPairs("final");
+    printBoundaryPathEnergyCheck("final");
+    checkBoundaryGradient("final");
 
     VectorType pathEnergies, pathEnergies_elast, pathEnergies_tpe, pathEnergies_mem, pathEnergies_bend,
         pathEnergies_dir, pathEnergies_obs, pathEnergies_rot, pathEnergies_bary;
@@ -1050,22 +1631,28 @@ int main( int argc, char *argv[] ) {
     std::cout << " .. Ebary        = " << pathEnergies_bary.transpose() << std::endl;
     std::cout << " .. Erot         = " << pathEnergies_rot.transpose() << std::endl;
     std::cout << " ................................................ " << std::endl;
-    std::cout << " .. E            = " << E( Path ) << std::endl;
+    std::cout << " .. E            = " << (*E)( Path ) << std::endl;
     std::cout << " .. Eelast       = " << Eelast( Path ) << std::endl;
     std::cout << " .. Etpe         = " << Etpe( Path ) << std::endl;
     std::cout << " .. Eobs         = " << Eobs( Path ) << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. Ebdry        = " << (*Ebdry)( Path ) << std::endl;
+    }
     std::cout << " .. Edir         = " << Edir( Path ) << std::endl;
     std::cout << " .. Ebary        = " << Ebary( Path ) << std::endl;
     std::cout << " .. Erot         = " << Erot( Path ) << std::endl;
     std::cout << " ................................................ " << std::endl;
-    std::cout << " .. DE.norm      = " << DE( Path ).norm() << std::endl;
+    std::cout << " .. DE.norm      = " << (*DE)( Path ).norm() << std::endl;
     std::cout << " .. DEelast.norm = " << DEelast( Path ).norm() << std::endl;
     std::cout << " .. DEtpe.norm   = " << DEtpe( Path ).norm() << std::endl;
     std::cout << " .. DEobs.norm   = " << DEobs( Path ).norm() << std::endl;
+    if ( boundaryTPEAvailable ) {
+      std::cout << " .. DEbdry.norm  = " << (*DEbdry)( Path ).norm() << std::endl;
+    }
     std::cout << " .. DEdir.norm   = " << DEdir( Path ).norm() << std::endl;
     std::cout << " .. DEbary.norm  = " << DEbary( Path ).norm() << std::endl;
     std::cout << " .. DErot.norm   = " << DErot( Path ).norm() << std::endl;
-    pathGradient = -DE( Path );
+    pathGradient = -(*DE)( Path );
     applyMaskToVector( fixedVariables, pathGradient );
 
     {

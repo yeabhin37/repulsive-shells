@@ -1,0 +1,2510 @@
+ .. [BoundaryTPE] enabled        = 0
+ .. [BoundaryTPE] weight         = 0
+ .. [BoundaryTPE] available      = 0
+ .. [BoundaryTPE] useInObjective = 0
+ .. [BoundaryTPE] active         = 0
+ .. numVertices = 866
+ .. W = 0.584414
+ .. TPE(1) = 0.0033292
+ .. TPE(2) = 0.00339567
+
+ .. Step 2: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1e-08.
+step = 0, stepsize = 1.000000e+00, norm = 2.454790e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.555734e-01, norm = 1.084756e+01, t = 2248.628274ms
+step = 2, stepsize = 5.556624e-01, norm = 4.755890e+00, t = 1944.612793ms
+step = 3, stepsize = 5.556239e-01, norm = 2.096539e+00, t = 1887.431726ms
+step = 4, stepsize = 5.555899e-01, norm = 9.280625e-01, t = 2087.428123ms
+step = 5, stepsize = 5.555716e-01, norm = 4.117073e-01, t = 1833.687788ms
+step = 6, stepsize = 5.555628e-01, norm = 1.828276e-01, t = 1665.834117ms
+step = 7, stepsize = 5.555588e-01, norm = 8.122622e-02, t = 1807.943382ms
+step = 8, stepsize = 5.555570e-01, norm = 3.609450e-02, t = 1555.845130ms
+step = 9, stepsize = 5.555562e-01, norm = 1.604080e-02, t = 1757.098233ms
+step = 10, stepsize = 5.555558e-01, norm = 7.129010e-03, t = 1836.120792ms
+step = 11, stepsize = 5.555557e-01, norm = 3.168402e-03, t = 1707.018508ms
+step = 12, stepsize = 5.555556e-01, norm = 1.408169e-03, t = 2067.893172ms
+step = 13, stepsize = 5.555556e-01, norm = 6.258513e-04, t = 1787.096658ms
+step = 14, stepsize = 5.555556e-01, norm = 2.781558e-04, t = 1714.307147ms
+step = 15, stepsize = 5.555556e-01, norm = 1.236247e-04, t = 1824.685946ms
+step = 16, stepsize = 5.555556e-01, norm = 5.494430e-05, t = 2077.245006ms
+step = 17, stepsize = 5.555556e-01, norm = 2.441969e-05, t = 2055.653130ms
+step = 18, stepsize = 5.555556e-01, norm = 1.085319e-05, t = 1729.423074ms
+step = 19, stepsize = 5.555556e-01, norm = 4.823642e-06, t = 1819.436110ms
+step = 20, stepsize = 5.555556e-01, norm = 2.143841e-06, t = 2017.071399ms
+step = 21, stepsize = 5.555556e-01, norm = 9.528181e-07, t = 1873.561622ms
+step = 22, stepsize = 5.555556e-01, norm = 4.234747e-07, t = 988.697866ms
+step = 23, stepsize = 5.555555e-01, norm = 1.882111e-07, t = 1046.365276ms
+step = 24, stepsize = 5.555556e-01, norm = 8.364941e-08, t = 515.377206ms
+step = 25, stepsize = 9.543357e-01, norm = 3.819925e-09, t = 1182.805112ms
+=========================================================================================
+Finished Newton's method after 25 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 9.543357e-01, final norm = 3.819925e-09
+=========================================================================================
+
+ .... Time: 4.306702e+01 seconds.
+
+ .. Step 3: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 2.675182e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.556009e-01, norm = 1.175280e+01, t = 2101.640718ms
+step = 2, stepsize = 5.557159e-01, norm = 5.115539e+00, t = 2402.712616ms
+step = 3, stepsize = 5.556576e-01, norm = 2.245780e+00, t = 1936.089708ms
+step = 4, stepsize = 5.556066e-01, norm = 9.921700e-01, t = 1674.526018ms
+step = 5, stepsize = 5.555793e-01, norm = 4.397526e-01, t = 2107.479679ms
+step = 6, stepsize = 5.555663e-01, norm = 1.952033e-01, t = 1856.981326ms
+step = 7, stepsize = 5.555604e-01, norm = 8.670891e-02, t = 1960.827139ms
+step = 8, stepsize = 5.555577e-01, norm = 3.852777e-02, t = 2109.131231ms
+step = 9, stepsize = 5.555565e-01, norm = 1.712157e-02, t = 2084.167543ms
+step = 10, stepsize = 5.555560e-01, norm = 7.609214e-03, t = 1850.947535ms
+step = 11, stepsize = 5.555557e-01, norm = 3.381799e-03, t = 1807.873227ms
+step = 12, stepsize = 5.555556e-01, norm = 1.503007e-03, t = 2282.714428ms
+step = 13, stepsize = 9.508176e-01, norm = 7.391328e-05, t = 2326.465603ms
+step = 14, stepsize = 5.555556e-01, norm = 3.285034e-05, t = 1908.923549ms
+step = 15, stepsize = 5.555556e-01, norm = 1.460015e-05, t = 2067.125743ms
+step = 16, stepsize = 5.555556e-01, norm = 6.488955e-06, t = 2224.562134ms
+step = 17, stepsize = 5.555556e-01, norm = 2.883980e-06, t = 1846.399447ms
+step = 18, stepsize = 5.555556e-01, norm = 1.281769e-06, t = 2233.600105ms
+step = 19, stepsize = 9.508141e-01, norm = 6.304502e-08, t = 2322.573532ms
+step = 20, stepsize = 5.555551e-01, norm = 2.802005e-08, t = 569.896204ms
+step = 21, stepsize = 5.555555e-01, norm = 1.245340e-08, t = 553.265420ms
+step = 22, stepsize = 5.555557e-01, norm = 5.534848e-09, t = 550.052065ms
+=========================================================================================
+Finished Newton's method after 22 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 5.555557e-01, final norm = 5.534848e-09
+=========================================================================================
+
+ .... Time: 4.081749e+01 seconds.
+
+ .. Step 4: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 3.113973e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.556326e-01, norm = 1.355682e+01, t = 2138.446121ms
+step = 2, stepsize = 9.540597e-01, norm = 2.970445e-01, t = 2964.768771ms
+step = 3, stepsize = 5.555553e-01, norm = 1.320239e-01, t = 2143.305225ms
+step = 4, stepsize = 5.555554e-01, norm = 5.867793e-02, t = 1973.678713ms
+step = 5, stepsize = 5.378635e-01, norm = 2.711732e-02, t = 2194.931784ms
+step = 6, stepsize = 5.555555e-01, norm = 1.205217e-02, t = 1930.623489ms
+step = 7, stepsize = 5.555555e-01, norm = 5.356523e-03, t = 2169.004606ms
+step = 8, stepsize = 5.555555e-01, norm = 2.380678e-03, t = 1911.658367ms
+step = 9, stepsize = 5.555555e-01, norm = 1.058079e-03, t = 2188.627943ms
+step = 10, stepsize = 5.555555e-01, norm = 4.702575e-04, t = 2429.454380ms
+step = 11, stepsize = 5.555555e-01, norm = 2.090034e-04, t = 2019.111420ms
+step = 12, stepsize = 5.555555e-01, norm = 9.289039e-05, t = 1882.268328ms
+step = 13, stepsize = 5.555555e-01, norm = 4.128462e-05, t = 1783.533473ms
+step = 14, stepsize = 5.555555e-01, norm = 1.834872e-05, t = 2003.406116ms
+step = 15, stepsize = 5.555555e-01, norm = 8.154988e-06, t = 2145.645928ms
+step = 16, stepsize = 5.555555e-01, norm = 3.624439e-06, t = 2170.081205ms
+step = 17, stepsize = 5.555555e-01, norm = 1.610862e-06, t = 2055.382237ms
+step = 18, stepsize = 5.378618e-01, norm = 7.444408e-07, t = 2002.792081ms
+step = 19, stepsize = 5.555555e-01, norm = 3.308626e-07, t = 2647.594415ms
+step = 20, stepsize = 5.555556e-01, norm = 1.470500e-07, t = 2009.648373ms
+step = 21, stepsize = 5.555553e-01, norm = 6.535565e-08, t = 1016.554204ms
+step = 22, stepsize = 5.555560e-01, norm = 2.904689e-08, t = 1153.625255ms
+step = 23, stepsize = 5.555536e-01, norm = 1.290980e-08, t = 560.994621ms
+step = 24, stepsize = 5.555563e-01, norm = 5.737659e-09, t = 551.409193ms
+=========================================================================================
+Finished Newton's method after 24 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 5.555563e-01, final norm = 5.737659e-09
+=========================================================================================
+
+ .... Time: 4.607712e+01 seconds.
+
+ .. Step 5: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 3.951504e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.556613e-01, norm = 1.693535e+01, t = 2012.675472ms
+step = 2, stepsize = 5.560179e-01, norm = 7.047874e+00, t = 2331.969204ms
+step = 3, stepsize = 5.558463e-01, norm = 3.020719e+00, t = 2680.695453ms
+step = 4, stepsize = 5.556961e-01, norm = 1.320308e+00, t = 2609.945160ms
+step = 5, stepsize = 5.556198e-01, norm = 5.824365e-01, t = 2707.169748ms
+step = 6, stepsize = 5.555845e-01, norm = 2.580014e-01, t = 2787.637903ms
+step = 7, stepsize = 5.555686e-01, norm = 1.144979e-01, t = 2745.688388ms
+step = 8, stepsize = 5.555614e-01, norm = 5.085450e-02, t = 2767.812490ms
+step = 9, stepsize = 5.555583e-01, norm = 2.259539e-02, t = 3105.530557ms
+step = 10, stepsize = 5.555569e-01, norm = 1.004109e-02, t = 3308.016467ms
+step = 11, stepsize = 5.555562e-01, norm = 4.462447e-03, t = 3445.456027ms
+step = 12, stepsize = 5.555560e-01, norm = 1.983258e-03, t = 3323.868638ms
+step = 13, stepsize = 5.555558e-01, norm = 8.814377e-04, t = 2821.107780ms
+step = 14, stepsize = 5.555558e-01, norm = 3.917480e-04, t = 2747.555517ms
+step = 15, stepsize = 5.555557e-01, norm = 1.741097e-04, t = 2853.647346ms
+step = 16, stepsize = 5.555557e-01, norm = 7.738200e-05, t = 2928.344092ms
+step = 17, stepsize = 9.550216e-01, norm = 3.480475e-06, t = 3554.382512ms
+step = 18, stepsize = 9.550212e-01, norm = 1.565475e-07, t = 4077.847102ms
+step = 19, stepsize = 5.555557e-01, norm = 6.957680e-08, t = 504.529828ms
+step = 20, stepsize = 5.555562e-01, norm = 3.092302e-08, t = 575.494491ms
+step = 21, stepsize = 5.555561e-01, norm = 1.374333e-08, t = 1500.207834ms
+step = 22, stepsize = 9.550249e-01, norm = 6.181262e-10, t = 576.553227ms
+=========================================================================================
+Finished Newton's method after 22 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 9.550249e-01, final norm = 6.181262e-10
+=========================================================================================
+
+ .... Time: 5.599590e+01 seconds.
+
+ .. Step 6: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 5.777740e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.557061e-01, norm = 2.402939e+01, t = 2783.947902ms
+step = 2, stepsize = 5.567412e-01, norm = 8.906477e+00, t = 2468.804096ms
+step = 3, stepsize = 5.562040e-01, norm = 3.677417e+00, t = 3054.987319ms
+step = 4, stepsize = 5.558780e-01, norm = 1.586203e+00, t = 2704.962611ms
+step = 5, stepsize = 5.557352e-01, norm = 6.959814e-01, t = 2464.654614ms
+step = 6, stepsize = 9.613936e-01, norm = 2.191370e-02, t = 3317.299317ms
+step = 7, stepsize = 5.556163e-01, norm = 9.736547e-03, t = 2528.128448ms
+step = 8, stepsize = 5.556155e-01, norm = 4.326466e-03, t = 2622.830197ms
+step = 9, stepsize = 5.556152e-01, norm = 1.922556e-03, t = 2483.712773ms
+step = 10, stepsize = 5.556150e-01, norm = 8.543432e-04, t = 2606.143487ms
+step = 11, stepsize = 5.556149e-01, norm = 3.796550e-04, t = 2702.534693ms
+step = 12, stepsize = 5.556149e-01, norm = 1.687126e-04, t = 2924.928541ms
+step = 13, stepsize = 5.556149e-01, norm = 7.497327e-05, t = 2557.988614ms
+step = 14, stepsize = 9.568129e-01, norm = 3.237823e-06, t = 2030.661449ms
+step = 15, stepsize = 5.556149e-01, norm = 1.438839e-06, t = 1508.395173ms
+step = 16, stepsize = 5.556151e-01, norm = 6.393978e-07, t = 1440.379117ms
+step = 17, stepsize = 5.555914e-01, norm = 2.841545e-07, t = 729.013646ms
+step = 18, stepsize = 9.567773e-01, norm = 1.228191e-08, t = 1082.230062ms
+step = 19, stepsize = 5.555602e-01, norm = 5.461656e-09, t = 377.359201ms
+=========================================================================================
+Finished Newton's method after 19 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 5.555602e-01, final norm = 5.461656e-09
+=========================================================================================
+
+ .... Time: 4.241507e+01 seconds.
+
+ .. Step 7: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.151970e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 2.783086e-01, norm = 8.232365e+01, t = 1774.132571ms
+step = 2, stepsize = 2.796018e-01, norm = 6.035460e+01, t = 1884.203421ms
+step = 3, stepsize = 2.794074e-01, norm = 4.428949e+01, t = 1985.362430ms
+step = 4, stepsize = 2.774124e-01, norm = 3.461561e+01, t = 1915.827034ms
+step = 5, stepsize = 2.762354e-01, norm = 2.744755e+01, t = 1947.055900ms
+step = 6, stepsize = 2.761979e-01, norm = 2.137525e+01, t = 1842.223689ms
+step = 7, stepsize = 5.531242e-01, norm = 1.448712e+01, t = 1559.212444ms
+step = 8, stepsize = 5.550516e-01, norm = 6.945198e+00, t = 1601.888857ms
+step = 9, stepsize = 5.553698e-01, norm = 3.174595e+00, t = 1553.059067ms
+step = 10, stepsize = 5.554917e-01, norm = 1.427725e+00, t = 1426.232728ms
+step = 11, stepsize = 5.555454e-01, norm = 6.378127e-01, t = 1560.049020ms
+step = 12, stepsize = 5.555695e-01, norm = 2.841049e-01, t = 1524.919890ms
+step = 13, stepsize = 5.555802e-01, norm = 1.263884e-01, t = 1465.593906ms
+step = 14, stepsize = 5.555850e-01, norm = 5.619391e-02, t = 1486.797587ms
+step = 15, stepsize = 5.555872e-01, norm = 2.497823e-02, t = 1530.607259ms
+step = 16, stepsize = 5.450277e-01, norm = 1.136534e-02, t = 1554.468214ms
+step = 17, stepsize = 5.555885e-01, norm = 5.051091e-03, t = 1534.142610ms
+step = 18, stepsize = 5.555888e-01, norm = 2.244803e-03, t = 1476.990175ms
+step = 19, stepsize = 5.555885e-01, norm = 9.976240e-04, t = 1511.666825ms
+step = 20, stepsize = 5.555888e-01, norm = 4.433557e-04, t = 1444.872792ms
+step = 21, stepsize = 5.555897e-01, norm = 1.970317e-04, t = 1523.133268ms
+step = 22, stepsize = 5.555878e-01, norm = 8.756290e-05, t = 1483.629255ms
+step = 23, stepsize = 5.555935e-01, norm = 3.891177e-05, t = 1531.765497ms
+step = 24, stepsize = 5.555850e-01, norm = 1.729527e-05, t = 1568.814945ms
+step = 25, stepsize = 5.555589e-01, norm = 7.686669e-06, t = 1545.710359ms
+step = 26, stepsize = 5.554781e-01, norm = 3.416556e-06, t = 766.964514ms
+step = 27, stepsize = 5.552766e-01, norm = 1.519624e-06, t = 780.080685ms
+step = 28, stepsize = 5.558340e-01, norm = 6.750401e-07, t = 411.615297ms
+step = 29, stepsize = 5.556363e-01, norm = 2.990789e-07, t = 753.150489ms
+step = 30, stepsize = 5.549829e-01, norm = 1.338035e-07, t = 396.834702ms
+step = 31, stepsize = 5.610697e-01, norm = 5.939590e-08, t = 386.841145ms
+step = 32, stepsize = 5.492738e-01, norm = 2.685287e-08, t = 397.261954ms
+step = 33, stepsize = 5.758962e-01, norm = 1.291398e-08, t = 406.364261ms
+step = 34, stepsize = 5.444410e-01, norm = 7.205962e-09, t = 409.394029ms
+=========================================================================================
+Finished Newton's method after 34 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 5.444410e-01, final norm = 7.205962e-09
+=========================================================================================
+
+ .... Time: 4.496105e+01 seconds.
+
+ .. Step 8: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 2.042795e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 2.312859e-04, norm = 2.042493e+03, t = 2318.771628ms
+step = 2, stepsize = 2.309430e-04, norm = 2.042194e+03, t = 2242.085035ms
+step = 3, stepsize = 2.305560e-04, norm = 2.041898e+03, t = 2320.019076ms
+step = 4, stepsize = 2.301849e-04, norm = 2.041606e+03, t = 2283.804652ms
+step = 5, stepsize = 2.298611e-04, norm = 2.041317e+03, t = 2333.806779ms
+step = 6, stepsize = 2.295426e-04, norm = 2.041030e+03, t = 2317.292242ms
+step = 7, stepsize = 2.291976e-04, norm = 2.040748e+03, t = 2256.712130ms
+step = 8, stepsize = 2.288854e-04, norm = 2.040468e+03, t = 2170.464459ms
+step = 9, stepsize = 2.285953e-04, norm = 2.040192e+03, t = 2214.912080ms
+step = 10, stepsize = 2.283305e-04, norm = 2.039919e+03, t = 2647.698530ms
+step = 11, stepsize = 2.280715e-04, norm = 2.039650e+03, t = 2341.721372ms
+step = 12, stepsize = 2.278804e-04, norm = 2.039384e+03, t = 2425.093068ms
+step = 13, stepsize = 2.276710e-04, norm = 2.039120e+03, t = 2334.953139ms
+step = 14, stepsize = 2.274690e-04, norm = 2.038861e+03, t = 2309.847331ms
+step = 15, stepsize = 2.273369e-04, norm = 2.038604e+03, t = 2329.322747ms
+step = 16, stepsize = 2.272175e-04, norm = 2.038351e+03, t = 2175.821171ms
+step = 17, stepsize = 2.271028e-04, norm = 2.038102e+03, t = 2244.348044ms
+step = 18, stepsize = 2.270425e-04, norm = 2.037855e+03, t = 2180.694254ms
+step = 19, stepsize = 2.270153e-04, norm = 2.037612e+03, t = 2333.917238ms
+step = 20, stepsize = 2.269276e-04, norm = 2.037372e+03, t = 2193.563739ms
+step = 21, stepsize = 2.269349e-04, norm = 2.037136e+03, t = 2189.301323ms
+step = 22, stepsize = 2.269581e-04, norm = 2.036904e+03, t = 2265.238208ms
+step = 23, stepsize = 1.135196e-04, norm = 2.036731e+03, t = 1927.174078ms
+step = 24, stepsize = 1.135467e-04, norm = 2.036558e+03, t = 1914.362794ms
+step = 25, stepsize = 1.135544e-04, norm = 2.036385e+03, t = 1821.768504ms
+step = 26, stepsize = 1.136056e-04, norm = 2.036213e+03, t = 1883.543967ms
+step = 27, stepsize = 1.136095e-04, norm = 2.036041e+03, t = 1838.695555ms
+step = 28, stepsize = 1.136540e-04, norm = 2.035870e+03, t = 1859.818433ms
+step = 29, stepsize = 1.137007e-04, norm = 2.035699e+03, t = 1947.303498ms
+step = 30, stepsize = 1.137404e-04, norm = 2.035528e+03, t = 1874.641700ms
+step = 31, stepsize = 1.138208e-04, norm = 2.035358e+03, t = 1838.277966ms
+step = 32, stepsize = 1.138561e-04, norm = 2.035188e+03, t = 1909.344071ms
+step = 33, stepsize = 1.139263e-04, norm = 2.035018e+03, t = 1927.658066ms
+step = 34, stepsize = 1.140101e-04, norm = 2.034849e+03, t = 1906.004223ms
+step = 35, stepsize = 1.140831e-04, norm = 2.034680e+03, t = 1957.516516ms
+step = 36, stepsize = 1.141726e-04, norm = 2.034511e+03, t = 1884.234446ms
+step = 37, stepsize = 1.142695e-04, norm = 2.034343e+03, t = 1917.205741ms
+step = 38, stepsize = 1.143757e-04, norm = 2.034175e+03, t = 1929.010068ms
+step = 39, stepsize = 1.144789e-04, norm = 2.034007e+03, t = 1906.024015ms
+step = 40, stepsize = 1.145905e-04, norm = 2.033840e+03, t = 1998.775273ms
+step = 41, stepsize = 1.147254e-04, norm = 2.033673e+03, t = 2012.847657ms
+step = 42, stepsize = 1.148535e-04, norm = 2.033507e+03, t = 2059.378980ms
+step = 43, stepsize = 1.150138e-04, norm = 2.033340e+03, t = 1971.038201ms
+step = 44, stepsize = 1.151583e-04, norm = 2.033175e+03, t = 1844.133148ms
+step = 45, stepsize = 1.152986e-04, norm = 2.033009e+03, t = 1878.360345ms
+step = 46, stepsize = 1.154537e-04, norm = 2.032843e+03, t = 1848.442532ms
+step = 47, stepsize = 1.156178e-04, norm = 2.032678e+03, t = 1799.167664ms
+step = 48, stepsize = 1.157178e-04, norm = 2.032514e+03, t = 1775.343991ms
+step = 49, stepsize = 1.158517e-04, norm = 2.032350e+03, t = 1822.066398ms
+step = 50, stepsize = 1.159629e-04, norm = 2.032186e+03, t = 1833.519618ms
+step = 51, stepsize = 1.160905e-04, norm = 2.032023e+03, t = 1897.338258ms
+step = 52, stepsize = 1.161730e-04, norm = 2.031859e+03, t = 1803.800811ms
+step = 53, stepsize = 1.162388e-04, norm = 2.031697e+03, t = 1776.156635ms
+step = 54, stepsize = 1.162917e-04, norm = 2.031535e+03, t = 1785.258632ms
+step = 55, stepsize = 1.163413e-04, norm = 2.031373e+03, t = 1760.668066ms
+step = 56, stepsize = 1.163615e-04, norm = 2.031212e+03, t = 1747.959403ms
+step = 57, stepsize = 1.163999e-04, norm = 2.031051e+03, t = 1771.614401ms
+step = 58, stepsize = 1.164134e-04, norm = 2.030890e+03, t = 1787.751398ms
+step = 59, stepsize = 1.164422e-04, norm = 2.030730e+03, t = 1901.641644ms
+step = 60, stepsize = 1.164267e-04, norm = 2.030571e+03, t = 1792.071959ms
+step = 61, stepsize = 1.164454e-04, norm = 2.030412e+03, t = 1725.893546ms
+step = 62, stepsize = 1.164585e-04, norm = 2.030253e+03, t = 1762.334112ms
+step = 63, stepsize = 1.164504e-04, norm = 2.030096e+03, t = 1794.442178ms
+step = 64, stepsize = 1.164447e-04, norm = 2.029938e+03, t = 1772.415699ms
+step = 65, stepsize = 1.164411e-04, norm = 2.029781e+03, t = 1724.951723ms
+step = 66, stepsize = 1.164623e-04, norm = 2.029624e+03, t = 1736.213781ms
+step = 67, stepsize = 1.164154e-04, norm = 2.029468e+03, t = 1732.612876ms
+step = 68, stepsize = 1.164040e-04, norm = 2.029313e+03, t = 1719.585116ms
+step = 69, stepsize = 1.164159e-04, norm = 2.029158e+03, t = 1728.010274ms
+step = 70, stepsize = 1.164087e-04, norm = 2.029003e+03, t = 1701.486533ms
+step = 71, stepsize = 1.163756e-04, norm = 2.028849e+03, t = 1717.658525ms
+step = 72, stepsize = 1.163508e-04, norm = 2.028695e+03, t = 1721.609274ms
+step = 73, stepsize = 1.163514e-04, norm = 2.028542e+03, t = 1706.375630ms
+step = 74, stepsize = 1.163492e-04, norm = 2.028389e+03, t = 1714.677485ms
+step = 75, stepsize = 1.163270e-04, norm = 2.028237e+03, t = 1881.273614ms
+step = 76, stepsize = 1.163226e-04, norm = 2.028085e+03, t = 1924.039112ms
+step = 77, stepsize = 1.163049e-04, norm = 2.027934e+03, t = 1753.531913ms
+step = 78, stepsize = 1.162986e-04, norm = 2.027783e+03, t = 1737.588572ms
+step = 79, stepsize = 1.162620e-04, norm = 2.027633e+03, t = 1796.543700ms
+step = 80, stepsize = 1.162435e-04, norm = 2.027483e+03, t = 1813.432095ms
+step = 81, stepsize = 1.162331e-04, norm = 2.027334e+03, t = 1705.264347ms
+step = 82, stepsize = 1.161966e-04, norm = 2.027185e+03, t = 1722.216308ms
+step = 83, stepsize = 1.162055e-04, norm = 2.027036e+03, t = 1714.858534ms
+step = 84, stepsize = 1.161731e-04, norm = 2.026889e+03, t = 1726.542266ms
+step = 85, stepsize = 1.161500e-04, norm = 2.026741e+03, t = 1745.169909ms
+step = 86, stepsize = 1.158120e-04, norm = 2.026594e+03, t = 1754.495640ms
+step = 87, stepsize = 1.158022e-04, norm = 2.026447e+03, t = 1773.276641ms
+step = 88, stepsize = 1.157613e-04, norm = 2.026301e+03, t = 1780.457658ms
+step = 89, stepsize = 1.160671e-04, norm = 2.026155e+03, t = 1744.630620ms
+step = 90, stepsize = 1.160582e-04, norm = 2.026010e+03, t = 1757.552384ms
+step = 91, stepsize = 1.156959e-04, norm = 2.025866e+03, t = 1776.592951ms
+step = 92, stepsize = 1.156936e-04, norm = 2.025721e+03, t = 1825.213994ms
+step = 93, stepsize = 1.156473e-04, norm = 2.025578e+03, t = 1751.708088ms
+step = 94, stepsize = 1.156250e-04, norm = 2.025435e+03, t = 1726.709740ms
+step = 95, stepsize = 1.155893e-04, norm = 2.025292e+03, t = 1771.280338ms
+step = 96, stepsize = 1.155732e-04, norm = 2.025150e+03, t = 1854.792225ms
+step = 97, stepsize = 1.155793e-04, norm = 2.025008e+03, t = 1816.611998ms
+step = 98, stepsize = 1.155497e-04, norm = 2.024867e+03, t = 1865.718479ms
+step = 99, stepsize = 1.155266e-04, norm = 2.024726e+03, t = 1793.388171ms
+step = 100, stepsize = 1.155001e-04, norm = 2.024586e+03, t = 1843.483089ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.155001e-04, final norm = 2.024586e+03
+=========================================================================================
+
+ .... Time: 1.921827e+02 seconds.
+
+ .. Step 9: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 9.903984e+01, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 4.850908e-02, norm = 6.081446e+01, t = 2668.241942ms
+step = 2, stepsize = 4.257194e-02, norm = 4.597165e+01, t = 2144.766575ms
+step = 3, stepsize = 1.340061e-02, norm = 4.543553e+01, t = 2657.092985ms
+step = 4, stepsize = 1.381370e-02, norm = 4.509986e+01, t = 2609.276634ms
+step = 5, stepsize = 7.315893e-03, norm = 4.486173e+01, t = 2958.547760ms
+step = 6, stepsize = 6.479705e-03, norm = 4.469386e+01, t = 3386.741760ms
+step = 7, stepsize = 7.020336e-03, norm = 4.450913e+01, t = 3000.623004ms
+step = 8, stepsize = 7.253173e-03, norm = 4.431998e+01, t = 3153.842021ms
+step = 9, stepsize = 7.117307e-03, norm = 4.415474e+01, t = 3206.179653ms
+step = 10, stepsize = 7.419747e-03, norm = 4.398829e+01, t = 3103.797330ms
+step = 11, stepsize = 3.699386e-03, norm = 4.386907e+01, t = 3633.762840ms
+step = 12, stepsize = 3.247210e-03, norm = 4.377077e+01, t = 3274.817589ms
+step = 13, stepsize = 3.631333e-03, norm = 4.365547e+01, t = 3328.244832ms
+step = 14, stepsize = 8.235156e-03, norm = 4.346248e+01, t = 2970.052714ms
+step = 15, stepsize = 3.574003e-03, norm = 4.335695e+01, t = 3170.529250ms
+step = 16, stepsize = 3.823326e-03, norm = 4.323988e+01, t = 3338.422328ms
+step = 17, stepsize = 3.549712e-03, norm = 4.313615e+01, t = 3203.782690ms
+step = 18, stepsize = 3.554213e-03, norm = 4.303393e+01, t = 3146.080196ms
+step = 19, stepsize = 3.425176e-03, norm = 4.293813e+01, t = 3285.023816ms
+step = 20, stepsize = 3.767249e-03, norm = 4.282749e+01, t = 3181.435359ms
+step = 21, stepsize = 3.473947e-03, norm = 4.273211e+01, t = 3246.459710ms
+step = 22, stepsize = 4.118245e-03, norm = 4.260490e+01, t = 3136.938344ms
+step = 23, stepsize = 3.254778e-03, norm = 4.252040e+01, t = 3245.296863ms
+step = 24, stepsize = 4.065311e-03, norm = 4.239985e+01, t = 3380.220730ms
+step = 25, stepsize = 3.493380e-03, norm = 4.230803e+01, t = 4112.828346ms
+step = 26, stepsize = 3.344018e-03, norm = 4.222217e+01, t = 3329.018406ms
+step = 27, stepsize = 3.715282e-03, norm = 4.212180e+01, t = 3642.369693ms
+step = 28, stepsize = 3.409433e-03, norm = 4.203473e+01, t = 3392.952004ms
+step = 29, stepsize = 3.830773e-03, norm = 4.193188e+01, t = 3337.327585ms
+step = 30, stepsize = 3.555932e-03, norm = 4.184230e+01, t = 3317.253223ms
+step = 31, stepsize = 3.665632e-03, norm = 4.175019e+01, t = 3693.565501ms
+step = 32, stepsize = 3.774834e-03, norm = 4.165228e+01, t = 3395.997624ms
+step = 33, stepsize = 3.507904e-03, norm = 4.156787e+01, t = 3349.099171ms
+step = 34, stepsize = 3.656165e-03, norm = 4.147826e+01, t = 3363.213731ms
+step = 35, stepsize = 3.737084e-03, norm = 4.138576e+01, t = 3215.507289ms
+step = 36, stepsize = 3.727292e-03, norm = 4.129320e+01, t = 3226.689848ms
+step = 37, stepsize = 4.365220e-03, norm = 4.117117e+01, t = 3177.069477ms
+step = 38, stepsize = 3.761910e-03, norm = 4.107954e+01, t = 3168.909226ms
+step = 39, stepsize = 4.040576e-03, norm = 4.097807e+01, t = 3099.240612ms
+step = 40, stepsize = 3.268274e-03, norm = 4.090742e+01, t = 3082.369120ms
+step = 41, stepsize = 3.513574e-03, norm = 4.082926e+01, t = 3198.075041ms
+step = 42, stepsize = 3.528291e-03, norm = 4.074859e+01, t = 3359.853147ms
+step = 43, stepsize = 1.568824e-03, norm = 4.070075e+01, t = 3844.686760ms
+step = 44, stepsize = 3.557569e-03, norm = 4.062354e+01, t = 3653.606142ms
+step = 45, stepsize = 3.300967e-03, norm = 4.055495e+01, t = 3335.291341ms
+step = 46, stepsize = 3.753561e-03, norm = 4.047065e+01, t = 3294.806982ms
+step = 47, stepsize = 3.620422e-03, norm = 4.039313e+01, t = 3327.988698ms
+step = 48, stepsize = 3.652983e-03, norm = 4.031473e+01, t = 3150.513787ms
+step = 49, stepsize = 1.599884e-03, norm = 4.026663e+01, t = 3499.316716ms
+step = 50, stepsize = 3.462390e-03, norm = 4.019675e+01, t = 3129.652509ms
+step = 51, stepsize = 3.794474e-03, norm = 4.011434e+01, t = 3140.530728ms
+step = 52, stepsize = 3.558119e-03, norm = 4.004269e+01, t = 3116.016012ms
+step = 53, stepsize = 3.588204e-03, norm = 3.997037e+01, t = 3333.201807ms
+step = 54, stepsize = 4.163640e-03, norm = 3.987512e+01, t = 3169.558587ms
+step = 55, stepsize = 1.537407e-03, norm = 3.983016e+01, t = 3558.028414ms
+step = 56, stepsize = 3.557407e-03, norm = 3.975880e+01, t = 3154.459929ms
+step = 57, stepsize = 3.787493e-03, norm = 3.968252e+01, t = 3166.078061ms
+step = 58, stepsize = 1.884944e-03, norm = 3.962635e+01, t = 3568.697040ms
+step = 59, stepsize = 1.700115e-03, norm = 3.957586e+01, t = 3636.005081ms
+step = 60, stepsize = 1.679911e-03, norm = 3.952720e+01, t = 3711.842065ms
+step = 61, stepsize = 1.774580e-03, norm = 3.947553e+01, t = 3538.617380ms
+step = 62, stepsize = 4.371118e-03, norm = 3.937806e+01, t = 3236.879865ms
+step = 63, stepsize = 1.959966e-03, norm = 3.932004e+01, t = 3442.266154ms
+step = 64, stepsize = 3.900834e-03, norm = 3.924323e+01, t = 3076.528397ms
+step = 65, stepsize = 1.626426e-03, norm = 3.919687e+01, t = 3501.791936ms
+step = 66, stepsize = 4.511103e-03, norm = 3.909546e+01, t = 3093.122973ms
+step = 67, stepsize = 1.668402e-03, norm = 3.904803e+01, t = 3418.812960ms
+step = 68, stepsize = 3.971510e-03, norm = 3.896984e+01, t = 3076.908766ms
+step = 69, stepsize = 1.954850e-03, norm = 3.891350e+01, t = 3516.391404ms
+step = 70, stepsize = 1.945808e-03, norm = 3.885730e+01, t = 3419.104348ms
+step = 71, stepsize = 1.962055e-03, norm = 3.880073e+01, t = 3367.690427ms
+step = 72, stepsize = 1.832705e-03, norm = 3.874753e+01, t = 3512.129684ms
+step = 73, stepsize = 1.643602e-03, norm = 3.870207e+01, t = 3350.767611ms
+step = 74, stepsize = 2.048696e-03, norm = 3.864234e+01, t = 3384.814660ms
+step = 75, stepsize = 1.995076e-03, norm = 3.858495e+01, t = 3453.008003ms
+step = 76, stepsize = 4.618546e-03, norm = 3.848449e+01, t = 3041.677311ms
+step = 77, stepsize = 4.272710e-03, norm = 3.840130e+01, t = 3296.936276ms
+step = 78, stepsize = 1.965102e-03, norm = 3.834653e+01, t = 3681.861461ms
+step = 79, stepsize = 1.805689e-03, norm = 3.829670e+01, t = 3533.364650ms
+step = 80, stepsize = 1.931038e-03, norm = 3.824258e+01, t = 3382.804151ms
+step = 81, stepsize = 1.671291e-03, norm = 3.819657e+01, t = 3514.450589ms
+step = 82, stepsize = 1.992646e-03, norm = 3.814094e+01, t = 3403.451464ms
+step = 83, stepsize = 2.119378e-03, norm = 3.808107e+01, t = 3466.063119ms
+step = 84, stepsize = 1.925299e-03, norm = 3.802811e+01, t = 3383.398261ms
+step = 85, stepsize = 4.281462e-03, norm = 3.793647e+01, t = 3088.610238ms
+step = 86, stepsize = 1.891380e-03, norm = 3.788457e+01, t = 3372.685565ms
+step = 87, stepsize = 2.100787e-03, norm = 3.782608e+01, t = 3410.764284ms
+step = 88, stepsize = 1.887123e-03, norm = 3.777514e+01, t = 3370.361123ms
+step = 89, stepsize = 2.073301e-03, norm = 3.771798e+01, t = 3315.335068ms
+step = 90, stepsize = 1.877379e-03, norm = 3.766731e+01, t = 3685.987309ms
+step = 91, stepsize = 1.730274e-03, norm = 3.762164e+01, t = 3541.432171ms
+step = 92, stepsize = 1.960575e-03, norm = 3.756835e+01, t = 3505.243373ms
+step = 93, stepsize = 1.957930e-03, norm = 3.751488e+01, t = 3603.605383ms
+step = 94, stepsize = 1.970175e-03, norm = 3.746131e+01, t = 3535.478203ms
+step = 95, stepsize = 1.944663e-03, norm = 3.740887e+01, t = 3723.390520ms
+step = 96, stepsize = 1.940936e-03, norm = 3.735681e+01, t = 3793.105100ms
+step = 97, stepsize = 2.040044e-03, norm = 3.730172e+01, t = 3601.935784ms
+step = 98, stepsize = 1.845518e-03, norm = 3.725347e+01, t = 4046.152517ms
+step = 99, stepsize = 2.057004e-03, norm = 3.719859e+01, t = 3948.729916ms
+step = 100, stepsize = 1.825515e-03, norm = 3.715005e+01, t = 3923.455064ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.825515e-03, final norm = 3.715005e+01
+=========================================================================================
+
+ .... Time: 3.342698e+02 seconds.
+
+ .. Step 10: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.530917e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.269926e-01, norm = 4.648046e+01, t = 2688.432455ms
+step = 2, stepsize = 1.020408e-01, norm = 2.693442e+01, t = 3031.100395ms
+step = 3, stepsize = 9.103936e-03, norm = 2.676517e+01, t = 3428.743229ms
+step = 4, stepsize = 5.050343e-02, norm = 2.479626e+01, t = 2547.074647ms
+step = 5, stepsize = 1.867108e-02, norm = 2.449928e+01, t = 3008.794109ms
+step = 6, stepsize = 2.957430e-03, norm = 2.445125e+01, t = 3626.854384ms
+step = 7, stepsize = 3.571975e-03, norm = 2.439078e+01, t = 3510.383984ms
+step = 8, stepsize = 2.050762e-03, norm = 2.436164e+01, t = 3641.497810ms
+step = 9, stepsize = 8.722931e-03, norm = 2.424339e+01, t = 3127.919755ms
+step = 10, stepsize = 2.493076e-03, norm = 2.420659e+01, t = 3772.654803ms
+step = 11, stepsize = 3.045475e-03, norm = 2.416026e+01, t = 3639.073385ms
+step = 12, stepsize = 7.816638e-03, norm = 2.405427e+01, t = 3338.827499ms
+step = 13, stepsize = 2.846148e-03, norm = 2.401126e+01, t = 3759.432334ms
+step = 14, stepsize = 3.491046e-03, norm = 2.395388e+01, t = 3710.149860ms
+step = 15, stepsize = 3.721620e-03, norm = 2.389281e+01, t = 3792.107180ms
+step = 16, stepsize = 3.324384e-03, norm = 2.383650e+01, t = 3719.520513ms
+step = 17, stepsize = 3.127282e-03, norm = 2.378973e+01, t = 3861.964068ms
+step = 18, stepsize = 2.562823e-03, norm = 2.375216e+01, t = 3817.679861ms
+step = 19, stepsize = 3.290970e-03, norm = 2.370186e+01, t = 3737.261673ms
+step = 20, stepsize = 2.191659e-03, norm = 2.367150e+01, t = 3781.028938ms
+step = 21, stepsize = 2.680206e-03, norm = 2.363315e+01, t = 3624.576307ms
+step = 22, stepsize = 2.632486e-03, norm = 2.359385e+01, t = 3784.400263ms
+step = 23, stepsize = 2.824861e-03, norm = 2.355054e+01, t = 3746.555991ms
+step = 24, stepsize = 2.429874e-03, norm = 2.351694e+01, t = 3752.456686ms
+step = 25, stepsize = 3.230602e-03, norm = 2.346320e+01, t = 3625.268358ms
+step = 26, stepsize = 3.441793e-03, norm = 2.340971e+01, t = 3678.759685ms
+step = 27, stepsize = 9.510057e-03, norm = 2.328162e+01, t = 3394.001812ms
+step = 28, stepsize = 2.183004e-03, norm = 2.324436e+01, t = 4074.262993ms
+step = 29, stepsize = 5.250448e-02, norm = 2.141333e+01, t = 2730.142735ms
+step = 30, stepsize = 2.425712e-03, norm = 2.138194e+01, t = 3813.669820ms
+step = 31, stepsize = 3.906393e-03, norm = 2.132166e+01, t = 3824.501249ms
+step = 32, stepsize = 2.642701e-03, norm = 2.128419e+01, t = 3678.280615ms
+step = 33, stepsize = 1.514359e-02, norm = 2.100308e+01, t = 3056.329685ms
+step = 34, stepsize = 1.900552e-03, norm = 2.097801e+01, t = 3764.820581ms
+step = 35, stepsize = 3.737491e-03, norm = 2.092577e+01, t = 4253.700734ms
+step = 36, stepsize = 1.787745e-03, norm = 2.090482e+01, t = 4560.202378ms
+step = 37, stepsize = 1.032815e-02, norm = 2.076742e+01, t = 3862.370296ms
+step = 38, stepsize = 3.751051e-03, norm = 2.071714e+01, t = 4165.872545ms
+step = 39, stepsize = 3.290700e-03, norm = 2.067447e+01, t = 5174.298944ms
+step = 40, stepsize = 2.988631e-03, norm = 2.063186e+01, t = 5420.245675ms
+step = 41, stepsize = 3.593632e-03, norm = 2.058191e+01, t = 5326.181884ms
+step = 42, stepsize = 2.409406e-03, norm = 2.054892e+01, t = 5187.641949ms
+step = 43, stepsize = 5.839967e-03, norm = 2.048202e+01, t = 4850.087894ms
+step = 44, stepsize = 2.827199e-03, norm = 2.044021e+01, t = 4841.060531ms
+step = 45, stepsize = 7.125092e-03, norm = 2.035870e+01, t = 4596.610422ms
+step = 46, stepsize = 4.476125e-03, norm = 2.029113e+01, t = 4978.011791ms
+step = 47, stepsize = 3.333679e-03, norm = 2.024738e+01, t = 4807.941318ms
+step = 48, stepsize = 2.772993e-03, norm = 2.020996e+01, t = 4928.694519ms
+step = 49, stepsize = 4.310272e-03, norm = 2.014944e+01, t = 3910.136831ms
+step = 50, stepsize = 2.924019e-03, norm = 2.011110e+01, t = 3610.639935ms
+step = 51, stepsize = 2.471466e-03, norm = 2.008099e+01, t = 3644.954450ms
+step = 52, stepsize = 4.121791e-03, norm = 2.002687e+01, t = 3796.919054ms
+step = 53, stepsize = 3.128406e-03, norm = 1.998543e+01, t = 3651.118634ms
+step = 54, stepsize = 1.028209e-02, norm = 1.987702e+01, t = 3247.480537ms
+step = 55, stepsize = 9.077893e-03, norm = 1.977558e+01, t = 3343.054328ms
+step = 56, stepsize = 4.797624e-02, norm = 1.901304e+01, t = 2560.144630ms
+step = 57, stepsize = 2.489309e-03, norm = 1.898107e+01, t = 4036.726432ms
+step = 58, stepsize = 3.466668e-03, norm = 1.893644e+01, t = 4138.246049ms
+step = 59, stepsize = 4.442673e-03, norm = 1.887369e+01, t = 4123.290320ms
+step = 60, stepsize = 2.773544e-03, norm = 1.884041e+01, t = 3873.134954ms
+step = 61, stepsize = 3.219663e-03, norm = 1.879879e+01, t = 3640.226220ms
+step = 62, stepsize = 6.905275e-03, norm = 1.873311e+01, t = 3571.953931ms
+step = 63, stepsize = 4.729195e-03, norm = 1.867107e+01, t = 3963.020196ms
+step = 64, stepsize = 2.083620e-03, norm = 1.864598e+01, t = 3845.770489ms
+step = 65, stepsize = 4.742048e-03, norm = 1.858267e+01, t = 3769.431505ms
+step = 66, stepsize = 2.734766e-03, norm = 1.854895e+01, t = 3926.865965ms
+step = 67, stepsize = 3.038413e-03, norm = 1.851168e+01, t = 3706.619800ms
+step = 68, stepsize = 2.578305e-03, norm = 1.847874e+01, t = 3650.183934ms
+step = 69, stepsize = 2.783889e-03, norm = 1.844602e+01, t = 3662.802289ms
+step = 70, stepsize = 2.383983e-03, norm = 1.841558e+01, t = 3725.173848ms
+step = 71, stepsize = 3.248639e-03, norm = 1.837049e+01, t = 3962.331604ms
+step = 72, stepsize = 1.140245e-02, norm = 1.824415e+01, t = 3481.512684ms
+step = 73, stepsize = 2.831111e-03, norm = 1.820993e+01, t = 4011.938224ms
+step = 74, stepsize = 3.102342e-03, norm = 1.817289e+01, t = 3996.796834ms
+step = 75, stepsize = 3.043458e-03, norm = 1.813652e+01, t = 3741.190172ms
+step = 76, stepsize = 4.211496e-03, norm = 1.808102e+01, t = 3790.876190ms
+step = 77, stepsize = 7.122251e-03, norm = 1.800520e+01, t = 3252.882221ms
+step = 78, stepsize = 1.015945e-02, norm = 1.790973e+01, t = 3265.656283ms
+step = 79, stepsize = 4.182452e-03, norm = 1.785937e+01, t = 3833.707570ms
+step = 80, stepsize = 2.369524e-03, norm = 1.782941e+01, t = 3686.912827ms
+step = 81, stepsize = 2.708673e-03, norm = 1.779769e+01, t = 3735.542337ms
+step = 82, stepsize = 3.820020e-03, norm = 1.775279e+01, t = 3671.558586ms
+step = 83, stepsize = 2.507144e-03, norm = 1.771970e+01, t = 3630.876977ms
+step = 84, stepsize = 2.632478e-03, norm = 1.769019e+01, t = 3730.446807ms
+step = 85, stepsize = 2.333750e-03, norm = 1.766061e+01, t = 3664.066134ms
+step = 86, stepsize = 1.060625e-02, norm = 1.755670e+01, t = 3317.098312ms
+step = 87, stepsize = 4.676587e-03, norm = 1.749887e+01, t = 4079.916052ms
+step = 88, stepsize = 3.103248e-03, norm = 1.745770e+01, t = 4575.396377ms
+step = 89, stepsize = 4.362471e-03, norm = 1.740624e+01, t = 3963.404705ms
+step = 90, stepsize = 4.937134e-03, norm = 1.734368e+01, t = 3937.517150ms
+step = 91, stepsize = 1.747392e-02, norm = 1.715015e+01, t = 3083.015533ms
+step = 92, stepsize = 3.669537e-03, norm = 1.710820e+01, t = 3977.954628ms
+step = 93, stepsize = 3.107610e-03, norm = 1.707327e+01, t = 3853.058498ms
+step = 94, stepsize = 3.659779e-03, norm = 1.703127e+01, t = 3763.803581ms
+step = 95, stepsize = 3.246491e-03, norm = 1.699078e+01, t = 3690.988714ms
+step = 96, stepsize = 3.061468e-03, norm = 1.695424e+01, t = 3787.754110ms
+step = 97, stepsize = 3.501202e-03, norm = 1.691384e+01, t = 3643.451594ms
+step = 98, stepsize = 2.769055e-03, norm = 1.688415e+01, t = 3785.992948ms
+step = 99, stepsize = 4.061132e-03, norm = 1.683668e+01, t = 3757.310855ms
+step = 100, stepsize = 4.243455e-03, norm = 1.678637e+01, t = 3723.932948ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 4.243455e-03, final norm = 1.678637e+01
+=========================================================================================
+
+ .... Time: 3.808657e+02 seconds.
+
+ .. Step 11: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 2.246916e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.346017e-02, norm = 2.224795e+02, t = 3313.484564ms
+step = 2, stepsize = 2.446030e-02, norm = 2.196819e+02, t = 3046.577332ms
+step = 3, stepsize = 1.627932e-01, norm = 1.278500e+02, t = 2223.544384ms
+step = 4, stepsize = 1.113229e-01, norm = 6.297548e+01, t = 2538.146586ms
+step = 5, stepsize = 7.910396e-02, norm = 5.158268e+01, t = 2507.166547ms
+step = 6, stepsize = 6.047065e-02, norm = 4.726119e+01, t = 2531.542438ms
+step = 7, stepsize = 2.030998e-01, norm = 3.905835e+01, t = 2524.143971ms
+step = 8, stepsize = 5.118930e-02, norm = 3.558966e+01, t = 2729.201252ms
+step = 9, stepsize = 1.288781e-02, norm = 3.527153e+01, t = 3260.627755ms
+step = 10, stepsize = 1.106095e-02, norm = 3.505829e+01, t = 3258.779825ms
+step = 11, stepsize = 1.277681e-02, norm = 3.477223e+01, t = 3364.119267ms
+step = 12, stepsize = 2.787260e-02, norm = 3.422609e+01, t = 3059.308961ms
+step = 13, stepsize = 3.964605e-03, norm = 3.413767e+01, t = 3828.877355ms
+step = 14, stepsize = 1.027979e-01, norm = 2.029336e+01, t = 2564.286328ms
+step = 15, stepsize = 8.703528e-03, norm = 2.018941e+01, t = 3298.080486ms
+step = 16, stepsize = 3.828493e-03, norm = 2.014070e+01, t = 3775.854207ms
+step = 17, stepsize = 3.163670e-03, norm = 2.009151e+01, t = 3599.710965ms
+step = 18, stepsize = 1.098888e-02, norm = 1.992801e+01, t = 3543.556881ms
+step = 19, stepsize = 9.928117e-02, norm = 1.242466e+01, t = 2766.457935ms
+step = 20, stepsize = 2.811891e-02, norm = 1.203601e+01, t = 2748.623263ms
+step = 21, stepsize = 3.117297e-02, norm = 1.154684e+01, t = 2659.541411ms
+step = 22, stepsize = 9.978058e-03, norm = 1.147168e+01, t = 3497.375361ms
+step = 23, stepsize = 9.374338e-03, norm = 1.140466e+01, t = 3572.174740ms
+step = 24, stepsize = 4.711290e-02, norm = 1.113126e+01, t = 2970.651819ms
+step = 25, stepsize = 5.261752e-03, norm = 1.109513e+01, t = 4246.004159ms
+step = 26, stepsize = 2.032723e-02, norm = 1.070535e+01, t = 3198.541559ms
+step = 27, stepsize = 7.168047e-03, norm = 1.064753e+01, t = 3772.452166ms
+step = 28, stepsize = 1.466689e-02, norm = 1.056107e+01, t = 3303.045307ms
+step = 29, stepsize = 1.427933e-02, norm = 1.042646e+01, t = 3236.770324ms
+step = 30, stepsize = 1.008904e-02, norm = 1.036872e+01, t = 3022.332777ms
+step = 31, stepsize = 2.468241e-02, norm = 1.014877e+01, t = 3073.315828ms
+step = 32, stepsize = 1.122413e-02, norm = 1.008033e+01, t = 3346.009906ms
+step = 33, stepsize = 2.931347e-02, norm = 9.893276e+00, t = 3280.382226ms
+step = 34, stepsize = 1.769444e-02, norm = 9.802217e+00, t = 3316.574211ms
+step = 35, stepsize = 1.076138e-02, norm = 9.725029e+00, t = 3608.153932ms
+step = 36, stepsize = 2.965016e-02, norm = 9.482738e+00, t = 2748.702826ms
+step = 37, stepsize = 4.368027e-02, norm = 9.146264e+00, t = 2843.704735ms
+step = 38, stepsize = 1.808481e-02, norm = 9.015451e+00, t = 3385.871096ms
+step = 39, stepsize = 9.494002e-03, norm = 8.949703e+00, t = 3256.793324ms
+step = 40, stepsize = 1.903599e-02, norm = 8.844464e+00, t = 2906.695545ms
+step = 41, stepsize = 9.555948e-03, norm = 8.781512e+00, t = 3332.370768ms
+step = 42, stepsize = 4.074774e-02, norm = 8.523603e+00, t = 2713.041076ms
+step = 43, stepsize = 1.005608e-02, norm = 8.459269e+00, t = 3592.254389ms
+step = 44, stepsize = 4.473992e-02, norm = 8.151075e+00, t = 3100.151295ms
+step = 45, stepsize = 2.568940e-02, norm = 8.020399e+00, t = 2995.587809ms
+step = 46, stepsize = 1.208967e-02, norm = 7.963888e+00, t = 3263.312766ms
+step = 47, stepsize = 4.383242e-02, norm = 7.772449e+00, t = 2834.217277ms
+step = 48, stepsize = 1.885811e-02, norm = 7.673606e+00, t = 3170.210819ms
+step = 49, stepsize = 6.233288e-02, norm = 7.401121e+00, t = 2567.268304ms
+step = 50, stepsize = 2.509712e-02, norm = 7.282056e+00, t = 2934.995222ms
+step = 51, stepsize = 1.827894e-02, norm = 7.204708e+00, t = 2962.719178ms
+step = 52, stepsize = 2.925907e-02, norm = 7.063282e+00, t = 3030.030118ms
+step = 53, stepsize = 2.784002e-02, norm = 6.914117e+00, t = 3073.219231ms
+step = 54, stepsize = 2.700204e-02, norm = 6.811178e+00, t = 3019.581979ms
+step = 55, stepsize = 7.981574e-03, norm = 6.778328e+00, t = 3640.190366ms
+step = 56, stepsize = 7.851511e-03, norm = 6.744496e+00, t = 3546.015500ms
+step = 57, stepsize = 8.132677e-03, norm = 6.707597e+00, t = 3463.547587ms
+step = 58, stepsize = 4.858747e-02, norm = 6.505844e+00, t = 2900.698244ms
+step = 59, stepsize = 9.785798e-03, norm = 6.462726e+00, t = 3450.941447ms
+step = 60, stepsize = 3.038272e-02, norm = 6.308719e+00, t = 2981.428371ms
+step = 61, stepsize = 5.474976e-02, norm = 5.926195e+00, t = 2662.507028ms
+step = 62, stepsize = 9.567586e-03, norm = 5.883929e+00, t = 3628.311646ms
+step = 63, stepsize = 2.412365e-02, norm = 5.791347e+00, t = 3316.296450ms
+step = 64, stepsize = 2.638859e-02, norm = 5.694606e+00, t = 3431.551618ms
+step = 65, stepsize = 6.532873e-02, norm = 5.396651e+00, t = 2857.176831ms
+step = 66, stepsize = 2.726270e-02, norm = 5.267235e+00, t = 3307.942682ms
+step = 67, stepsize = 1.248817e-02, norm = 5.217862e+00, t = 3568.654428ms
+step = 68, stepsize = 1.156644e-02, norm = 5.176358e+00, t = 3635.399844ms
+step = 69, stepsize = 2.594267e-02, norm = 5.066340e+00, t = 3226.047352ms
+step = 70, stepsize = 6.793139e-02, norm = 4.677218e+00, t = 2713.678536ms
+step = 71, stepsize = 6.674819e-02, norm = 4.368389e+00, t = 2778.932393ms
+step = 72, stepsize = 2.238960e-02, norm = 4.288196e+00, t = 3186.844869ms
+step = 73, stepsize = 9.647451e-03, norm = 4.257320e+00, t = 3516.782555ms
+step = 74, stepsize = 2.652739e-02, norm = 4.193855e+00, t = 3062.139517ms
+step = 75, stepsize = 3.046631e-02, norm = 4.101389e+00, t = 3138.907262ms
+step = 76, stepsize = 2.752181e-02, norm = 4.029939e+00, t = 3290.874892ms
+step = 77, stepsize = 2.660267e-02, norm = 3.954790e+00, t = 3209.659146ms
+step = 78, stepsize = 2.642891e-02, norm = 3.892517e+00, t = 3437.715674ms
+step = 79, stepsize = 2.970257e-02, norm = 3.816169e+00, t = 2981.084161ms
+step = 80, stepsize = 6.677470e-02, norm = 3.561939e+00, t = 2581.421365ms
+step = 81, stepsize = 2.650597e-02, norm = 3.513814e+00, t = 3044.699201ms
+step = 82, stepsize = 3.027538e-02, norm = 3.443202e+00, t = 3139.702158ms
+step = 83, stepsize = 6.440178e-02, norm = 3.267420e+00, t = 2893.891143ms
+step = 84, stepsize = 2.724114e-02, norm = 3.220025e+00, t = 2980.659670ms
+step = 85, stepsize = 2.802131e-02, norm = 3.143472e+00, t = 3083.434775ms
+step = 86, stepsize = 3.018096e-02, norm = 3.078209e+00, t = 2872.956925ms
+step = 87, stepsize = 2.949159e-02, norm = 3.021441e+00, t = 2994.987907ms
+step = 88, stepsize = 2.649181e-02, norm = 2.968768e+00, t = 3184.174327ms
+step = 89, stepsize = 6.421837e-02, norm = 2.802127e+00, t = 2496.101065ms
+step = 90, stepsize = 2.972804e-02, norm = 2.752077e+00, t = 2887.478817ms
+step = 91, stepsize = 6.395731e-02, norm = 2.594613e+00, t = 2679.124686ms
+step = 92, stepsize = 6.412503e-02, norm = 2.499324e+00, t = 2852.714759ms
+step = 93, stepsize = 1.326941e-01, norm = 2.267403e+00, t = 2577.943510ms
+step = 94, stepsize = 2.922778e-02, norm = 2.227800e+00, t = 3139.508108ms
+step = 95, stepsize = 6.403354e-02, norm = 2.116302e+00, t = 2564.072672ms
+step = 96, stepsize = 6.544599e-02, norm = 2.026007e+00, t = 2568.573832ms
+step = 97, stepsize = 2.961977e-02, norm = 1.994678e+00, t = 2860.418324ms
+step = 98, stepsize = 6.428628e-02, norm = 1.914780e+00, t = 2477.949597ms
+step = 99, stepsize = 2.941206e-02, norm = 1.882324e+00, t = 2805.500095ms
+step = 100, stepsize = 3.070890e-02, norm = 1.842195e+00, t = 2812.369461ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 3.070890e-02, final norm = 1.842195e+00
+=========================================================================================
+
+ .... Time: 3.087761e+02 seconds.
+
+ .. Step 12: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 3.566499e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.331988e-02, norm = 2.743118e+02, t = 2399.339410ms
+step = 2, stepsize = 6.429101e-02, norm = 1.720229e+02, t = 2423.193475ms
+step = 3, stepsize = 3.548325e-02, norm = 1.442549e+02, t = 2156.688705ms
+step = 4, stepsize = 2.796207e-02, norm = 1.381704e+02, t = 2317.964513ms
+step = 5, stepsize = 1.353190e-02, norm = 1.361149e+02, t = 2988.640847ms
+step = 6, stepsize = 1.687442e-02, norm = 1.288431e+02, t = 2247.893534ms
+step = 7, stepsize = 9.982457e-03, norm = 1.280816e+02, t = 2657.534249ms
+step = 8, stepsize = 6.719929e-03, norm = 1.266361e+02, t = 2196.406771ms
+step = 9, stepsize = 2.353123e-02, norm = 1.237135e+02, t = 2535.353369ms
+step = 10, stepsize = 4.423896e-03, norm = 1.233455e+02, t = 2481.883526ms
+step = 11, stepsize = 9.321347e-03, norm = 1.221064e+02, t = 2513.719238ms
+step = 12, stepsize = 2.434158e-02, norm = 1.171743e+02, t = 2528.036997ms
+step = 13, stepsize = 1.230099e-02, norm = 1.157810e+02, t = 2494.881558ms
+step = 14, stepsize = 9.377468e-03, norm = 1.149201e+02, t = 2224.484350ms
+step = 15, stepsize = 5.481252e-03, norm = 1.144800e+02, t = 2929.223435ms
+step = 16, stepsize = 2.622240e-02, norm = 1.111707e+02, t = 2200.973463ms
+step = 17, stepsize = 3.730451e-03, norm = 1.108970e+02, t = 3032.007362ms
+step = 18, stepsize = 3.323764e-02, norm = 1.086514e+02, t = 2639.134291ms
+step = 19, stepsize = 4.060185e-02, norm = 1.053069e+02, t = 2548.164948ms
+step = 20, stepsize = 3.885651e-03, norm = 1.050719e+02, t = 3330.412315ms
+step = 21, stepsize = 6.315019e-03, norm = 1.046442e+02, t = 3267.106874ms
+step = 22, stepsize = 1.005180e-03, norm = 1.045746e+02, t = 3750.572175ms
+step = 23, stepsize = 2.289478e-02, norm = 1.021971e+02, t = 2608.235966ms
+step = 24, stepsize = 3.726983e-03, norm = 1.019435e+02, t = 5271.406737ms
+step = 25, stepsize = 3.358596e-03, norm = 1.017379e+02, t = 6588.660595ms
+step = 26, stepsize = 6.677896e-04, norm = 1.016853e+02, t = 4877.328845ms
+step = 27, stepsize = 2.088207e-02, norm = 9.404039e+01, t = 2339.164117ms
+step = 28, stepsize = 7.658697e-03, norm = 9.349210e+01, t = 2952.322924ms
+step = 29, stepsize = 1.889280e-02, norm = 9.130022e+01, t = 2339.611665ms
+step = 30, stepsize = 3.675636e-02, norm = 8.639433e+01, t = 2360.648285ms
+step = 31, stepsize = 1.733283e-03, norm = 8.629297e+01, t = 3819.755326ms
+step = 32, stepsize = 1.116428e-02, norm = 8.508124e+01, t = 2317.924563ms
+step = 33, stepsize = 9.144977e-03, norm = 8.448175e+01, t = 2930.432828ms
+step = 34, stepsize = 6.947520e-03, norm = 8.402887e+01, t = 3441.570942ms
+step = 35, stepsize = 2.122579e-03, norm = 8.390625e+01, t = 3476.095837ms
+step = 36, stepsize = 1.962094e-03, norm = 8.380052e+01, t = 3286.299374ms
+step = 37, stepsize = 4.238485e-02, norm = 7.610525e+01, t = 2578.058774ms
+step = 38, stepsize = 4.737894e-02, norm = 7.305836e+01, t = 2685.792487ms
+step = 39, stepsize = 2.531938e-04, norm = 7.303676e+01, t = 3407.230852ms
+step = 40, stepsize = 2.038450e-03, norm = 7.293770e+01, t = 3286.150599ms
+step = 41, stepsize = 6.885991e-03, norm = 7.255227e+01, t = 2979.087279ms
+step = 42, stepsize = 5.956783e-04, norm = 7.252413e+01, t = 3372.855418ms
+step = 43, stepsize = 2.531183e-03, norm = 7.238771e+01, t = 3609.289326ms
+step = 44, stepsize = 2.587668e-03, norm = 7.227418e+01, t = 3574.503788ms
+step = 45, stepsize = 6.186466e-02, norm = 6.294511e+01, t = 2573.601150ms
+step = 46, stepsize = 6.594253e-02, norm = 5.832667e+01, t = 2562.934171ms
+step = 47, stepsize = 5.231497e-03, norm = 5.755023e+01, t = 2727.140735ms
+step = 48, stepsize = 4.738569e-02, norm = 5.203464e+01, t = 2834.127289ms
+step = 49, stepsize = 8.021729e-03, norm = 5.117829e+01, t = 2029.707457ms
+step = 50, stepsize = 9.636217e-03, norm = 5.073778e+01, t = 2855.406509ms
+step = 51, stepsize = 1.572825e-02, norm = 5.007735e+01, t = 3148.564672ms
+step = 52, stepsize = 1.800445e-02, norm = 4.924647e+01, t = 3243.598666ms
+step = 53, stepsize = 1.792586e-02, norm = 4.861482e+01, t = 3128.359532ms
+step = 54, stepsize = 7.908125e-03, norm = 4.838364e+01, t = 3214.337122ms
+step = 55, stepsize = 1.417464e-02, norm = 4.798675e+01, t = 3363.275833ms
+step = 56, stepsize = 9.595290e-05, norm = 4.797836e+01, t = 3366.772316ms
+step = 57, stepsize = 1.561084e-02, norm = 4.759976e+01, t = 3212.781811ms
+step = 58, stepsize = 9.555655e-03, norm = 4.723860e+01, t = 3769.912666ms
+step = 59, stepsize = 2.040249e-02, norm = 4.673758e+01, t = 3323.743528ms
+step = 60, stepsize = 2.212590e-02, norm = 4.532256e+01, t = 2112.273680ms
+step = 61, stepsize = 4.065380e-02, norm = 4.241753e+01, t = 2832.439531ms
+step = 62, stepsize = 1.381008e-02, norm = 4.164201e+01, t = 2295.457644ms
+step = 63, stepsize = 2.612792e-02, norm = 3.886622e+01, t = 2415.653781ms
+step = 64, stepsize = 1.377249e-02, norm = 3.840994e+01, t = 3480.661467ms
+step = 65, stepsize = 3.043417e-02, norm = 3.633091e+01, t = 2742.497170ms
+step = 66, stepsize = 8.936865e-03, norm = 3.608159e+01, t = 2797.738520ms
+step = 67, stepsize = 5.884192e-03, norm = 3.592345e+01, t = 2912.077025ms
+step = 68, stepsize = 1.334572e-02, norm = 3.554824e+01, t = 2944.993064ms
+step = 69, stepsize = 1.548280e-02, norm = 3.515728e+01, t = 2910.901058ms
+step = 70, stepsize = 1.796561e-02, norm = 3.474951e+01, t = 3038.297145ms
+step = 71, stepsize = 1.427086e-02, norm = 3.448398e+01, t = 2899.362674ms
+step = 72, stepsize = 2.047724e-02, norm = 3.407669e+01, t = 3213.574818ms
+step = 73, stepsize = 1.080130e-04, norm = 3.406835e+01, t = 3896.578852ms
+step = 74, stepsize = 6.446997e-03, norm = 3.390911e+01, t = 3410.896492ms
+step = 75, stepsize = 9.396923e-05, norm = 3.388632e+01, t = 3789.074518ms
+step = 76, stepsize = 1.937744e-02, norm = 3.314626e+01, t = 2674.369387ms
+step = 77, stepsize = 2.419960e-04, norm = 3.313787e+01, t = 3259.275674ms
+step = 78, stepsize = 2.391040e-03, norm = 3.291388e+01, t = 1869.574353ms
+step = 79, stepsize = 1.801057e-02, norm = 3.246805e+01, t = 2949.961785ms
+step = 80, stepsize = 8.331798e-03, norm = 3.225478e+01, t = 3332.740087ms
+step = 81, stepsize = 1.831094e-02, norm = 3.192830e+01, t = 3003.481551ms
+step = 82, stepsize = 3.424747e-03, norm = 3.186251e+01, t = 2376.496682ms
+step = 83, stepsize = 6.147970e-03, norm = 3.171696e+01, t = 3504.133518ms
+step = 84, stepsize = 9.371650e-03, norm = 3.148765e+01, t = 3658.501881ms
+step = 85, stepsize = 8.173194e-06, norm = 3.147824e+01, t = 2222.878375ms
+step = 86, stepsize = 2.590888e-03, norm = 3.142715e+01, t = 3335.572680ms
+step = 87, stepsize = 4.001459e-03, norm = 2.973957e+01, t = 2176.976897ms
+step = 88, stepsize = 5.237127e-03, norm = 2.962884e+01, t = 2219.500605ms
+step = 89, stepsize = 8.783526e-03, norm = 2.926595e+01, t = 1837.649381ms
+step = 90, stepsize = 1.309791e-02, norm = 2.896430e+01, t = 2465.162702ms
+step = 91, stepsize = 2.831141e-03, norm = 2.870539e+01, t = 1860.525183ms
+step = 92, stepsize = 1.865320e-02, norm = 2.825632e+01, t = 2533.584615ms
+step = 93, stepsize = 6.090864e-03, norm = 2.814266e+01, t = 3029.157501ms
+step = 94, stepsize = 2.266207e-02, norm = 2.760383e+01, t = 3117.417619ms
+step = 95, stepsize = 1.670635e-02, norm = 2.725787e+01, t = 3056.783366ms
+step = 96, stepsize = 5.858890e-04, norm = 2.724381e+01, t = 3381.942700ms
+step = 97, stepsize = 1.513563e-02, norm = 2.691555e+01, t = 2894.766163ms
+step = 98, stepsize = 7.062171e-03, norm = 2.650314e+01, t = 2252.253428ms
+step = 99, stepsize = 1.564999e-02, norm = 2.617209e+01, t = 2961.399383ms
+step = 100, stepsize = 2.107016e-03, norm = 2.613967e+01, t = 3956.767324ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 2.107016e-03, final norm = 2.613967e+01
+=========================================================================================
+
+ .... Time: 2.949757e+02 seconds.
+
+ .. Step 13: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 6.031426e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 7.231827e-02, norm = 4.808929e+02, t = 3064.697104ms
+step = 2, stepsize = 5.006958e-04, norm = 4.806932e+02, t = 4398.401691ms
+step = 3, stepsize = 7.294410e-03, norm = 4.292306e+02, t = 2957.332413ms
+step = 4, stepsize = 2.746780e-03, norm = 4.259690e+02, t = 3035.032724ms
+step = 5, stepsize = 1.560565e-04, norm = 4.259196e+02, t = 3200.136919ms
+step = 6, stepsize = 9.508971e-06, norm = 4.257850e+02, t = 3353.998194ms
+step = 7, stepsize = 5.911848e-02, norm = 2.440754e+02, t = 2641.938592ms
+step = 8, stepsize = 2.045425e-02, norm = 2.289679e+02, t = 2410.474851ms
+step = 9, stepsize = 1.670857e-04, norm = 2.289026e+02, t = 3092.241607ms
+step = 10, stepsize = 7.669880e-04, norm = 2.287576e+02, t = 3720.925766ms
+step = 11, stepsize = 3.442050e-04, norm = 2.287149e+02, t = 3634.595516ms
+step = 12, stepsize = 9.117429e-05, norm = 2.286846e+02, t = 2812.619549ms
+step = 13, stepsize = 3.934156e-05, norm = 2.286381e+02, t = 3543.578666ms
+step = 14, stepsize = 6.481905e-03, norm = 2.278154e+02, t = 2896.452037ms
+step = 15, stepsize = 1.410376e-03, norm = 2.275388e+02, t = 3648.962146ms
+step = 16, stepsize = 9.008056e-03, norm = 2.250915e+02, t = 2457.828724ms
+step = 17, stepsize = 4.954010e-03, norm = 2.241768e+02, t = 2893.122856ms
+step = 18, stepsize = 1.717062e-04, norm = 2.241144e+02, t = 3620.595185ms
+step = 19, stepsize = 1.230069e-04, norm = 2.240747e+02, t = 3607.328266ms
+step = 20, stepsize = 5.491462e-03, norm = 2.233506e+02, t = 2952.383980ms
+step = 21, stepsize = 2.093187e-05, norm = 2.232754e+02, t = 3287.662260ms
+step = 22, stepsize = 1.186154e-02, norm = 2.204023e+02, t = 2719.416261ms
+step = 23, stepsize = 1.236526e-02, norm = 1.785867e+02, t = 2855.849176ms
+step = 24, stepsize = 2.219049e-03, norm = 1.783290e+02, t = 3594.557015ms
+step = 25, stepsize = 1.667482e-05, norm = 1.783144e+02, t = 4567.319631ms
+step = 26, stepsize = 1.108911e-03, norm = 1.781514e+02, t = 3724.286066ms
+step = 27, stepsize = 5.245766e-04, norm = 1.780801e+02, t = 3530.548428ms
+step = 28, stepsize = 1.585242e-05, norm = 1.780656e+02, t = 3934.674033ms
+step = 29, stepsize = 2.085620e-03, norm = 1.778347e+02, t = 3901.960556ms
+step = 30, stepsize = 5.815855e-05, norm = 1.777553e+02, t = 4264.409611ms
+step = 31, stepsize = 3.126856e-03, norm = 1.481613e+02, t = 2907.669117ms
+step = 32, stepsize = 1.254334e-02, norm = 1.445631e+02, t = 2331.689394ms
+step = 33, stepsize = 5.518787e-03, norm = 1.440262e+02, t = 2562.643402ms
+step = 34, stepsize = 9.407672e-03, norm = 1.429067e+02, t = 2120.094493ms
+step = 35, stepsize = 4.176061e-03, norm = 1.423605e+02, t = 2507.040193ms
+step = 36, stepsize = 1.161661e-03, norm = 1.422055e+02, t = 2517.622140ms
+step = 37, stepsize = 1.884458e-04, norm = 1.421669e+02, t = 3495.950911ms
+step = 38, stepsize = 1.285273e-03, norm = 1.420595e+02, t = 3375.938833ms
+step = 39, stepsize = 1.469823e-03, norm = 1.419216e+02, t = 1876.147367ms
+step = 40, stepsize = 4.340333e-03, norm = 1.401491e+02, t = 2315.610945ms
+step = 41, stepsize = 1.375005e-03, norm = 1.400132e+02, t = 3029.402588ms
+step = 42, stepsize = 3.086125e-05, norm = 1.399997e+02, t = 1885.167547ms
+step = 43, stepsize = 7.624202e-03, norm = 1.394126e+02, t = 3108.855596ms
+step = 44, stepsize = 4.163564e-03, norm = 1.358947e+02, t = 2289.901452ms
+step = 45, stepsize = 2.564586e-05, norm = 1.358722e+02, t = 3901.902747ms
+step = 46, stepsize = 1.301685e-03, norm = 1.357799e+02, t = 2995.164855ms
+step = 47, stepsize = 3.249609e-06, norm = 1.357610e+02, t = 2925.703523ms
+step = 48, stepsize = 1.180093e-03, norm = 1.356576e+02, t = 3338.766490ms
+step = 49, stepsize = 8.966825e-08, norm = 1.356424e+02, t = 2617.929961ms
+step = 50, stepsize = 4.413066e-03, norm = 1.346767e+02, t = 2225.831539ms
+step = 51, stepsize = 1.399127e-03, norm = 1.345283e+02, t = 3387.689887ms
+step = 52, stepsize = 3.789543e-04, norm = 1.344909e+02, t = 2695.893124ms
+step = 53, stepsize = 2.398361e-04, norm = 1.344530e+02, t = 3605.229194ms
+step = 54, stepsize = 5.855780e-05, norm = 1.344273e+02, t = 3698.748596ms
+step = 55, stepsize = 1.461032e-03, norm = 1.342759e+02, t = 3514.664416ms
+step = 56, stepsize = 2.964646e-05, norm = 1.342408e+02, t = 2718.012030ms
+step = 57, stepsize = 8.773934e-03, norm = 1.316551e+02, t = 2295.155521ms
+step = 58, stepsize = 2.054858e-04, norm = 1.316125e+02, t = 2045.499656ms
+step = 59, stepsize = 9.717261e-05, norm = 1.315792e+02, t = 3023.736307ms
+step = 60, stepsize = 1.220989e-03, norm = 1.314742e+02, t = 3608.794465ms
+step = 61, stepsize = 2.727695e-04, norm = 1.314486e+02, t = 3419.816946ms
+step = 62, stepsize = 2.272771e-03, norm = 1.308078e+02, t = 1920.623082ms
+step = 63, stepsize = 1.343987e-03, norm = 1.306880e+02, t = 1972.500046ms
+step = 64, stepsize = 9.763728e-05, norm = 1.306747e+02, t = 2380.343710ms
+step = 65, stepsize = 1.783040e-02, norm = 1.276588e+02, t = 2223.985438ms
+step = 66, stepsize = 4.499610e-03, norm = 1.272681e+02, t = 3078.505619ms
+step = 67, stepsize = 9.587291e-04, norm = 1.271647e+02, t = 2281.169133ms
+step = 68, stepsize = 1.816791e-04, norm = 1.271389e+02, t = 3193.693022ms
+step = 69, stepsize = 1.812873e-05, norm = 1.271177e+02, t = 3320.725816ms
+step = 70, stepsize = 1.836872e-03, norm = 1.269496e+02, t = 2684.133392ms
+step = 71, stepsize = 2.314375e-03, norm = 1.267594e+02, t = 3358.241992ms
+step = 72, stepsize = 2.927263e-03, norm = 1.250167e+02, t = 2477.327991ms
+step = 73, stepsize = 1.769028e-03, norm = 1.247792e+02, t = 1975.846402ms
+step = 74, stepsize = 3.409972e-02, norm = 1.199233e+02, t = 2992.855967ms
+step = 75, stepsize = 1.302739e-02, norm = 1.191189e+02, t = 2477.773222ms
+step = 76, stepsize = 1.024322e-04, norm = 1.191011e+02, t = 3268.252797ms
+step = 77, stepsize = 2.488858e-03, norm = 1.188931e+02, t = 3264.072646ms
+step = 78, stepsize = 1.743583e-04, norm = 1.180507e+02, t = 4061.659203ms
+step = 79, stepsize = 9.433118e-04, norm = 1.179614e+02, t = 2476.959920ms
+step = 80, stepsize = 4.088454e-03, norm = 1.175808e+02, t = 3309.303242ms
+step = 81, stepsize = 3.166054e-03, norm = 1.173648e+02, t = 3359.664066ms
+step = 82, stepsize = 3.079211e-03, norm = 1.171752e+02, t = 3368.133578ms
+step = 83, stepsize = 1.049302e-04, norm = 1.171569e+02, t = 3570.754502ms
+step = 84, stepsize = 1.807084e-04, norm = 1.171363e+02, t = 3164.842158ms
+step = 85, stepsize = 5.277542e-03, norm = 1.160760e+02, t = 1895.460547ms
+step = 86, stepsize = 1.239883e-03, norm = 1.159926e+02, t = 3138.945758ms
+step = 87, stepsize = 2.224719e-02, norm = 1.129720e+02, t = 2363.313456ms
+step = 88, stepsize = 1.385088e-02, norm = 1.109295e+02, t = 2230.113634ms
+step = 89, stepsize = 5.587761e-04, norm = 1.104455e+02, t = 2505.825845ms
+step = 90, stepsize = 6.443145e-03, norm = 1.098327e+02, t = 2631.812446ms
+step = 91, stepsize = 6.288652e-03, norm = 1.093924e+02, t = 2798.158855ms
+step = 92, stepsize = 4.476603e-04, norm = 1.093431e+02, t = 2946.460180ms
+step = 93, stepsize = 9.057958e-04, norm = 1.086743e+02, t = 2599.874609ms
+step = 94, stepsize = 7.463553e-04, norm = 1.086026e+02, t = 1759.608714ms
+step = 95, stepsize = 1.485601e-03, norm = 1.084675e+02, t = 2170.272541ms
+step = 96, stepsize = 4.563106e-03, norm = 1.081084e+02, t = 2532.463164ms
+step = 97, stepsize = 1.241349e-03, norm = 1.080070e+02, t = 2528.795124ms
+step = 98, stepsize = 2.979952e-05, norm = 1.080008e+02, t = 2522.660184ms
+step = 99, stepsize = 7.986701e-04, norm = 1.079296e+02, t = 2136.784060ms
+step = 100, stepsize = 4.731403e-03, norm = 1.076397e+02, t = 2559.739033ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 4.731403e-03, final norm = 1.076397e+02
+=========================================================================================
+
+ .... Time: 2.941985e+02 seconds.
+
+ .. Step 14: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 7.646090e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.043667e-01, norm = 5.009942e+02, t = 2593.303225ms
+step = 2, stepsize = 1.936488e-03, norm = 5.004806e+02, t = 3272.422395ms
+step = 3, stepsize = 1.248494e-03, norm = 4.999683e+02, t = 3433.012564ms
+step = 4, stepsize = 1.095118e-04, norm = 4.998119e+02, t = 4228.721342ms
+step = 5, stepsize = 7.852338e-03, norm = 4.158209e+02, t = 2113.164348ms
+step = 6, stepsize = 5.487675e-03, norm = 4.143846e+02, t = 3885.139823ms
+step = 7, stepsize = 1.955490e-02, norm = 2.816401e+02, t = 1848.319206ms
+step = 8, stepsize = 2.676589e-04, norm = 2.815811e+02, t = 3238.421768ms
+step = 9, stepsize = 4.245826e-04, norm = 2.814997e+02, t = 3591.796607ms
+step = 10, stepsize = 1.783004e-02, norm = 2.262182e+02, t = 2179.815480ms
+step = 11, stepsize = 2.027219e-02, norm = 8.956937e+01, t = 2130.606666ms
+step = 12, stepsize = 2.652887e-03, norm = 8.500175e+01, t = 2473.231698ms
+step = 13, stepsize = 1.095963e-04, norm = 8.496108e+01, t = 2161.810310ms
+step = 14, stepsize = 1.146265e-03, norm = 8.486855e+01, t = 2925.750998ms
+step = 15, stepsize = 1.644279e-03, norm = 8.476228e+01, t = 3319.344713ms
+step = 16, stepsize = 3.069872e-03, norm = 8.452835e+01, t = 3256.234106ms
+step = 17, stepsize = 7.711988e-04, norm = 8.448462e+01, t = 3797.399326ms
+step = 18, stepsize = 4.119464e-05, norm = 8.438756e+01, t = 3890.995310ms
+step = 19, stepsize = 9.021503e-03, norm = 6.908834e+01, t = 2077.761972ms
+step = 20, stepsize = 1.374336e-03, norm = 6.899525e+01, t = 3245.318471ms
+step = 21, stepsize = 3.351393e-04, norm = 6.895409e+01, t = 3571.078711ms
+step = 22, stepsize = 1.539523e-03, norm = 6.536490e+01, t = 2867.472810ms
+step = 23, stepsize = 2.247687e-04, norm = 6.531262e+01, t = 3203.313581ms
+step = 24, stepsize = 1.585875e-04, norm = 6.529552e+01, t = 2683.535448ms
+step = 25, stepsize = 5.791063e-03, norm = 6.475776e+01, t = 1804.417843ms
+step = 26, stepsize = 6.146265e-03, norm = 6.445052e+01, t = 2164.601146ms
+step = 27, stepsize = 3.763176e-04, norm = 6.442949e+01, t = 3228.096389ms
+step = 28, stepsize = 7.940105e-04, norm = 6.433478e+01, t = 2122.699954ms
+step = 29, stepsize = 2.851901e-03, norm = 6.411665e+01, t = 1905.206590ms
+step = 30, stepsize = 4.144465e-03, norm = 6.311293e+01, t = 2224.471068ms
+step = 31, stepsize = 8.217759e-03, norm = 6.263447e+01, t = 2285.433389ms
+step = 32, stepsize = 1.254783e-03, norm = 6.256847e+01, t = 2558.754993ms
+step = 33, stepsize = 3.718250e-03, norm = 6.226889e+01, t = 2258.527108ms
+step = 34, stepsize = 2.869488e-03, norm = 6.216226e+01, t = 1847.270035ms
+step = 35, stepsize = 1.334699e-03, norm = 6.207534e+01, t = 2093.916427ms
+step = 36, stepsize = 3.763784e-03, norm = 6.190249e+01, t = 2796.577292ms
+step = 37, stepsize = 6.597834e-06, norm = 6.189436e+01, t = 2034.698176ms
+step = 38, stepsize = 2.812304e-03, norm = 6.179928e+01, t = 2737.458181ms
+step = 39, stepsize = 1.384188e-03, norm = 6.173855e+01, t = 2552.025190ms
+step = 40, stepsize = 2.111371e-04, norm = 6.160544e+01, t = 3250.610266ms
+step = 41, stepsize = 2.601185e-04, norm = 6.158871e+01, t = 2016.816257ms
+step = 42, stepsize = 1.093356e-03, norm = 6.153331e+01, t = 2774.321952ms
+step = 43, stepsize = 5.542292e-04, norm = 6.151476e+01, t = 2219.367292ms
+step = 44, stepsize = 6.578316e-03, norm = 6.126435e+01, t = 2621.829710ms
+step = 45, stepsize = 5.057148e-04, norm = 6.124289e+01, t = 2630.284949ms
+step = 46, stepsize = 7.483421e-04, norm = 6.118770e+01, t = 3551.923356ms
+step = 47, stepsize = 1.397707e-04, norm = 6.115198e+01, t = 3433.512289ms
+step = 48, stepsize = 7.683651e-03, norm = 6.077342e+01, t = 3138.316689ms
+step = 49, stepsize = 3.908840e-03, norm = 6.058092e+01, t = 2752.296979ms
+step = 50, stepsize = 1.139118e-03, norm = 6.054555e+01, t = 2875.783247ms
+step = 51, stepsize = 3.268393e-04, norm = 6.052573e+01, t = 3358.694696ms
+step = 52, stepsize = 1.535882e-04, norm = 6.051184e+01, t = 3128.251602ms
+step = 53, stepsize = 2.123467e-03, norm = 6.041746e+01, t = 2974.935979ms
+step = 54, stepsize = 3.045976e-04, norm = 6.040208e+01, t = 2941.289105ms
+step = 55, stepsize = 2.599978e-03, norm = 6.025806e+01, t = 3198.009152ms
+step = 56, stepsize = 3.025073e-03, norm = 5.993292e+01, t = 2204.807851ms
+step = 57, stepsize = 1.370680e-08, norm = 5.991072e+01, t = 2250.487585ms
+step = 58, stepsize = 7.332312e-04, norm = 5.988769e+01, t = 2988.515477ms
+step = 59, stepsize = 1.077970e-02, norm = 5.894549e+01, t = 2155.854602ms
+step = 60, stepsize = 2.143226e-03, norm = 5.879331e+01, t = 1896.384492ms
+step = 61, stepsize = 3.417888e-04, norm = 5.876085e+01, t = 2974.203055ms
+step = 62, stepsize = 8.806853e-03, norm = 5.833685e+01, t = 2169.756683ms
+step = 63, stepsize = 3.015610e-03, norm = 5.824040e+01, t = 2664.725127ms
+step = 64, stepsize = 2.590585e-03, norm = 5.791181e+01, t = 1813.986870ms
+step = 65, stepsize = 5.151626e-03, norm = 5.769066e+01, t = 2366.914953ms
+step = 66, stepsize = 3.831750e-03, norm = 5.752038e+01, t = 2777.196982ms
+step = 67, stepsize = 3.270945e-03, norm = 5.742433e+01, t = 2635.354310ms
+step = 68, stepsize = 4.217481e-03, norm = 5.692359e+01, t = 1839.913698ms
+step = 69, stepsize = 8.001796e-03, norm = 5.659517e+01, t = 2553.553798ms
+step = 70, stepsize = 9.107031e-04, norm = 5.655099e+01, t = 2352.198760ms
+step = 71, stepsize = 4.778539e-03, norm = 5.639862e+01, t = 2674.638823ms
+step = 72, stepsize = 1.887007e-03, norm = 5.632927e+01, t = 3067.484282ms
+step = 73, stepsize = 1.870007e-03, norm = 5.623951e+01, t = 3211.262650ms
+step = 74, stepsize = 8.143931e-04, norm = 5.621641e+01, t = 2406.395433ms
+step = 75, stepsize = 4.767833e-04, norm = 5.617664e+01, t = 3757.585141ms
+step = 76, stepsize = 1.749534e-03, norm = 5.609007e+01, t = 3020.300303ms
+step = 77, stepsize = 1.231066e-04, norm = 5.606605e+01, t = 2891.525015ms
+step = 78, stepsize = 1.915773e-03, norm = 5.597716e+01, t = 2955.669275ms
+step = 79, stepsize = 1.771890e-03, norm = 5.591318e+01, t = 3130.579087ms
+step = 80, stepsize = 3.363911e-05, norm = 5.590144e+01, t = 2531.641248ms
+step = 81, stepsize = 8.968607e-04, norm = 5.586338e+01, t = 3215.385870ms
+step = 82, stepsize = 4.331160e-04, norm = 5.583538e+01, t = 3278.314923ms
+step = 83, stepsize = 2.038703e-03, norm = 5.538613e+01, t = 2340.572406ms
+step = 84, stepsize = 4.247943e-03, norm = 5.518541e+01, t = 2657.200476ms
+step = 85, stepsize = 2.182981e-03, norm = 5.505403e+01, t = 1790.793879ms
+step = 86, stepsize = 7.232548e-03, norm = 5.484427e+01, t = 2173.452903ms
+step = 87, stepsize = 1.699091e-03, norm = 5.478566e+01, t = 3145.496326ms
+step = 88, stepsize = 2.261494e-03, norm = 5.471462e+01, t = 3041.539286ms
+step = 89, stepsize = 1.908803e-03, norm = 5.465764e+01, t = 3181.938821ms
+step = 90, stepsize = 1.935853e-05, norm = 5.465146e+01, t = 3800.826483ms
+step = 91, stepsize = 3.920421e-04, norm = 5.463025e+01, t = 2569.653124ms
+step = 92, stepsize = 6.422211e-04, norm = 5.459925e+01, t = 2524.452528ms
+step = 93, stepsize = 1.925305e-03, norm = 5.453637e+01, t = 2828.276939ms
+step = 94, stepsize = 1.084580e-03, norm = 5.450543e+01, t = 3232.706388ms
+step = 95, stepsize = 1.711505e-03, norm = 5.444790e+01, t = 2929.868205ms
+step = 96, stepsize = 1.477493e-03, norm = 5.403489e+01, t = 2170.005500ms
+step = 97, stepsize = 1.070229e-03, norm = 5.398312e+01, t = 2608.298511ms
+step = 98, stepsize = 1.608272e-03, norm = 5.392583e+01, t = 2577.335584ms
+step = 99, stepsize = 2.103960e-03, norm = 5.383200e+01, t = 3004.820938ms
+step = 100, stepsize = 2.089763e-03, norm = 5.364090e+01, t = 1799.897059ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 2.089763e-03, final norm = 5.364090e+01
+=========================================================================================
+
+ .... Time: 2.736593e+02 seconds.
+
+ .. Step 15: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 8.434494e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 3.738519e-03, norm = 8.412265e+02, t = 3657.753541ms
+step = 2, stepsize = 9.224637e-03, norm = 8.356557e+02, t = 3428.552746ms
+step = 3, stepsize = 7.940816e-02, norm = 4.468829e+02, t = 2749.512191ms
+step = 4, stepsize = 8.437385e-02, norm = 3.460928e+02, t = 2684.307103ms
+step = 5, stepsize = 1.414033e-07, norm = 3.460678e+02, t = 2697.450201ms
+step = 6, stepsize = 4.377247e-04, norm = 3.459353e+02, t = 4173.802437ms
+step = 7, stepsize = 4.365436e-03, norm = 3.449072e+02, t = 3836.780900ms
+step = 8, stepsize = 1.281981e-02, norm = 3.382016e+02, t = 2611.008539ms
+step = 9, stepsize = 5.394029e-02, norm = 3.044119e+02, t = 2766.963469ms
+step = 10, stepsize = 1.907599e-01, norm = 2.157214e+02, t = 2236.918322ms
+step = 11, stepsize = 1.166265e-01, norm = 1.493007e+02, t = 2492.597518ms
+step = 12, stepsize = 7.288738e-04, norm = 1.492446e+02, t = 3238.696231ms
+step = 13, stepsize = 7.168687e-04, norm = 1.491084e+02, t = 3947.211897ms
+step = 14, stepsize = 9.327247e-03, norm = 1.483976e+02, t = 3427.948451ms
+step = 15, stepsize = 4.848098e-03, norm = 1.479102e+02, t = 3798.232918ms
+step = 16, stepsize = 3.855538e-02, norm = 4.648908e+01, t = 1830.466841ms
+step = 17, stepsize = 1.825329e-02, norm = 3.368685e+01, t = 2155.358915ms
+step = 18, stepsize = 6.612098e-02, norm = 1.979015e+01, t = 2895.051669ms
+step = 19, stepsize = 1.453748e-04, norm = 1.975402e+01, t = 4227.776734ms
+step = 20, stepsize = 1.079786e-02, norm = 1.955507e+01, t = 2558.232586ms
+step = 21, stepsize = 6.925675e-04, norm = 1.944453e+01, t = 3986.557065ms
+step = 22, stepsize = 2.689751e-03, norm = 1.930021e+01, t = 3349.403790ms
+step = 23, stepsize = 2.508350e-03, norm = 1.924658e+01, t = 2582.404435ms
+step = 24, stepsize = 5.157922e-03, norm = 1.913107e+01, t = 2960.781357ms
+step = 25, stepsize = 5.441168e-04, norm = 1.905599e+01, t = 3344.613479ms
+step = 26, stepsize = 9.313739e-04, norm = 1.903740e+01, t = 3257.562553ms
+step = 27, stepsize = 6.909904e-04, norm = 1.899226e+01, t = 2998.162066ms
+step = 28, stepsize = 1.096364e-03, norm = 1.895339e+01, t = 2771.447121ms
+step = 29, stepsize = 1.308212e-03, norm = 1.879117e+01, t = 4106.937935ms
+step = 30, stepsize = 9.855640e-03, norm = 1.846926e+01, t = 2552.630803ms
+step = 31, stepsize = 4.828872e-04, norm = 1.843388e+01, t = 3300.479172ms
+step = 32, stepsize = 1.659854e-02, norm = 1.640615e+01, t = 2126.630182ms
+step = 33, stepsize = 2.375242e-03, norm = 1.629669e+01, t = 3181.356117ms
+step = 34, stepsize = 8.834971e-04, norm = 1.628894e+01, t = 3977.397374ms
+step = 35, stepsize = 1.248220e-03, norm = 1.626840e+01, t = 2537.074843ms
+step = 36, stepsize = 6.184302e-04, norm = 1.622546e+01, t = 3426.300868ms
+step = 37, stepsize = 5.564009e-03, norm = 1.602716e+01, t = 2536.679139ms
+step = 38, stepsize = 3.999992e-03, norm = 1.592814e+01, t = 2952.477955ms
+step = 39, stepsize = 3.167603e-03, norm = 1.590138e+01, t = 2949.749789ms
+step = 40, stepsize = 3.824460e-03, norm = 1.583057e+01, t = 2908.711747ms
+step = 41, stepsize = 1.608596e-03, norm = 1.580734e+01, t = 2991.203903ms
+step = 42, stepsize = 1.944142e-03, norm = 1.564626e+01, t = 2279.299212ms
+step = 43, stepsize = 1.554152e-02, norm = 1.512264e+01, t = 1948.948974ms
+step = 44, stepsize = 6.444966e-03, norm = 1.328746e+01, t = 2239.067891ms
+step = 45, stepsize = 2.237032e-03, norm = 1.322119e+01, t = 2732.104765ms
+step = 46, stepsize = 2.285822e-03, norm = 1.315322e+01, t = 3391.774718ms
+step = 47, stepsize = 5.987372e-04, norm = 1.313743e+01, t = 1888.112253ms
+step = 48, stepsize = 1.126522e-03, norm = 1.312158e+01, t = 2897.691498ms
+step = 49, stepsize = 1.280371e-04, norm = 1.306998e+01, t = 2471.091317ms
+step = 50, stepsize = 4.369632e-03, norm = 1.298619e+01, t = 3157.061270ms
+step = 51, stepsize = 3.587178e-03, norm = 1.291989e+01, t = 2646.191558ms
+step = 52, stepsize = 2.978784e-03, norm = 1.289842e+01, t = 2991.629584ms
+step = 53, stepsize = 7.528623e-04, norm = 1.286415e+01, t = 3102.186066ms
+step = 54, stepsize = 5.782406e-03, norm = 1.280946e+01, t = 3157.765482ms
+step = 55, stepsize = 3.122416e-03, norm = 1.278124e+01, t = 3212.845319ms
+step = 56, stepsize = 3.753711e-02, norm = 1.253286e+01, t = 2687.941030ms
+step = 57, stepsize = 2.216064e-03, norm = 1.247868e+01, t = 3202.981177ms
+step = 58, stepsize = 1.609798e-03, norm = 1.245824e+01, t = 2162.522484ms
+step = 59, stepsize = 5.624397e-04, norm = 1.243119e+01, t = 2629.003686ms
+step = 60, stepsize = 4.377685e-04, norm = 1.238642e+01, t = 3986.621465ms
+step = 61, stepsize = 4.184052e-03, norm = 1.235810e+01, t = 1855.455243ms
+step = 62, stepsize = 2.447694e-03, norm = 1.231060e+01, t = 2878.817490ms
+step = 63, stepsize = 4.103874e-03, norm = 1.222672e+01, t = 3044.864710ms
+step = 64, stepsize = 1.112545e-03, norm = 1.219733e+01, t = 3543.457703ms
+step = 65, stepsize = 1.680985e-03, norm = 1.218381e+01, t = 3450.836148ms
+step = 66, stepsize = 7.707972e-03, norm = 1.213139e+01, t = 2571.190676ms
+step = 67, stepsize = 2.954544e-04, norm = 1.209726e+01, t = 1989.169200ms
+step = 68, stepsize = 6.235278e-03, norm = 1.187270e+01, t = 1804.036642ms
+step = 69, stepsize = 2.704898e-03, norm = 1.182667e+01, t = 2267.216590ms
+step = 70, stepsize = 9.294688e-03, norm = 1.169652e+01, t = 2207.721128ms
+step = 71, stepsize = 1.601616e-03, norm = 1.168644e+01, t = 2939.764486ms
+step = 72, stepsize = 1.533860e-03, norm = 1.166640e+01, t = 2988.551517ms
+step = 73, stepsize = 3.062443e-03, norm = 1.164706e+01, t = 2657.206926ms
+step = 74, stepsize = 2.282489e-03, norm = 1.161863e+01, t = 3197.543784ms
+step = 75, stepsize = 4.822037e-03, norm = 1.156193e+01, t = 3151.950153ms
+step = 76, stepsize = 3.652336e-03, norm = 1.152328e+01, t = 3249.990178ms
+step = 77, stepsize = 3.259853e-04, norm = 1.151181e+01, t = 4100.846306ms
+step = 78, stepsize = 3.163165e-03, norm = 1.148553e+01, t = 2646.904802ms
+step = 79, stepsize = 5.289333e-04, norm = 1.147971e+01, t = 2167.054624ms
+step = 80, stepsize = 8.822066e-03, norm = 1.140528e+01, t = 2616.001393ms
+step = 81, stepsize = 4.220956e-03, norm = 1.134660e+01, t = 2698.750122ms
+step = 82, stepsize = 1.132240e-02, norm = 1.125949e+01, t = 3229.274600ms
+step = 83, stepsize = 1.045734e-03, norm = 1.122373e+01, t = 3064.736145ms
+step = 84, stepsize = 4.609006e-03, norm = 1.112390e+01, t = 2204.625453ms
+step = 85, stepsize = 4.220276e-03, norm = 1.107131e+01, t = 3032.246615ms
+step = 86, stepsize = 2.000311e-03, norm = 1.105175e+01, t = 3266.743853ms
+step = 87, stepsize = 2.548652e-03, norm = 1.103476e+01, t = 3318.756235ms
+step = 88, stepsize = 7.889530e-10, norm = 1.101828e+01, t = 1748.716086ms
+step = 89, stepsize = 3.981077e-03, norm = 1.099434e+01, t = 2891.064634ms
+step = 90, stepsize = 1.154579e-02, norm = 1.092499e+01, t = 2829.379353ms
+step = 91, stepsize = 1.091942e-02, norm = 1.084760e+01, t = 2167.227737ms
+step = 92, stepsize = 4.437802e-03, norm = 1.081427e+01, t = 3246.895809ms
+step = 93, stepsize = 1.151308e-04, norm = 1.078136e+01, t = 2082.136733ms
+step = 94, stepsize = 1.768942e-02, norm = 1.061914e+01, t = 2629.493488ms
+step = 95, stepsize = 4.179345e-03, norm = 1.057646e+01, t = 3178.384787ms
+step = 96, stepsize = 4.450192e-03, norm = 1.053282e+01, t = 3296.417633ms
+step = 97, stepsize = 8.749482e-04, norm = 1.049853e+01, t = 4437.315548ms
+step = 98, stepsize = 3.758853e-03, norm = 1.043636e+01, t = 3661.422670ms
+step = 99, stepsize = 1.910694e-03, norm = 1.040933e+01, t = 3882.571152ms
+step = 100, stepsize = 7.363619e-04, norm = 1.039832e+01, t = 3615.406338ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 7.363619e-04, final norm = 1.039832e+01
+=========================================================================================
+
+ .... Time: 2.948384e+02 seconds.
+
+ .. Step 16: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 9.011359e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 7.756484e-02, norm = 7.135808e+02, t = 2756.160008ms
+step = 2, stepsize = 7.623536e-02, norm = 5.889089e+02, t = 2808.197207ms
+step = 3, stepsize = 8.499753e-02, norm = 4.582049e+02, t = 2646.150326ms
+step = 4, stepsize = 5.766193e-01, norm = 3.105458e+02, t = 1537.903835ms
+step = 5, stepsize = 4.496049e-03, norm = 3.096408e+02, t = 3836.123848ms
+step = 6, stepsize = 1.360046e-01, norm = 2.792838e+02, t = 2208.859310ms
+step = 7, stepsize = 5.526169e-01, norm = 1.699120e+02, t = 1433.432580ms
+step = 8, stepsize = 8.013342e-02, norm = 1.388930e+02, t = 2506.577871ms
+step = 9, stepsize = 1.340061e-03, norm = 1.387302e+02, t = 3655.934244ms
+step = 10, stepsize = 5.219000e-03, norm = 1.379141e+02, t = 4093.608040ms
+step = 11, stepsize = 6.568385e-02, norm = 1.319342e+02, t = 2670.880754ms
+step = 12, stepsize = 2.741324e-01, norm = 1.122268e+02, t = 1900.582813ms
+step = 13, stepsize = 6.598882e-02, norm = 1.071506e+02, t = 2483.003110ms
+step = 14, stepsize = 1.347485e-01, norm = 9.807717e+01, t = 2222.846448ms
+step = 15, stepsize = 5.513373e-01, norm = 6.803032e+01, t = 1513.616533ms
+step = 16, stepsize = 5.537057e-01, norm = 4.365818e+01, t = 1450.721232ms
+step = 17, stepsize = 5.505637e-01, norm = 2.334842e+01, t = 1546.925747ms
+step = 18, stepsize = 5.656879e-01, norm = 1.105618e+01, t = 1487.442353ms
+step = 19, stepsize = 5.581000e-01, norm = 4.819698e+00, t = 1512.882456ms
+step = 20, stepsize = 5.693025e-01, norm = 2.171940e+00, t = 1478.327008ms
+step = 21, stepsize = 9.866710e-01, norm = 3.014312e-01, t = 2068.731549ms
+step = 22, stepsize = 2.733971e-02, norm = 2.819935e-01, t = 3240.373046ms
+step = 23, stepsize = 8.454115e-02, norm = 3.838205e-02, t = 2240.118255ms
+step = 24, stepsize = 1.833115e-08, norm = 3.357080e-02, t = 4936.953972ms
+step = 25, stepsize = 2.172576e-08, norm = 3.335285e-02, t = 4588.211304ms
+step = 26, stepsize = 6.305611e-05, norm = 1.285155e-02, t = 5592.680403ms
+step = 27, stepsize = 3.254081e-09, norm = 5.421532e-03, t = 4191.259903ms
+step = 28, stepsize = 1.016185e-08, norm = 1.652453e-03, t = 3253.292997ms
+step = 29, stepsize = 5.615558e-10, norm = 1.581517e-03, t = 3140.513124ms
+step = 30, stepsize = 4.571444e-09, norm = 1.546098e-03, t = 2099.764889ms
+step = 31, stepsize = 1.749889e-09, norm = 1.498093e-03, t = 2922.076521ms
+step = 32, stepsize = 3.290181e-10, norm = 1.498061e-03, t = 3035.209132ms
+step = 33, stepsize = 1.118707e-09, norm = 1.479186e-03, t = 2262.260501ms
+step = 34, stepsize = 1.465703e-09, norm = 1.463878e-03, t = 2475.470260ms
+step = 35, stepsize = 1.222440e-09, norm = 1.462661e-03, t = 2632.117710ms
+step = 36, stepsize = 8.231116e-10, norm = 1.461341e-03, t = 3011.899129ms
+step = 37, stepsize = 1.519920e-09, norm = 1.460038e-03, t = 2981.566117ms
+step = 38, stepsize = 1.131210e-09, norm = 1.426220e-03, t = 3280.880779ms
+step = 39, stepsize = 7.658652e-10, norm = 1.426197e-03, t = 2600.215093ms
+step = 40, stepsize = 7.085541e-10, norm = 1.426132e-03, t = 2886.633942ms
+step = 41, stepsize = 1.159378e-09, norm = 1.426131e-03, t = 2726.321408ms
+step = 42, stepsize = 6.762555e-10, norm = 1.426131e-03, t = 2197.075458ms
+step = 43, stepsize = 5.700274e-10, norm = 1.426131e-03, t = 2391.208307ms
+step = 44, stepsize = 6.520579e-10, norm = 1.426103e-03, t = 2776.083425ms
+step = 45, stepsize = 2.754647e-09, norm = 1.409625e-03, t = 2605.065990ms
+step = 46, stepsize = 4.429021e-11, norm = 1.409625e-03, t = 3123.837213ms
+step = 47, stepsize = 6.613830e-10, norm = 1.409625e-03, t = 3333.509972ms
+step = 48, stepsize = 1.099741e-10, norm = 1.409625e-03, t = 2182.467059ms
+step = 49, stepsize = 4.102771e-10, norm = 1.409597e-03, t = 2498.977062ms
+step = 50, stepsize = 1.951945e-10, norm = 1.409597e-03, t = 2950.800241ms
+step = 51, stepsize = 9.939255e-10, norm = 1.409563e-03, t = 2126.376086ms
+step = 52, stepsize = 2.964063e-10, norm = 1.409563e-03, t = 2538.475126ms
+step = 53, stepsize = 7.073711e-10, norm = 1.409530e-03, t = 2149.404396ms
+step = 54, stepsize = 1.437676e-09, norm = 1.408363e-03, t = 2576.392750ms
+step = 55, stepsize = 8.834075e-10, norm = 1.408341e-03, t = 2822.442097ms
+step = 56, stepsize = 1.886359e-10, norm = 1.408341e-03, t = 2472.863775ms
+step = 57, stepsize = 4.760557e-10, norm = 1.408341e-03, t = 2123.113498ms
+step = 58, stepsize = 5.913827e-10, norm = 1.408338e-03, t = 2483.644183ms
+step = 59, stepsize = 5.933677e-10, norm = 1.408305e-03, t = 2461.653673ms
+step = 60, stepsize = 3.698857e-10, norm = 1.408275e-03, t = 2819.738896ms
+step = 61, stepsize = 6.522491e-10, norm = 1.408275e-03, t = 2094.032160ms
+step = 62, stepsize = 8.225484e-10, norm = 1.408273e-03, t = 2411.826803ms
+step = 63, stepsize = 3.867587e-10, norm = 1.408246e-03, t = 2703.820046ms
+step = 64, stepsize = 6.181633e-10, norm = 1.408246e-03, t = 2696.346423ms
+step = 65, stepsize = 7.669689e-10, norm = 1.408245e-03, t = 2526.198376ms
+step = 66, stepsize = 9.988174e-10, norm = 1.407891e-03, t = 2645.285837ms
+step = 67, stepsize = 4.503059e-10, norm = 1.407891e-03, t = 2493.752184ms
+step = 68, stepsize = 3.033039e-10, norm = 1.407831e-03, t = 2447.598534ms
+step = 69, stepsize = 7.748737e-10, norm = 1.407809e-03, t = 2291.204333ms
+step = 70, stepsize = 5.370894e-10, norm = 1.407809e-03, t = 2089.894849ms
+step = 71, stepsize = 6.412389e-10, norm = 1.406371e-03, t = 2944.514844ms
+step = 72, stepsize = 5.633630e-10, norm = 1.406371e-03, t = 1414.359535ms
+step = 73, stepsize = 7.539089e-10, norm = 1.406306e-03, t = 2567.659650ms
+step = 74, stepsize = 2.248011e-10, norm = 1.406306e-03, t = 2956.771352ms
+step = 75, stepsize = 3.280888e-10, norm = 1.406305e-03, t = 2600.662522ms
+step = 76, stepsize = 9.567983e-10, norm = 1.406243e-03, t = 2412.058731ms
+step = 77, stepsize = 3.698179e-10, norm = 1.406210e-03, t = 2758.958965ms
+step = 78, stepsize = 1.408771e-09, norm = 1.405109e-03, t = 3080.812905ms
+step = 79, stepsize = 6.723283e-10, norm = 1.403707e-03, t = 2827.971558ms
+step = 80, stepsize = 1.370925e-09, norm = 1.378882e-03, t = 2071.031134ms
+step = 81, stepsize = 4.539982e-10, norm = 1.378860e-03, t = 2379.700432ms
+step = 82, stepsize = 1.596070e-10, norm = 1.378860e-03, t = 2490.946784ms
+step = 83, stepsize = 4.942546e-10, norm = 1.378811e-03, t = 2532.196147ms
+step = 84, stepsize = 2.062915e-09, norm = 1.361424e-03, t = 2476.818560ms
+step = 85, stepsize = 1.743275e-10, norm = 1.361424e-03, t = 2510.444088ms
+step = 86, stepsize = 6.896262e-10, norm = 1.361423e-03, t = 2140.315682ms
+step = 87, stepsize = 8.427837e-10, norm = 1.361420e-03, t = 2598.938399ms
+step = 88, stepsize = 2.881083e-09, norm = 1.361126e-03, t = 2186.835915ms
+step = 89, stepsize = 4.543623e-10, norm = 1.361093e-03, t = 2443.194554ms
+step = 90, stepsize = 4.794183e-10, norm = 1.361093e-03, t = 3712.270103ms
+step = 91, stepsize = 5.161831e-10, norm = 1.361071e-03, t = 2135.101065ms
+step = 92, stepsize = 6.675644e-10, norm = 1.359933e-03, t = 3288.587506ms
+step = 93, stepsize = 1.771778e-10, norm = 1.359933e-03, t = 3381.051832ms
+step = 94, stepsize = 1.572023e-10, norm = 1.359933e-03, t = 2196.451657ms
+step = 95, stepsize = 2.198080e-10, norm = 1.359933e-03, t = 2530.755949ms
+step = 96, stepsize = 4.126308e-10, norm = 1.359933e-03, t = 2591.476533ms
+step = 97, stepsize = 1.502663e-09, norm = 1.328864e-03, t = 2529.350638ms
+step = 98, stepsize = 2.773692e-10, norm = 1.328863e-03, t = 2532.026403ms
+step = 99, stepsize = 5.415963e-10, norm = 1.328824e-03, t = 3342.734124ms
+step = 100, stepsize = 1.666324e-10, norm = 1.328824e-03, t = 2802.235215ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.666324e-10, final norm = 1.328824e-03
+=========================================================================================
+
+ .... Time: 2.634158e+02 seconds.
+
+ .. Step 17: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 9.662632e+02, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.989322e-01, norm = 7.437448e+02, t = 2176.653601ms
+step = 2, stepsize = 1.790708e-03, norm = 7.427001e+02, t = 3968.862257ms
+step = 3, stepsize = 5.752712e-01, norm = 5.262092e+02, t = 1396.168628ms
+step = 4, stepsize = 3.094588e-02, norm = 5.156442e+02, t = 2796.639753ms
+step = 5, stepsize = 2.744545e-01, norm = 4.170082e+02, t = 1750.367792ms
+step = 6, stepsize = 6.496606e-02, norm = 3.977771e+02, t = 2385.554590ms
+step = 7, stepsize = 5.581929e-01, norm = 2.277753e+02, t = 1435.069542ms
+step = 8, stepsize = 2.913320e-02, norm = 2.241535e+02, t = 2777.972349ms
+step = 9, stepsize = 3.441585e-04, norm = 2.238758e+02, t = 3222.508135ms
+step = 10, stepsize = 1.340045e-01, norm = 2.071466e+02, t = 2312.745409ms
+step = 11, stepsize = 5.585143e-01, norm = 8.322755e+01, t = 1537.691531ms
+step = 12, stepsize = 5.580704e-01, norm = 3.216137e+01, t = 1443.552635ms
+step = 13, stepsize = 5.512794e-01, norm = 1.746714e+01, t = 1412.358303ms
+step = 14, stepsize = 5.544118e-01, norm = 7.892793e+00, t = 1479.333919ms
+step = 15, stepsize = 5.442580e-01, norm = 4.019993e+00, t = 1404.713186ms
+step = 16, stepsize = 5.246050e-01, norm = 2.028013e+00, t = 1476.450361ms
+step = 17, stepsize = 6.848841e-01, norm = 4.621572e-01, t = 1440.401963ms
+step = 18, stepsize = 3.723801e-01, norm = 9.237391e-02, t = 2249.446386ms
+step = 19, stepsize = 2.301990e-03, norm = 4.196009e-02, t = 3603.891266ms
+step = 20, stepsize = 1.197224e-01, norm = 3.887027e-02, t = 1759.685170ms
+step = 21, stepsize = 3.569921e-09, norm = 3.524735e-02, t = 3786.239826ms
+step = 22, stepsize = 3.164614e-09, norm = 3.271602e-02, t = 3818.798913ms
+step = 23, stepsize = 2.352245e-10, norm = 3.271602e-02, t = 3870.168004ms
+step = 24, stepsize = 1.037716e-08, norm = 2.509687e-02, t = 4524.688171ms
+step = 25, stepsize = 1.368881e-10, norm = 2.496506e-02, t = 5265.246755ms
+step = 26, stepsize = 1.620337e-08, norm = 2.427019e-02, t = 3756.555789ms
+step = 27, stepsize = 3.205106e-10, norm = 2.409784e-02, t = 4585.988877ms
+step = 28, stepsize = 2.058471e-10, norm = 2.409775e-02, t = 4136.307998ms
+step = 29, stepsize = 4.859221e-10, norm = 2.399655e-02, t = 5249.232651ms
+step = 30, stepsize = 5.866457e-10, norm = 2.399655e-02, t = 4180.205166ms
+step = 31, stepsize = 1.970097e-09, norm = 1.828425e-02, t = 4431.336677ms
+step = 32, stepsize = 5.024268e-09, norm = 1.502635e-02, t = 3851.423254ms
+step = 33, stepsize = 2.143711e-09, norm = 9.524676e-03, t = 4122.746439ms
+step = 34, stepsize = 2.536892e-10, norm = 9.524674e-03, t = 3148.303268ms
+step = 35, stepsize = 1.534399e-09, norm = 9.302134e-03, t = 2775.541616ms
+step = 36, stepsize = 3.505675e-09, norm = 9.301271e-03, t = 3306.422520ms
+step = 37, stepsize = 1.679162e-09, norm = 9.299877e-03, t = 3425.911073ms
+step = 38, stepsize = 1.679450e-08, norm = 9.039542e-03, t = 2686.596648ms
+step = 39, stepsize = 2.465307e-08, norm = 7.420603e-03, t = 4230.426057ms
+step = 40, stepsize = 2.029242e-09, norm = 7.406041e-03, t = 3152.960572ms
+step = 41, stepsize = 1.250840e-08, norm = 4.380201e-03, t = 3822.946192ms
+step = 42, stepsize = 9.458553e-10, norm = 2.921332e-03, t = 2558.337221ms
+step = 43, stepsize = 2.549553e-09, norm = 2.819224e-03, t = 2072.505145ms
+step = 44, stepsize = 1.597635e-09, norm = 2.815228e-03, t = 3808.383690ms
+step = 45, stepsize = 5.150190e-10, norm = 2.812923e-03, t = 3068.823523ms
+step = 46, stepsize = 2.082393e-10, norm = 2.795394e-03, t = 3440.082000ms
+step = 47, stepsize = 7.596866e-09, norm = 2.792301e-03, t = 2115.804403ms
+step = 48, stepsize = 2.654015e-09, norm = 2.757247e-03, t = 2384.803002ms
+step = 49, stepsize = 1.124236e-09, norm = 2.757233e-03, t = 2790.349369ms
+step = 50, stepsize = 1.188312e-09, norm = 2.676762e-03, t = 2664.700947ms
+step = 51, stepsize = 1.108399e-09, norm = 2.676755e-03, t = 2792.428363ms
+step = 52, stepsize = 5.698702e-10, norm = 2.676744e-03, t = 2695.220935ms
+step = 53, stepsize = 2.478623e-09, norm = 2.647948e-03, t = 3305.365079ms
+step = 54, stepsize = 2.569277e-11, norm = 2.643127e-03, t = 5813.452446ms
+step = 55, stepsize = 1.874749e-09, norm = 2.607066e-03, t = 3054.238978ms
+step = 56, stepsize = 2.865773e-10, norm = 2.578159e-03, t = 4136.837311ms
+step = 57, stepsize = 4.030974e-09, norm = 2.578107e-03, t = 2847.222574ms
+step = 58, stepsize = 3.517943e-09, norm = 2.559246e-03, t = 3621.430903ms
+step = 59, stepsize = 4.984272e-09, norm = 2.425744e-03, t = 2329.026223ms
+step = 60, stepsize = 1.872733e-09, norm = 2.417942e-03, t = 2585.828394ms
+step = 61, stepsize = 1.729206e-10, norm = 2.416162e-03, t = 4487.050959ms
+step = 62, stepsize = 8.844665e-10, norm = 2.414998e-03, t = 3522.919096ms
+step = 63, stepsize = 1.682591e-10, norm = 2.414998e-03, t = 3743.560143ms
+step = 64, stepsize = 2.026224e-09, norm = 2.410999e-03, t = 2771.339934ms
+step = 65, stepsize = 1.063276e-10, norm = 2.410999e-03, t = 2854.214747ms
+step = 66, stepsize = 7.890766e-10, norm = 2.410996e-03, t = 2804.933239ms
+step = 67, stepsize = 4.989175e-09, norm = 2.408895e-03, t = 3280.992672ms
+step = 68, stepsize = 1.766571e-09, norm = 2.405741e-03, t = 2587.735091ms
+step = 69, stepsize = 1.296328e-09, norm = 2.401588e-03, t = 2620.579459ms
+step = 70, stepsize = 1.359231e-11, norm = 2.401180e-03, t = 5289.315458ms
+step = 71, stepsize = 6.067258e-11, norm = 2.400958e-03, t = 5173.458032ms
+step = 72, stepsize = 4.091384e-09, norm = 2.397639e-03, t = 2141.967620ms
+step = 73, stepsize = 1.046969e-08, norm = 2.396754e-03, t = 2470.915452ms
+step = 74, stepsize = 1.691300e-10, norm = 2.396742e-03, t = 3549.053122ms
+step = 75, stepsize = 2.455577e-09, norm = 2.322927e-03, t = 2374.274661ms
+step = 76, stepsize = 2.389248e-10, norm = 2.322924e-03, t = 3204.432808ms
+step = 77, stepsize = 2.316211e-09, norm = 2.322909e-03, t = 2754.481110ms
+step = 78, stepsize = 4.137296e-11, norm = 2.322235e-03, t = 4213.528271ms
+step = 79, stepsize = 1.760998e-10, norm = 2.321577e-03, t = 3532.336074ms
+step = 80, stepsize = 7.911490e-09, norm = 2.319144e-03, t = 2064.839595ms
+step = 81, stepsize = 2.369507e-09, norm = 2.318684e-03, t = 1426.347385ms
+step = 82, stepsize = 7.203525e-11, norm = 2.318684e-03, t = 3189.037622ms
+step = 83, stepsize = 0.000000e+00, norm = 2.318684e-03, t = 2896.726621ms
+=========================================================================================
+Finished Newton's method after 83 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 2.318684e-03
+=========================================================================================
+
+ .... Time: 2.552212e+02 seconds.
+
+ .. Step 18: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.038960e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.686649e-01, norm = 3.940179e+02, t = 1362.307884ms
+step = 2, stepsize = 4.626891e-03, norm = 3.926287e+02, t = 3523.849031ms
+step = 3, stepsize = 6.348775e-02, norm = 3.798792e+02, t = 2585.644673ms
+step = 4, stepsize = 2.950200e-05, norm = 3.797348e+02, t = 4473.883453ms
+step = 5, stepsize = 1.355492e-01, norm = 3.445279e+02, t = 2189.368344ms
+step = 6, stepsize = 1.129278e-03, norm = 3.440558e+02, t = 4143.291103ms
+step = 7, stepsize = 1.356422e-01, norm = 3.113555e+02, t = 2166.806433ms
+step = 8, stepsize = 5.542215e-01, norm = 1.551416e+02, t = 1435.231043ms
+step = 9, stepsize = 9.575079e-04, norm = 1.547348e+02, t = 3666.928278ms
+step = 10, stepsize = 2.986014e-02, norm = 1.517721e+02, t = 2863.645492ms
+step = 11, stepsize = 3.093319e-01, norm = 7.424318e+01, t = 1915.013797ms
+step = 12, stepsize = 3.102821e-01, norm = 4.240145e+01, t = 1763.975269ms
+step = 13, stepsize = 6.379764e-02, norm = 4.103522e+01, t = 2494.329090ms
+step = 14, stepsize = 2.966147e-01, norm = 1.714948e+01, t = 1798.863336ms
+step = 15, stepsize = 1.379509e-01, norm = 1.490759e+01, t = 2108.163516ms
+step = 16, stepsize = 6.604964e-02, norm = 1.435986e+01, t = 2419.068176ms
+step = 17, stepsize = 2.587782e-02, norm = 1.413555e+01, t = 2765.400809ms
+step = 18, stepsize = 7.096203e-02, norm = 1.264904e+01, t = 2426.258894ms
+step = 19, stepsize = 6.426869e-02, norm = 1.224090e+01, t = 2513.409259ms
+step = 20, stepsize = 3.304763e-02, norm = 1.191751e+01, t = 2882.561123ms
+step = 21, stepsize = 1.383003e-01, norm = 1.045213e+01, t = 2217.501601ms
+step = 22, stepsize = 6.331050e-02, norm = 1.003455e+01, t = 2472.372927ms
+step = 23, stepsize = 1.296665e-01, norm = 8.958390e+00, t = 2228.754296ms
+step = 24, stepsize = 6.490728e-02, norm = 8.479582e+00, t = 2581.215848ms
+step = 25, stepsize = 6.775965e-02, norm = 7.981496e+00, t = 2478.590771ms
+step = 26, stepsize = 1.335785e-01, norm = 7.109066e+00, t = 2146.327648ms
+step = 27, stepsize = 1.379589e-01, norm = 6.171032e+00, t = 2479.009760ms
+step = 28, stepsize = 6.527863e-02, norm = 5.785499e+00, t = 2813.126043ms
+step = 29, stepsize = 1.333554e-01, norm = 5.176848e+00, t = 2130.597359ms
+step = 30, stepsize = 1.278559e-01, norm = 4.663237e+00, t = 2256.376300ms
+step = 31, stepsize = 2.041077e-01, norm = 2.110719e+00, t = 2120.217853ms
+step = 32, stepsize = 1.799302e-01, norm = 1.146997e+00, t = 2119.787017ms
+step = 33, stepsize = 7.195782e-03, norm = 8.961540e-01, t = 3547.813176ms
+step = 34, stepsize = 3.427885e-02, norm = 8.021523e-01, t = 2879.718133ms
+step = 35, stepsize = 1.055864e-01, norm = 3.570963e-01, t = 2126.873527ms
+step = 36, stepsize = 7.078807e-02, norm = 3.238530e-01, t = 2154.756892ms
+step = 37, stepsize = 1.735227e-04, norm = 1.808091e-01, t = 5062.662219ms
+step = 38, stepsize = 1.093353e-09, norm = 1.046568e-01, t = 6171.739398ms
+step = 39, stepsize = 0.000000e+00, norm = 1.046568e-01, t = 6688.878210ms
+=========================================================================================
+Finished Newton's method after 39 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 1.046568e-01
+=========================================================================================
+
+ .... Time: 1.081934e+02 seconds.
+
+ .. Step 19: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.120107e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.285116e-02, norm = 1.111451e+03, t = 3401.886159ms
+step = 2, stepsize = 7.309203e-02, norm = 4.337188e+02, t = 2772.849408ms
+step = 3, stepsize = 3.822895e-03, norm = 4.328383e+02, t = 3484.726158ms
+step = 4, stepsize = 1.367967e-01, norm = 3.851997e+02, t = 2118.182993ms
+step = 5, stepsize = 5.054325e-02, norm = 2.522354e+02, t = 2509.141291ms
+step = 6, stepsize = 1.167210e-03, norm = 2.520128e+02, t = 4103.382664ms
+step = 7, stepsize = 6.401811e-02, norm = 2.424326e+02, t = 2746.276601ms
+step = 8, stepsize = 4.065483e-04, norm = 2.423723e+02, t = 3545.683642ms
+step = 9, stepsize = 4.009968e-02, norm = 1.057926e+02, t = 2167.226799ms
+step = 10, stepsize = 1.118258e-03, norm = 1.055921e+02, t = 3488.150922ms
+step = 11, stepsize = 2.590223e-02, norm = 1.040747e+02, t = 2851.331993ms
+step = 12, stepsize = 1.338268e-03, norm = 1.037569e+02, t = 3593.749977ms
+step = 13, stepsize = 3.145712e-02, norm = 1.017436e+02, t = 3045.831903ms
+step = 14, stepsize = 1.867843e-03, norm = 1.014388e+02, t = 4029.221290ms
+step = 15, stepsize = 2.185691e-02, norm = 9.187010e+01, t = 2263.700707ms
+step = 16, stepsize = 2.982884e-02, norm = 6.195245e+01, t = 1899.503277ms
+step = 17, stepsize = 5.602573e-03, norm = 6.168490e+01, t = 3724.456302ms
+step = 18, stepsize = 2.731582e-02, norm = 3.177219e+01, t = 2083.901726ms
+step = 19, stepsize = 2.874639e-02, norm = 3.080518e+01, t = 1802.014812ms
+step = 20, stepsize = 1.774814e-02, norm = 2.895784e+01, t = 1753.631449ms
+step = 21, stepsize = 2.779899e-03, norm = 2.878903e+01, t = 3143.285237ms
+step = 22, stepsize = 1.373167e-03, norm = 2.833273e+01, t = 3959.006110ms
+step = 23, stepsize = 8.038741e-04, norm = 2.802278e+01, t = 1839.615100ms
+step = 24, stepsize = 5.894853e-03, norm = 2.755556e+01, t = 2989.281735ms
+step = 25, stepsize = 2.214923e-03, norm = 2.748859e+01, t = 2900.381377ms
+step = 26, stepsize = 6.546203e-02, norm = 2.428776e+01, t = 2233.034561ms
+step = 27, stepsize = 8.490779e-03, norm = 2.417316e+01, t = 3492.526973ms
+step = 28, stepsize = 8.385743e-03, norm = 2.405465e+01, t = 3204.705259ms
+step = 29, stepsize = 7.637377e-04, norm = 2.394632e+01, t = 3491.009730ms
+step = 30, stepsize = 8.057496e-04, norm = 2.390492e+01, t = 2773.811644ms
+step = 31, stepsize = 4.868811e-03, norm = 2.378964e+01, t = 2864.650522ms
+step = 32, stepsize = 6.614361e-05, norm = 2.368231e+01, t = 3594.900358ms
+step = 33, stepsize = 1.134774e-02, norm = 2.328707e+01, t = 3144.810159ms
+step = 34, stepsize = 1.945022e-02, norm = 1.332344e+01, t = 1840.309270ms
+step = 35, stepsize = 8.836437e-04, norm = 1.331052e+01, t = 2211.166183ms
+step = 36, stepsize = 8.924392e-03, norm = 1.323627e+01, t = 2815.168383ms
+step = 37, stepsize = 9.308749e-04, norm = 1.305184e+01, t = 3150.037031ms
+step = 38, stepsize = 1.612495e-03, norm = 1.298530e+01, t = 2471.609941ms
+step = 39, stepsize = 2.610228e-03, norm = 1.243728e+01, t = 2205.983946ms
+step = 40, stepsize = 1.469503e-02, norm = 1.171059e+01, t = 1838.415724ms
+step = 41, stepsize = 1.914963e-03, norm = 1.167634e+01, t = 3589.657533ms
+step = 42, stepsize = 2.423107e-03, norm = 1.154760e+01, t = 2512.090300ms
+step = 43, stepsize = 1.929137e-03, norm = 1.142068e+01, t = 2878.681388ms
+step = 44, stepsize = 3.613048e-03, norm = 1.126859e+01, t = 2802.328710ms
+step = 45, stepsize = 2.709947e-03, norm = 1.121845e+01, t = 2531.476376ms
+step = 46, stepsize = 2.032169e-03, norm = 1.107141e+01, t = 3229.910388ms
+step = 47, stepsize = 4.480161e-03, norm = 1.102880e+01, t = 3227.448960ms
+step = 48, stepsize = 2.433470e-04, norm = 1.092984e+01, t = 2163.038592ms
+step = 49, stepsize = 6.154897e-03, norm = 1.065488e+01, t = 2792.669990ms
+step = 50, stepsize = 3.500593e-03, norm = 9.294184e+00, t = 2678.399297ms
+step = 51, stepsize = 3.547312e-03, norm = 9.230821e+00, t = 2535.900175ms
+step = 52, stepsize = 3.450276e-04, norm = 9.202995e+00, t = 3717.672108ms
+step = 53, stepsize = 5.082426e-03, norm = 9.097654e+00, t = 3248.906614ms
+step = 54, stepsize = 1.979253e-03, norm = 9.087503e+00, t = 2887.533707ms
+step = 55, stepsize = 2.171736e-03, norm = 9.008707e+00, t = 1757.757135ms
+step = 56, stepsize = 2.265642e-02, norm = 8.890915e+00, t = 2101.501372ms
+step = 57, stepsize = 2.685837e-03, norm = 8.814276e+00, t = 3213.447645ms
+step = 58, stepsize = 3.786449e-03, norm = 8.779773e+00, t = 2501.838630ms
+step = 59, stepsize = 3.034949e-03, norm = 8.762847e+00, t = 3121.734619ms
+step = 60, stepsize = 9.595124e-04, norm = 8.665939e+00, t = 2501.461123ms
+step = 61, stepsize = 1.449092e-03, norm = 8.650830e+00, t = 2504.540119ms
+step = 62, stepsize = 9.216705e-03, norm = 8.579595e+00, t = 2081.624540ms
+step = 63, stepsize = 5.585598e-03, norm = 8.541677e+00, t = 2496.465409ms
+step = 64, stepsize = 3.215138e-08, norm = 8.540454e+00, t = 3254.805445ms
+step = 65, stepsize = 5.541237e-04, norm = 8.532069e+00, t = 1808.294444ms
+step = 66, stepsize = 6.191009e-03, norm = 8.484788e+00, t = 2892.685724ms
+step = 67, stepsize = 1.165402e-02, norm = 8.367984e+00, t = 2519.462853ms
+step = 68, stepsize = 7.021207e-03, norm = 8.319204e+00, t = 2474.339934ms
+step = 69, stepsize = 1.296687e-02, norm = 8.257952e+00, t = 2157.863774ms
+step = 70, stepsize = 6.628275e-03, norm = 8.202132e+00, t = 2057.000335ms
+step = 71, stepsize = 1.704033e-02, norm = 8.043291e+00, t = 2061.026510ms
+step = 72, stepsize = 3.751346e-03, norm = 7.982845e+00, t = 2133.141885ms
+step = 73, stepsize = 8.919232e-05, norm = 7.982118e+00, t = 3730.094470ms
+step = 74, stepsize = 8.965768e-04, norm = 7.971077e+00, t = 3123.855234ms
+step = 75, stepsize = 9.631459e-04, norm = 7.964630e+00, t = 2130.861824ms
+step = 76, stepsize = 6.933282e-03, norm = 7.908088e+00, t = 2171.445678ms
+step = 77, stepsize = 9.268104e-04, norm = 7.901898e+00, t = 2156.158767ms
+step = 78, stepsize = 4.197183e-04, norm = 7.898155e+00, t = 2435.285039ms
+step = 79, stepsize = 7.710607e-03, norm = 7.846393e+00, t = 2505.574308ms
+step = 80, stepsize = 3.403085e-03, norm = 7.832982e+00, t = 2449.576527ms
+step = 81, stepsize = 5.981414e-04, norm = 7.823785e+00, t = 3821.770060ms
+step = 82, stepsize = 1.912304e-03, norm = 7.805822e+00, t = 2481.511652ms
+step = 83, stepsize = 7.656991e-04, norm = 7.794933e+00, t = 2893.817633ms
+step = 84, stepsize = 5.761717e-04, norm = 7.782734e+00, t = 2454.405479ms
+step = 85, stepsize = 6.140288e-03, norm = 7.736871e+00, t = 2541.383981ms
+step = 86, stepsize = 9.650822e-03, norm = 7.686093e+00, t = 2445.156568ms
+step = 87, stepsize = 1.702156e-02, norm = 7.542083e+00, t = 2396.834592ms
+step = 88, stepsize = 3.396201e-04, norm = 7.537303e+00, t = 1710.278564ms
+step = 89, stepsize = 1.041076e-02, norm = 7.458789e+00, t = 2494.557269ms
+step = 90, stepsize = 3.403393e-03, norm = 7.444371e+00, t = 2475.536386ms
+step = 91, stepsize = 2.417082e-03, norm = 7.422792e+00, t = 2822.418404ms
+step = 92, stepsize = 1.439892e-03, norm = 7.403145e+00, t = 3074.343100ms
+step = 93, stepsize = 3.029151e-04, norm = 7.400018e+00, t = 3772.554243ms
+step = 94, stepsize = 1.903485e-05, norm = 7.399175e+00, t = 2138.840199ms
+step = 95, stepsize = 4.348460e-03, norm = 7.379641e+00, t = 3137.596139ms
+step = 96, stepsize = 4.678773e-03, norm = 7.335683e+00, t = 2344.785207ms
+step = 97, stepsize = 3.859721e-03, norm = 7.310791e+00, t = 2574.596322ms
+step = 98, stepsize = 4.894090e-03, norm = 7.283418e+00, t = 2467.669467ms
+step = 99, stepsize = 3.458563e-05, norm = 7.275911e+00, t = 2082.590732ms
+step = 100, stepsize = 1.651120e-03, norm = 7.258774e+00, t = 2497.249091ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.651120e-03, final norm = 7.258774e+00
+=========================================================================================
+
+ .... Time: 2.713416e+02 seconds.
+
+ .. Step 20: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.177288e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.841668e-01, norm = 1.936142e+02, t = 2316.524356ms
+step = 2, stepsize = 4.756457e-03, norm = 1.924354e+02, t = 2479.035297ms
+step = 3, stepsize = 1.392757e-03, norm = 1.919734e+02, t = 3130.831850ms
+step = 4, stepsize = 8.224196e-02, norm = 1.498447e+02, t = 2485.327619ms
+step = 5, stepsize = 1.026185e-02, norm = 1.487079e+02, t = 3260.170113ms
+step = 6, stepsize = 4.507976e-02, norm = 5.574309e+01, t = 2134.916715ms
+step = 7, stepsize = 6.391502e-04, norm = 5.549951e+01, t = 2818.245947ms
+step = 8, stepsize = 7.206393e-04, norm = 5.524694e+01, t = 3342.101301ms
+step = 9, stepsize = 7.677543e-04, norm = 5.499801e+01, t = 3279.013754ms
+step = 10, stepsize = 1.615543e-03, norm = 5.484225e+01, t = 3773.491478ms
+step = 11, stepsize = 2.938732e-02, norm = 5.396565e+01, t = 2775.856914ms
+step = 12, stepsize = 2.639873e-03, norm = 5.363303e+01, t = 2841.468450ms
+step = 13, stepsize = 4.914409e-03, norm = 5.279267e+01, t = 3479.020692ms
+step = 14, stepsize = 8.227242e-05, norm = 5.262565e+01, t = 3161.135842ms
+step = 15, stepsize = 2.333653e-03, norm = 5.215800e+01, t = 3293.424631ms
+step = 16, stepsize = 3.075589e-02, norm = 2.238175e+01, t = 1917.477841ms
+step = 17, stepsize = 8.442004e-03, norm = 2.217155e+01, t = 2609.524559ms
+step = 18, stepsize = 6.288842e-04, norm = 2.197383e+01, t = 2148.831755ms
+step = 19, stepsize = 1.664451e-03, norm = 2.166333e+01, t = 2850.727577ms
+step = 20, stepsize = 2.974087e-03, norm = 1.753489e+01, t = 2826.366808ms
+step = 21, stepsize = 1.105162e-02, norm = 1.539878e+01, t = 2073.450790ms
+step = 22, stepsize = 1.887461e-02, norm = 1.510039e+01, t = 2064.714309ms
+step = 23, stepsize = 4.303126e-03, norm = 1.484093e+01, t = 1766.202286ms
+step = 24, stepsize = 1.654958e-02, norm = 1.362050e+01, t = 1931.809194ms
+step = 25, stepsize = 4.574878e-05, norm = 1.333037e+01, t = 1770.595830ms
+step = 26, stepsize = 1.074794e-02, norm = 1.282910e+01, t = 1740.971036ms
+step = 27, stepsize = 1.456494e-03, norm = 1.278160e+01, t = 2455.694716ms
+step = 28, stepsize = 6.202727e-04, norm = 1.271640e+01, t = 2912.604867ms
+step = 29, stepsize = 3.325464e-04, norm = 1.261437e+01, t = 2598.140675ms
+step = 30, stepsize = 8.614025e-03, norm = 1.241518e+01, t = 2588.947503ms
+step = 31, stepsize = 2.471026e-02, norm = 1.158095e+01, t = 2146.188400ms
+step = 32, stepsize = 1.562029e-03, norm = 1.117084e+01, t = 2773.302887ms
+step = 33, stepsize = 1.929424e-04, norm = 1.113671e+01, t = 3130.692095ms
+step = 34, stepsize = 6.325483e-03, norm = 1.099428e+01, t = 2052.716440ms
+step = 35, stepsize = 1.167765e-03, norm = 1.080266e+01, t = 3113.568092ms
+step = 36, stepsize = 5.387412e-04, norm = 1.076139e+01, t = 3175.073275ms
+step = 37, stepsize = 4.202025e-04, norm = 1.050592e+01, t = 2417.949057ms
+step = 38, stepsize = 1.819030e-03, norm = 1.038450e+01, t = 2923.069598ms
+step = 39, stepsize = 3.472003e-03, norm = 1.022473e+01, t = 2865.857570ms
+step = 40, stepsize = 6.144887e-03, norm = 1.009569e+01, t = 2755.706320ms
+step = 41, stepsize = 6.964209e-03, norm = 9.894657e+00, t = 1923.035389ms
+step = 42, stepsize = 5.500315e-03, norm = 9.715563e+00, t = 2565.291578ms
+step = 43, stepsize = 1.143387e-02, norm = 9.619102e+00, t = 2650.000651ms
+step = 44, stepsize = 3.055483e-03, norm = 9.563304e+00, t = 2700.360448ms
+step = 45, stepsize = 7.088747e-03, norm = 9.299051e+00, t = 1748.038591ms
+step = 46, stepsize = 1.515015e-03, norm = 9.272953e+00, t = 1838.881267ms
+step = 47, stepsize = 1.307922e-03, norm = 9.221236e+00, t = 2090.695607ms
+step = 48, stepsize = 5.967429e-03, norm = 9.140714e+00, t = 2552.014757ms
+step = 49, stepsize = 1.490636e-03, norm = 9.040749e+00, t = 2832.800318ms
+step = 50, stepsize = 5.386812e-05, norm = 9.026199e+00, t = 1716.704991ms
+step = 51, stepsize = 1.274380e-03, norm = 8.945183e+00, t = 2412.808329ms
+step = 52, stepsize = 3.889139e-03, norm = 8.786848e+00, t = 2912.655697ms
+step = 53, stepsize = 5.995864e-03, norm = 8.714595e+00, t = 1765.501750ms
+step = 54, stepsize = 3.751235e-03, norm = 8.625918e+00, t = 2420.882883ms
+step = 55, stepsize = 2.203020e-03, norm = 8.616263e+00, t = 2453.225256ms
+step = 56, stepsize = 4.473049e-03, norm = 8.544088e+00, t = 2508.646711ms
+step = 57, stepsize = 2.103973e-03, norm = 8.469181e+00, t = 1726.656073ms
+step = 58, stepsize = 9.349430e-03, norm = 7.985806e+00, t = 1854.030290ms
+step = 59, stepsize = 3.313314e-04, norm = 7.916890e+00, t = 2518.671601ms
+step = 60, stepsize = 2.016363e-03, norm = 7.905079e+00, t = 2459.322384ms
+step = 61, stepsize = 4.890249e-03, norm = 7.803179e+00, t = 2488.564307ms
+step = 62, stepsize = 2.126730e-04, norm = 7.755454e+00, t = 3678.772207ms
+step = 63, stepsize = 3.685484e-03, norm = 7.679367e+00, t = 2146.001325ms
+step = 64, stepsize = 1.384913e-03, norm = 7.659977e+00, t = 2082.716774ms
+step = 65, stepsize = 1.605108e-03, norm = 7.638668e+00, t = 3128.414058ms
+step = 66, stepsize = 8.188681e-05, norm = 7.633680e+00, t = 4462.163834ms
+step = 67, stepsize = 3.734057e-04, norm = 7.630846e+00, t = 1777.538660ms
+step = 68, stepsize = 1.692117e-04, norm = 7.624875e+00, t = 4475.397099ms
+step = 69, stepsize = 2.915031e-03, norm = 7.608150e+00, t = 2245.926838ms
+step = 70, stepsize = 1.181570e-03, norm = 7.595249e+00, t = 2084.267752ms
+step = 71, stepsize = 8.840202e-03, norm = 7.553325e+00, t = 2089.572340ms
+step = 72, stepsize = 1.153578e-03, norm = 7.536505e+00, t = 2129.995760ms
+step = 73, stepsize = 4.581040e-03, norm = 7.483544e+00, t = 2106.608430ms
+step = 74, stepsize = 2.843745e-11, norm = 7.481418e+00, t = 4304.224473ms
+step = 75, stepsize = 3.619061e-03, norm = 7.453425e+00, t = 2132.873828ms
+step = 76, stepsize = 1.459178e-07, norm = 7.451910e+00, t = 6176.893573ms
+step = 77, stepsize = 1.216082e-03, norm = 7.443202e+00, t = 3118.834004ms
+step = 78, stepsize = 1.852371e-11, norm = 7.443019e+00, t = 7337.782160ms
+step = 79, stepsize = 5.217931e-03, norm = 7.409743e+00, t = 2121.717331ms
+step = 80, stepsize = 9.410041e-04, norm = 7.398086e+00, t = 2471.590532ms
+step = 81, stepsize = 2.887119e-03, norm = 7.378579e+00, t = 2155.045580ms
+step = 82, stepsize = 1.528601e-03, norm = 7.255894e+00, t = 2462.356556ms
+step = 83, stepsize = 1.302701e-02, norm = 7.168736e+00, t = 2374.305259ms
+step = 84, stepsize = 7.336987e-03, norm = 7.141706e+00, t = 2147.016968ms
+step = 85, stepsize = 2.332363e-03, norm = 7.129862e+00, t = 2993.513074ms
+step = 86, stepsize = 9.143052e-03, norm = 7.033041e+00, t = 3111.808190ms
+step = 87, stepsize = 3.473744e-05, norm = 7.014581e+00, t = 4702.607152ms
+step = 88, stepsize = 1.781553e-03, norm = 7.007391e+00, t = 1805.210674ms
+step = 89, stepsize = 1.037812e-02, norm = 6.930332e+00, t = 2146.456898ms
+step = 90, stepsize = 1.951780e-03, norm = 6.918121e+00, t = 2781.459126ms
+step = 91, stepsize = 2.718769e-03, norm = 6.899948e+00, t = 2820.315033ms
+step = 92, stepsize = 1.649238e-03, norm = 6.881920e+00, t = 2097.091580ms
+step = 93, stepsize = 1.146472e-02, norm = 6.806109e+00, t = 2106.167999ms
+step = 94, stepsize = 2.026037e-03, norm = 6.791822e+00, t = 2193.491362ms
+step = 95, stepsize = 7.330885e-03, norm = 6.744885e+00, t = 2437.399798ms
+step = 96, stepsize = 3.691369e-05, norm = 6.743028e+00, t = 3337.826189ms
+step = 97, stepsize = 1.715094e-03, norm = 6.735020e+00, t = 2124.476346ms
+step = 98, stepsize = 7.049336e-03, norm = 6.688998e+00, t = 2487.181634ms
+step = 99, stepsize = 2.719060e-03, norm = 6.676836e+00, t = 1798.234370ms
+step = 100, stepsize = 5.636289e-03, norm = 6.621685e+00, t = 2138.911146ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 5.636289e-03, final norm = 6.621685e+00
+=========================================================================================
+
+ .... Time: 2.646421e+02 seconds.
+
+ .. Step 21: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.210536e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.484957e-01, norm = 9.236269e+02, t = 2174.414820ms
+step = 2, stepsize = 1.540554e-01, norm = 6.198331e+02, t = 2143.440069ms
+step = 3, stepsize = 6.830212e-03, norm = 6.166293e+02, t = 3233.227759ms
+step = 4, stepsize = 1.232274e-02, norm = 6.127331e+02, t = 3163.165158ms
+step = 5, stepsize = 6.420129e-02, norm = 5.909618e+02, t = 2496.652812ms
+step = 6, stepsize = 2.752822e-01, norm = 4.874211e+02, t = 1751.243478ms
+step = 7, stepsize = 1.842426e-02, norm = 4.540681e+02, t = 1826.173646ms
+step = 8, stepsize = 8.638622e-02, norm = 3.440856e+02, t = 2479.565249ms
+step = 9, stepsize = 1.715116e-01, norm = 2.347916e+02, t = 2451.691429ms
+step = 10, stepsize = 1.434885e-01, norm = 1.928473e+02, t = 2283.108599ms
+step = 11, stepsize = 1.453204e-01, norm = 1.587228e+02, t = 2228.953282ms
+step = 12, stepsize = 8.616225e-02, norm = 7.089177e+01, t = 2890.868562ms
+step = 13, stepsize = 2.386905e-03, norm = 7.064103e+01, t = 4118.832290ms
+step = 14, stepsize = 7.485260e-02, norm = 5.992618e+01, t = 2475.849521ms
+step = 15, stepsize = 5.605091e-02, norm = 5.698673e+01, t = 2512.659890ms
+step = 16, stepsize = 6.284580e-02, norm = 5.474301e+01, t = 2600.782530ms
+step = 17, stepsize = 2.862147e-02, norm = 5.395577e+01, t = 2846.394577ms
+step = 18, stepsize = 4.565361e-02, norm = 5.113591e+01, t = 2096.391249ms
+step = 19, stepsize = 1.268866e-05, norm = 5.070240e+01, t = 2472.241688ms
+step = 20, stepsize = 1.194120e-03, norm = 5.029603e+01, t = 3194.607257ms
+step = 21, stepsize = 5.219730e-02, norm = 3.986322e+01, t = 2451.777859ms
+step = 22, stepsize = 5.591296e-03, norm = 3.972339e+01, t = 3560.104869ms
+step = 23, stepsize = 2.937476e-02, norm = 3.912481e+01, t = 2881.985270ms
+step = 24, stepsize = 1.414631e-02, norm = 3.868061e+01, t = 3197.288696ms
+step = 25, stepsize = 4.769216e-03, norm = 3.849821e+01, t = 3158.929958ms
+step = 26, stepsize = 6.129043e-03, norm = 3.824544e+01, t = 3630.261119ms
+step = 27, stepsize = 1.505874e-02, norm = 3.760703e+01, t = 3193.975364ms
+step = 28, stepsize = 5.412870e-03, norm = 3.749496e+01, t = 3571.753968ms
+step = 29, stepsize = 1.417213e-01, norm = 3.213495e+01, t = 2156.142357ms
+step = 30, stepsize = 1.527030e-02, norm = 3.159811e+01, t = 3516.466422ms
+step = 31, stepsize = 3.128982e-03, norm = 3.119470e+01, t = 3253.085638ms
+step = 32, stepsize = 1.475330e-02, norm = 3.083674e+01, t = 3162.328590ms
+step = 33, stepsize = 1.249654e-02, norm = 3.061114e+01, t = 3348.603907ms
+step = 34, stepsize = 2.965069e-02, norm = 3.013590e+01, t = 2903.184349ms
+step = 35, stepsize = 1.538221e-01, norm = 2.363159e+01, t = 2166.172239ms
+step = 36, stepsize = 7.778790e-04, norm = 2.339036e+01, t = 4419.816085ms
+step = 37, stepsize = 6.455639e-02, norm = 2.237876e+01, t = 2549.476079ms
+step = 38, stepsize = 4.337168e-04, norm = 2.197501e+01, t = 3585.224339ms
+step = 39, stepsize = 7.161075e-04, norm = 2.164718e+01, t = 4681.525087ms
+step = 40, stepsize = 5.852838e-02, norm = 1.842835e+01, t = 2493.359596ms
+step = 41, stepsize = 8.564483e-03, norm = 1.831612e+01, t = 3245.965413ms
+step = 42, stepsize = 3.018970e-02, norm = 1.795844e+01, t = 2875.298790ms
+step = 43, stepsize = 7.420855e-03, norm = 1.751837e+01, t = 3675.932252ms
+step = 44, stepsize = 2.988140e-02, norm = 1.717740e+01, t = 3076.950243ms
+step = 45, stepsize = 2.879889e-02, norm = 1.689484e+01, t = 2916.224314ms
+step = 46, stepsize = 1.481335e-01, norm = 1.529277e+01, t = 2106.851984ms
+step = 47, stepsize = 6.837146e-02, norm = 1.409621e+01, t = 2432.592089ms
+step = 48, stepsize = 6.151409e-02, norm = 1.328246e+01, t = 2493.022273ms
+step = 49, stepsize = 2.832347e-02, norm = 1.295255e+01, t = 3057.488409ms
+step = 50, stepsize = 3.216007e-02, norm = 1.207565e+01, t = 3218.269846ms
+step = 51, stepsize = 6.383368e-02, norm = 1.125858e+01, t = 2726.779704ms
+step = 52, stepsize = 1.545483e-02, norm = 1.081659e+01, t = 3279.245536ms
+step = 53, stepsize = 1.047816e-02, norm = 1.060398e+01, t = 2493.749917ms
+step = 54, stepsize = 6.003769e-02, norm = 1.022259e+01, t = 2584.788344ms
+step = 55, stepsize = 5.895113e-02, norm = 9.725545e+00, t = 2643.767265ms
+step = 56, stepsize = 3.741807e-03, norm = 9.190364e+00, t = 4389.906274ms
+step = 57, stepsize = 1.114210e-02, norm = 8.759453e+00, t = 3750.406086ms
+step = 58, stepsize = 7.717486e-03, norm = 8.477828e+00, t = 4009.135597ms
+step = 59, stepsize = 2.973820e-02, norm = 8.228855e+00, t = 3265.089361ms
+step = 60, stepsize = 6.088433e-02, norm = 7.887794e+00, t = 2889.203530ms
+step = 61, stepsize = 2.924714e-02, norm = 7.677108e+00, t = 2934.505065ms
+step = 62, stepsize = 1.701479e-01, norm = 5.031492e+00, t = 2319.233648ms
+step = 63, stepsize = 6.391009e-02, norm = 4.853982e+00, t = 2809.299161ms
+step = 64, stepsize = 3.252451e-02, norm = 4.604602e+00, t = 3130.414384ms
+step = 65, stepsize = 5.728695e-02, norm = 4.343627e+00, t = 2637.051754ms
+step = 66, stepsize = 1.502822e-02, norm = 4.284370e+00, t = 3324.889225ms
+step = 67, stepsize = 1.190547e-02, norm = 4.191306e+00, t = 3290.021634ms
+step = 68, stepsize = 1.404082e-05, norm = 3.952178e+00, t = 1786.947395ms
+step = 69, stepsize = 6.142106e-02, norm = 3.495586e+00, t = 2753.827600ms
+step = 70, stepsize = 3.263066e-02, norm = 3.032442e+00, t = 3152.229133ms
+step = 71, stepsize = 1.229596e-02, norm = 2.629013e+00, t = 3251.391200ms
+step = 72, stepsize = 2.838341e-02, norm = 2.457858e+00, t = 2956.805852ms
+step = 73, stepsize = 4.299322e-02, norm = 2.250879e+00, t = 2730.407830ms
+step = 74, stepsize = 6.346106e-02, norm = 1.962492e+00, t = 2627.060441ms
+step = 75, stepsize = 2.188379e-02, norm = 1.848196e+00, t = 3206.048692ms
+step = 76, stepsize = 2.341456e-02, norm = 1.757429e+00, t = 3101.717526ms
+step = 77, stepsize = 4.323057e-02, norm = 1.691154e+00, t = 2775.345098ms
+step = 78, stepsize = 9.063348e-04, norm = 1.680083e+00, t = 5090.669904ms
+step = 79, stepsize = 5.861873e-03, norm = 1.616078e+00, t = 2865.174585ms
+step = 80, stepsize = 1.955660e-02, norm = 1.414174e+00, t = 2987.586653ms
+step = 81, stepsize = 2.415800e-02, norm = 1.278336e+00, t = 3034.926805ms
+step = 82, stepsize = 4.522462e-02, norm = 1.244910e+00, t = 2620.482293ms
+step = 83, stepsize = 5.070623e-03, norm = 1.225080e+00, t = 3763.079250ms
+step = 84, stepsize = 2.832434e-02, norm = 1.035350e+00, t = 2979.336619ms
+step = 85, stepsize = 3.019239e-02, norm = 9.926324e-01, t = 2970.629048ms
+step = 86, stepsize = 3.482136e-02, norm = 9.591081e-01, t = 3206.713800ms
+step = 87, stepsize = 3.029181e-02, norm = 9.284970e-01, t = 3297.937741ms
+step = 88, stepsize = 3.610236e-03, norm = 9.024891e-01, t = 4980.613470ms
+step = 89, stepsize = 4.130043e-02, norm = 8.710634e-01, t = 2727.377506ms
+step = 90, stepsize = 2.688835e-09, norm = 8.615836e-01, t = 8888.254473ms
+step = 91, stepsize = 6.258818e-03, norm = 8.568265e-01, t = 4185.642109ms
+step = 92, stepsize = 2.228626e-02, norm = 8.439783e-01, t = 3292.059019ms
+step = 93, stepsize = 5.153780e-02, norm = 8.218033e-01, t = 2617.979114ms
+step = 94, stepsize = 5.418739e-03, norm = 7.998688e-01, t = 3945.875034ms
+step = 95, stepsize = 1.457362e-02, norm = 7.856342e-01, t = 3508.070962ms
+step = 96, stepsize = 8.153325e-04, norm = 7.779924e-01, t = 4531.270918ms
+step = 97, stepsize = 5.172285e-11, norm = 7.770479e-01, t = 8462.211813ms
+step = 98, stepsize = 5.003624e-11, norm = 7.769258e-01, t = 8066.931989ms
+step = 99, stepsize = 2.125297e-11, norm = 7.769255e-01, t = 8148.145552ms
+step = 100, stepsize = 3.049579e-02, norm = 7.607687e-01, t = 3038.455590ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 3.049579e-02, final norm = 7.607687e-01
+=========================================================================================
+
+ .... Time: 3.244774e+02 seconds.
+
+ .. Step 22: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.244419e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 3.047064e-02, norm = 1.220134e+03, t = 3005.411976ms
+step = 2, stepsize = 2.978195e-01, norm = 3.904594e+02, t = 1817.220879ms
+step = 3, stepsize = 2.985270e-01, norm = 2.690478e+02, t = 1819.895506ms
+step = 4, stepsize = 2.768820e-01, norm = 2.289052e+02, t = 1857.480926ms
+step = 5, stepsize = 1.341785e-02, norm = 2.226432e+02, t = 2165.261877ms
+step = 6, stepsize = 5.556715e-01, norm = 1.071638e+02, t = 1562.090799ms
+step = 7, stepsize = 1.547759e-01, norm = 7.523129e+01, t = 2456.121543ms
+step = 8, stepsize = 1.849565e-03, norm = 7.478490e+01, t = 5338.815989ms
+step = 9, stepsize = 6.410026e-02, norm = 7.232493e+01, t = 3887.680344ms
+step = 10, stepsize = 3.188556e-02, norm = 7.065516e+01, t = 3362.949476ms
+step = 11, stepsize = 3.183582e-02, norm = 6.852633e+01, t = 3302.699918ms
+step = 12, stepsize = 6.585736e-02, norm = 6.597152e+01, t = 3016.582837ms
+step = 13, stepsize = 5.027077e-04, norm = 6.587529e+01, t = 5474.440244ms
+step = 14, stepsize = 6.559764e-02, norm = 6.304837e+01, t = 2915.534401ms
+step = 15, stepsize = 6.623685e-02, norm = 5.989569e+01, t = 2895.462313ms
+step = 16, stepsize = 1.359828e-01, norm = 5.419910e+01, t = 2456.156714ms
+step = 17, stepsize = 6.561172e-02, norm = 5.227249e+01, t = 3198.160325ms
+step = 18, stepsize = 2.779658e-01, norm = 3.939436e+01, t = 2094.841192ms
+step = 19, stepsize = 1.384329e-01, norm = 3.466968e+01, t = 2547.420977ms
+step = 20, stepsize = 6.565556e-02, norm = 3.346002e+01, t = 3406.443514ms
+step = 21, stepsize = 9.797534e-03, norm = 1.956231e+01, t = 2572.583269ms
+step = 22, stepsize = 3.063876e-02, norm = 1.839840e+01, t = 5357.307958ms
+step = 23, stepsize = 1.435831e-01, norm = 1.636033e+01, t = 2574.426906ms
+step = 24, stepsize = 1.414735e-01, norm = 1.414799e+01, t = 2393.801311ms
+step = 25, stepsize = 1.437865e-01, norm = 1.227550e+01, t = 2833.264240ms
+step = 26, stepsize = 3.264710e-02, norm = 1.138450e+01, t = 3397.060473ms
+step = 27, stepsize = 3.291356e-02, norm = 1.097533e+01, t = 3615.192270ms
+step = 28, stepsize = 6.640267e-02, norm = 1.046394e+01, t = 3296.118713ms
+step = 29, stepsize = 6.325335e-02, norm = 9.510295e+00, t = 3871.066568ms
+step = 30, stepsize = 1.345999e-01, norm = 8.184992e+00, t = 3388.962593ms
+step = 31, stepsize = 2.849666e-01, norm = 6.211529e+00, t = 2112.003262ms
+step = 32, stepsize = 3.493560e-02, norm = 5.864487e+00, t = 3666.972683ms
+step = 33, stepsize = 7.263866e-02, norm = 4.920428e+00, t = 3599.963476ms
+step = 34, stepsize = 1.660865e-01, norm = 4.178948e+00, t = 2379.858752ms
+step = 35, stepsize = 1.428970e-01, norm = 3.845609e+00, t = 2457.140045ms
+step = 36, stepsize = 1.171657e-01, norm = 3.348804e+00, t = 3090.134974ms
+step = 37, stepsize = 1.292664e-01, norm = 2.616804e+00, t = 3413.824889ms
+step = 38, stepsize = 1.207657e-01, norm = 1.636137e+00, t = 2759.519175ms
+step = 39, stepsize = 6.520432e-02, norm = 1.352977e+00, t = 3394.502585ms
+step = 40, stepsize = 1.614298e-01, norm = 1.027951e+00, t = 2432.589930ms
+step = 41, stepsize = 1.068533e-01, norm = 9.379518e-01, t = 2737.816426ms
+step = 42, stepsize = 2.091008e-01, norm = 7.427938e-01, t = 2184.824678ms
+step = 43, stepsize = 2.069698e-01, norm = 6.077155e-01, t = 2062.168285ms
+step = 44, stepsize = 4.423822e-02, norm = 5.136212e-01, t = 3094.315107ms
+step = 45, stepsize = 1.422417e-01, norm = 1.738844e-01, t = 2316.128484ms
+step = 46, stepsize = 9.930067e-08, norm = 1.224801e-01, t = 6823.544402ms
+step = 47, stepsize = 5.190322e-11, norm = 1.224801e-01, t = 5913.589203ms
+step = 48, stepsize = 8.589176e-04, norm = 9.153261e-02, t = 4044.088462ms
+step = 49, stepsize = 1.119325e-04, norm = 3.873344e-02, t = 5407.720033ms
+step = 50, stepsize = 8.375592e-11, norm = 3.706166e-02, t = 7647.573565ms
+step = 51, stepsize = 1.980460e-09, norm = 3.675501e-02, t = 4925.744178ms
+step = 52, stepsize = 1.392982e-11, norm = 3.675501e-02, t = 5361.982357ms
+step = 53, stepsize = 1.654957e-11, norm = 3.675501e-02, t = 5702.846712ms
+step = 54, stepsize = 5.925724e-12, norm = 3.675501e-02, t = 5488.408413ms
+step = 55, stepsize = 6.879052e-11, norm = 3.675458e-02, t = 6086.255683ms
+step = 56, stepsize = 2.432208e-11, norm = 3.675451e-02, t = 5439.153971ms
+step = 57, stepsize = 2.924705e-11, norm = 3.606399e-02, t = 5338.750433ms
+step = 58, stepsize = 2.382099e-11, norm = 3.606395e-02, t = 4986.746700ms
+step = 59, stepsize = 1.958845e-11, norm = 3.606395e-02, t = 5451.558522ms
+step = 60, stepsize = 1.728451e-10, norm = 3.606339e-02, t = 5543.670509ms
+step = 61, stepsize = 1.494985e-11, norm = 3.606339e-02, t = 5473.891973ms
+step = 62, stepsize = 3.083547e-12, norm = 3.606339e-02, t = 5875.267785ms
+step = 63, stepsize = 6.613916e-12, norm = 3.606339e-02, t = 5466.287106ms
+step = 64, stepsize = 3.792442e-11, norm = 3.606328e-02, t = 5867.746708ms
+step = 65, stepsize = 2.275479e-11, norm = 3.606328e-02, t = 5634.573352ms
+step = 66, stepsize = 0.000000e+00, norm = 3.606328e-02, t = 6181.270900ms
+=========================================================================================
+Finished Newton's method after 66 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 3.606328e-02
+=========================================================================================
+
+ .... Time: 2.522690e+02 seconds.
+
+ .. Step 23: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.279619e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.623777e-02, norm = 1.048123e+03, t = 2556.923923ms
+step = 2, stepsize = 1.801008e-01, norm = 7.033964e+02, t = 2095.736230ms
+step = 3, stepsize = 1.415154e-01, norm = 5.868070e+02, t = 2259.640882ms
+step = 4, stepsize = 1.380242e-01, norm = 5.158554e+02, t = 2261.970087ms
+step = 5, stepsize = 3.160512e-02, norm = 5.033591e+02, t = 2964.853278ms
+step = 6, stepsize = 6.067470e-02, norm = 4.831244e+02, t = 2503.921616ms
+step = 7, stepsize = 1.629690e-01, norm = 3.702433e+02, t = 2160.527250ms
+step = 8, stepsize = 1.427782e-01, norm = 3.018989e+02, t = 2097.728847ms
+step = 9, stepsize = 2.753253e-01, norm = 2.494123e+02, t = 1790.562228ms
+step = 10, stepsize = 2.754724e-01, norm = 1.969138e+02, t = 1731.079914ms
+step = 11, stepsize = 1.351539e-01, norm = 1.787206e+02, t = 2122.464113ms
+step = 12, stepsize = 1.358894e-01, norm = 1.605599e+02, t = 2162.537325ms
+step = 13, stepsize = 2.808052e-01, norm = 1.036848e+02, t = 1840.475289ms
+step = 14, stepsize = 5.641917e-01, norm = 5.417643e+01, t = 1438.570334ms
+step = 15, stepsize = 1.703009e-01, norm = 1.686853e+01, t = 2107.282101ms
+step = 16, stepsize = 5.545391e-01, norm = 1.135457e+01, t = 1429.339973ms
+step = 17, stepsize = 2.697123e-01, norm = 9.699303e+00, t = 1734.594181ms
+step = 18, stepsize = 5.704976e-01, norm = 5.448902e+00, t = 1406.534104ms
+step = 19, stepsize = 6.220303e-01, norm = 2.151683e+00, t = 1394.396826ms
+step = 20, stepsize = 9.316185e-01, norm = 8.815794e-01, t = 1821.704582ms
+step = 21, stepsize = 1.000000e+00, norm = 2.273756e-01, t = 1373.803630ms
+step = 22, stepsize = 2.460847e-01, norm = 8.042535e-02, t = 2420.091596ms
+step = 23, stepsize = 1.867927e-09, norm = 3.554124e-02, t = 6236.834917ms
+step = 24, stepsize = 4.377709e-07, norm = 1.820665e-02, t = 4765.558120ms
+step = 25, stepsize = 2.019629e-10, norm = 1.432880e-02, t = 4754.373485ms
+step = 26, stepsize = 6.823977e-10, norm = 1.241980e-02, t = 4339.843485ms
+step = 27, stepsize = 8.899617e-11, norm = 1.240299e-02, t = 4038.006553ms
+step = 28, stepsize = 1.775773e-10, norm = 1.240284e-02, t = 4549.489914ms
+step = 29, stepsize = 8.632927e-11, norm = 1.239538e-02, t = 5084.592133ms
+step = 30, stepsize = 6.811006e-11, norm = 1.239073e-02, t = 5310.554536ms
+step = 31, stepsize = 2.340185e-11, norm = 1.239058e-02, t = 4712.445505ms
+step = 32, stepsize = 9.804071e-12, norm = 1.239058e-02, t = 4321.823451ms
+step = 33, stepsize = 3.775126e-11, norm = 1.239058e-02, t = 4624.152854ms
+step = 34, stepsize = 2.103093e-11, norm = 1.239058e-02, t = 4308.194617ms
+step = 35, stepsize = 2.059463e-11, norm = 1.239044e-02, t = 5036.114227ms
+step = 36, stepsize = 2.132158e-11, norm = 1.239044e-02, t = 4209.899656ms
+step = 37, stepsize = 1.779638e-11, norm = 1.239044e-02, t = 4668.863787ms
+step = 38, stepsize = 2.189965e-10, norm = 1.239029e-02, t = 5584.643047ms
+step = 39, stepsize = 3.452331e-11, norm = 1.239014e-02, t = 4611.434106ms
+step = 40, stepsize = 2.772288e-11, norm = 1.239000e-02, t = 4543.020630ms
+step = 41, stepsize = 2.684399e-11, norm = 1.238986e-02, t = 4914.213279ms
+step = 42, stepsize = 1.815223e-11, norm = 1.238986e-02, t = 4499.646753ms
+step = 43, stepsize = 5.878556e-12, norm = 1.238986e-02, t = 4837.028151ms
+step = 44, stepsize = 3.848523e-11, norm = 1.238971e-02, t = 4840.436440ms
+step = 45, stepsize = 3.554647e-11, norm = 1.238957e-02, t = 4660.831950ms
+step = 46, stepsize = 2.774897e-11, norm = 1.238957e-02, t = 4662.253016ms
+step = 47, stepsize = 2.040405e-10, norm = 1.238942e-02, t = 4643.360326ms
+step = 48, stepsize = 1.701274e-10, norm = 1.238928e-02, t = 4454.452049ms
+step = 49, stepsize = 1.872832e-10, norm = 1.238915e-02, t = 4219.593922ms
+step = 50, stepsize = 1.289989e-10, norm = 1.238901e-02, t = 4523.096752ms
+step = 51, stepsize = 4.584174e-10, norm = 8.952789e-03, t = 4325.540775ms
+step = 52, stepsize = 6.005816e-11, norm = 3.616923e-03, t = 4165.580966ms
+step = 53, stepsize = 6.153479e-11, norm = 3.462729e-03, t = 4256.327869ms
+step = 54, stepsize = 1.933527e-10, norm = 3.374524e-03, t = 3750.155191ms
+step = 55, stepsize = 4.583540e-11, norm = 3.247596e-03, t = 3893.250009ms
+step = 56, stepsize = 5.165209e-11, norm = 3.168390e-03, t = 4556.082483ms
+step = 57, stepsize = 2.066122e-11, norm = 3.168389e-03, t = 3830.878331ms
+step = 58, stepsize = 5.191109e-11, norm = 3.086603e-03, t = 3456.823687ms
+step = 59, stepsize = 4.685708e-11, norm = 3.053546e-03, t = 3469.601451ms
+step = 60, stepsize = 1.762784e-11, norm = 3.053546e-03, t = 4190.332212ms
+step = 61, stepsize = 6.024272e-11, norm = 3.026241e-03, t = 3148.152702ms
+step = 62, stepsize = 1.060021e-10, norm = 3.026236e-03, t = 3577.335312ms
+step = 63, stepsize = 1.192611e-10, norm = 3.026221e-03, t = 3656.002579ms
+step = 64, stepsize = 5.060318e-11, norm = 3.023917e-03, t = 3591.555640ms
+step = 65, stepsize = 1.087262e-11, norm = 3.023917e-03, t = 4021.644550ms
+step = 66, stepsize = 3.220577e-10, norm = 3.023789e-03, t = 3122.893777ms
+step = 67, stepsize = 1.150486e-10, norm = 3.023785e-03, t = 3539.082983ms
+step = 68, stepsize = 2.429064e-11, norm = 3.023785e-03, t = 3500.178049ms
+step = 69, stepsize = 8.818114e-11, norm = 3.023636e-03, t = 3830.302765ms
+step = 70, stepsize = 1.413587e-11, norm = 3.023636e-03, t = 3541.615357ms
+step = 71, stepsize = 7.913763e-12, norm = 3.023636e-03, t = 3820.154590ms
+step = 72, stepsize = 1.202622e-10, norm = 3.023634e-03, t = 3416.444744ms
+step = 73, stepsize = 2.277174e-11, norm = 3.023634e-03, t = 3435.793019ms
+step = 74, stepsize = 7.202537e-12, norm = 3.023634e-03, t = 3173.184214ms
+step = 75, stepsize = 1.384942e-11, norm = 3.023634e-03, t = 3826.495383ms
+step = 76, stepsize = 1.143833e-11, norm = 3.023634e-03, t = 3409.490661ms
+step = 77, stepsize = 2.773201e-10, norm = 3.023504e-03, t = 3417.222927ms
+step = 78, stepsize = 9.917932e-12, norm = 3.023504e-03, t = 3447.297910ms
+step = 79, stepsize = 1.952390e-11, norm = 3.023504e-03, t = 4291.157472ms
+step = 80, stepsize = 1.298347e-11, norm = 3.023504e-03, t = 4027.551800ms
+step = 81, stepsize = 1.134283e-11, norm = 3.023504e-03, t = 3961.891872ms
+step = 82, stepsize = 8.760744e-12, norm = 3.023504e-03, t = 3257.683702ms
+step = 83, stepsize = 1.151705e-11, norm = 3.023504e-03, t = 3680.602974ms
+step = 84, stepsize = 8.106513e-12, norm = 3.023504e-03, t = 3293.003901ms
+step = 85, stepsize = 1.223094e-10, norm = 3.023496e-03, t = 3488.323058ms
+step = 86, stepsize = 1.169399e-11, norm = 3.023496e-03, t = 3476.874281ms
+step = 87, stepsize = 9.634505e-12, norm = 3.023496e-03, t = 3512.509646ms
+step = 88, stepsize = 1.088138e-11, norm = 3.023496e-03, t = 3515.116205ms
+step = 89, stepsize = 1.272282e-11, norm = 3.023496e-03, t = 3764.351877ms
+step = 90, stepsize = 1.433455e-11, norm = 3.023496e-03, t = 5311.584309ms
+step = 91, stepsize = 2.786302e-11, norm = 3.023494e-03, t = 3611.341111ms
+step = 92, stepsize = 1.595496e-11, norm = 3.023494e-03, t = 3616.679041ms
+step = 93, stepsize = 1.448544e-11, norm = 3.023494e-03, t = 3528.900378ms
+step = 94, stepsize = 1.067229e-11, norm = 3.023494e-03, t = 3903.335395ms
+step = 95, stepsize = 1.270672e-11, norm = 3.023494e-03, t = 3648.191832ms
+step = 96, stepsize = 1.009471e-10, norm = 3.023388e-03, t = 4404.910068ms
+step = 97, stepsize = 1.695734e-11, norm = 3.023388e-03, t = 3575.140168ms
+step = 98, stepsize = 2.648389e-11, norm = 3.023387e-03, t = 3462.044270ms
+step = 99, stepsize = 9.087949e-12, norm = 3.023387e-03, t = 3245.155739ms
+step = 100, stepsize = 1.373229e-11, norm = 3.023387e-03, t = 3587.472028ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.373229e-11, final norm = 3.023387e-03
+=========================================================================================
+
+ .... Time: 3.611901e+02 seconds.
+
+ .. Step 24: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.316408e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.750901e-01, norm = 4.242673e+02, t = 2075.994464ms
+step = 2, stepsize = 1.419032e-02, norm = 4.200989e+02, t = 3092.149626ms
+step = 3, stepsize = 1.238517e-02, norm = 4.173247e+02, t = 3171.958055ms
+step = 4, stepsize = 1.406813e-01, norm = 3.218485e+02, t = 2398.778309ms
+step = 5, stepsize = 1.166585e-02, norm = 3.193705e+02, t = 3152.239195ms
+step = 6, stepsize = 5.354886e-02, norm = 2.932325e+02, t = 2429.210459ms
+step = 7, stepsize = 1.924715e-01, norm = 4.421311e+01, t = 2044.305202ms
+step = 8, stepsize = 1.965658e-03, norm = 4.380649e+01, t = 3553.193429ms
+step = 9, stepsize = 6.779752e-03, norm = 4.352677e+01, t = 3145.308765ms
+step = 10, stepsize = 7.419026e-03, norm = 4.312794e+01, t = 3504.096068ms
+step = 11, stepsize = 2.141186e-04, norm = 4.240985e+01, t = 4514.453237ms
+step = 12, stepsize = 5.430094e-03, norm = 4.204719e+01, t = 2818.914432ms
+step = 13, stepsize = 9.773802e-04, norm = 4.141461e+01, t = 4029.886762ms
+step = 14, stepsize = 2.521145e-02, norm = 3.588398e+01, t = 1986.510244ms
+step = 15, stepsize = 2.761483e-02, norm = 3.453371e+01, t = 2963.776218ms
+step = 16, stepsize = 3.339062e-04, norm = 3.451346e+01, t = 3911.874718ms
+step = 17, stepsize = 4.019836e-03, norm = 3.422240e+01, t = 2810.089731ms
+step = 18, stepsize = 5.295548e-03, norm = 3.396058e+01, t = 2835.852827ms
+step = 19, stepsize = 5.780278e-03, norm = 3.375813e+01, t = 3187.486253ms
+step = 20, stepsize = 6.001881e-02, norm = 3.233662e+01, t = 2469.019052ms
+step = 21, stepsize = 1.796426e-03, norm = 3.192421e+01, t = 3901.800415ms
+step = 22, stepsize = 1.131974e-03, norm = 3.175970e+01, t = 3592.694425ms
+step = 23, stepsize = 7.694601e-03, norm = 3.128278e+01, t = 3183.532815ms
+step = 24, stepsize = 8.021846e-03, norm = 3.096292e+01, t = 2473.220368ms
+step = 25, stepsize = 1.227261e-02, norm = 3.018654e+01, t = 2843.286810ms
+step = 26, stepsize = 7.833219e-03, norm = 2.940767e+01, t = 3251.117905ms
+step = 27, stepsize = 4.946156e-03, norm = 2.895432e+01, t = 3139.720642ms
+step = 28, stepsize = 1.664551e-03, norm = 2.840322e+01, t = 2431.740964ms
+step = 29, stepsize = 7.814813e-03, norm = 2.794294e+01, t = 3158.944879ms
+step = 30, stepsize = 5.734190e-02, norm = 2.691214e+01, t = 2601.944433ms
+step = 31, stepsize = 2.748099e-03, norm = 2.617804e+01, t = 3530.631785ms
+step = 32, stepsize = 2.157156e-02, norm = 2.578180e+01, t = 2849.659846ms
+step = 33, stepsize = 3.583734e-03, norm = 2.560925e+01, t = 3201.144725ms
+step = 34, stepsize = 3.003395e-03, norm = 2.528946e+01, t = 3775.431186ms
+step = 35, stepsize = 2.138249e-03, norm = 9.836838e+00, t = 3151.434982ms
+step = 36, stepsize = 3.208168e-03, norm = 9.610049e+00, t = 2089.866293ms
+step = 37, stepsize = 4.484441e-02, norm = 7.908527e+00, t = 2158.854256ms
+step = 38, stepsize = 2.017167e-04, norm = 7.849709e+00, t = 4001.609558ms
+step = 39, stepsize = 4.577546e-03, norm = 7.749531e+00, t = 3160.709326ms
+step = 40, stepsize = 2.911898e-03, norm = 7.492065e+00, t = 3048.400892ms
+step = 41, stepsize = 1.120105e-02, norm = 7.280765e+00, t = 1968.050155ms
+step = 42, stepsize = 1.725831e-02, norm = 7.100196e+00, t = 2886.515696ms
+step = 43, stepsize = 6.126241e-02, norm = 6.206300e+00, t = 2138.662353ms
+step = 44, stepsize = 4.535753e-02, norm = 4.609549e+00, t = 2460.405471ms
+step = 45, stepsize = 2.571843e-04, norm = 4.401401e+00, t = 2497.207865ms
+step = 46, stepsize = 1.800834e-03, norm = 4.268244e+00, t = 3193.726783ms
+step = 47, stepsize = 4.324059e-04, norm = 4.246678e+00, t = 2090.296844ms
+step = 48, stepsize = 6.937761e-03, norm = 4.220681e+00, t = 2409.148751ms
+step = 49, stepsize = 5.520986e-03, norm = 4.056116e+00, t = 2482.700655ms
+step = 50, stepsize = 1.889022e-03, norm = 3.982048e+00, t = 2613.692726ms
+step = 51, stepsize = 6.333872e-04, norm = 3.911522e+00, t = 3702.966326ms
+step = 52, stepsize = 2.551208e-04, norm = 3.798838e+00, t = 2220.108959ms
+step = 53, stepsize = 1.002554e-02, norm = 3.734173e+00, t = 2627.432247ms
+step = 54, stepsize = 8.388898e-05, norm = 3.656928e+00, t = 2182.008931ms
+step = 55, stepsize = 4.961088e-04, norm = 3.656015e+00, t = 2145.375802ms
+step = 56, stepsize = 6.297589e-07, norm = 3.610629e+00, t = 2327.011479ms
+step = 57, stepsize = 6.073671e-03, norm = 3.570799e+00, t = 2265.150885ms
+step = 58, stepsize = 1.274875e-02, norm = 3.404239e+00, t = 2294.547804ms
+step = 59, stepsize = 3.291883e-03, norm = 3.353691e+00, t = 2543.016060ms
+step = 60, stepsize = 1.315260e-03, norm = 3.313183e+00, t = 3339.818880ms
+step = 61, stepsize = 7.110106e-04, norm = 3.231774e+00, t = 3701.079390ms
+step = 62, stepsize = 3.785342e-03, norm = 3.220199e+00, t = 3066.197943ms
+step = 63, stepsize = 1.648908e-04, norm = 3.202816e+00, t = 4851.302975ms
+step = 64, stepsize = 3.332608e-03, norm = 3.107201e+00, t = 2278.290751ms
+step = 65, stepsize = 1.143686e-02, norm = 3.044106e+00, t = 1902.250886ms
+step = 66, stepsize = 1.112133e-02, norm = 2.992721e+00, t = 2272.293858ms
+step = 67, stepsize = 2.013025e-03, norm = 2.984134e+00, t = 4195.546060ms
+step = 68, stepsize = 1.138992e-05, norm = 2.981444e+00, t = 5845.702458ms
+step = 69, stepsize = 5.536208e-07, norm = 2.978200e+00, t = 7953.128109ms
+step = 70, stepsize = 1.579640e-10, norm = 2.975773e+00, t = 7774.415068ms
+step = 71, stepsize = 0.000000e+00, norm = 2.975773e+00, t = 8600.053113ms
+=========================================================================================
+Finished Newton's method after 71 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 2.975773e+00
+=========================================================================================
+
+ .... Time: 2.244932e+02 seconds.
+
+ .. Step 25: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.343205e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 9.822819e-02, norm = 8.666963e+02, t = 2722.900440ms
+step = 2, stepsize = 2.741884e-01, norm = 7.399699e+02, t = 1922.934049ms
+step = 3, stepsize = 1.358533e-01, norm = 6.664632e+02, t = 2196.127866ms
+step = 4, stepsize = 1.367336e-01, norm = 5.978145e+02, t = 2235.572950ms
+step = 5, stepsize = 5.585703e-01, norm = 3.428926e+02, t = 1453.981412ms
+step = 6, stepsize = 2.828823e-01, norm = 2.497571e+02, t = 1891.743458ms
+step = 7, stepsize = 5.663164e-01, norm = 1.048555e+02, t = 1580.263584ms
+step = 8, stepsize = 1.360171e-01, norm = 9.433060e+01, t = 2326.499514ms
+step = 9, stepsize = 5.552542e-01, norm = 5.037207e+01, t = 1549.215981ms
+step = 10, stepsize = 5.507546e-01, norm = 2.902898e+01, t = 1557.401142ms
+step = 11, stepsize = 5.575641e-01, norm = 1.319206e+01, t = 1517.965944ms
+step = 12, stepsize = 5.485380e-01, norm = 6.282712e+00, t = 1531.748107ms
+step = 13, stepsize = 9.893066e-01, norm = 1.557813e+00, t = 1961.834032ms
+step = 14, stepsize = 5.249087e-01, norm = 9.991015e-01, t = 1564.828589ms
+step = 15, stepsize = 6.593927e-01, norm = 2.302761e-01, t = 1447.511677ms
+step = 16, stepsize = 4.416291e-01, norm = 1.432372e-01, t = 2243.418817ms
+step = 17, stepsize = 6.939755e-09, norm = 4.120293e-02, t = 5799.498422ms
+step = 18, stepsize = 8.715507e-10, norm = 4.073125e-02, t = 6389.487263ms
+step = 19, stepsize = 2.695444e-10, norm = 3.452746e-02, t = 6454.109427ms
+step = 20, stepsize = 0.000000e+00, norm = 3.452746e-02, t = 5476.526763ms
+=========================================================================================
+Finished Newton's method after 20 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 3.452746e-02
+=========================================================================================
+
+ .... Time: 5.384199e+01 seconds.
+
+ .. Step 26: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.370868e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 2.952802e-01, norm = 3.548195e+02, t = 2459.015988ms
+step = 2, stepsize = 1.468031e-03, norm = 3.540816e+02, t = 7091.724054ms
+step = 3, stepsize = 2.892335e-01, norm = 2.345390e+02, t = 3011.528011ms
+step = 4, stepsize = 1.465800e-01, norm = 1.834723e+02, t = 3435.968373ms
+step = 5, stepsize = 1.363439e-02, norm = 1.816992e+02, t = 4080.030594ms
+step = 6, stepsize = 2.738841e-01, norm = 1.481129e+02, t = 2413.456921ms
+step = 7, stepsize = 6.610584e-02, norm = 1.285642e+02, t = 2810.934962ms
+step = 8, stepsize = 2.972637e-01, norm = 3.991312e+01, t = 2026.577464ms
+step = 9, stepsize = 1.137309e-02, norm = 3.947243e+01, t = 4659.293446ms
+step = 10, stepsize = 1.316855e-01, norm = 3.642989e+01, t = 2387.994536ms
+step = 11, stepsize = 1.344906e-05, norm = 3.620207e+01, t = 2707.073495ms
+step = 12, stepsize = 2.966637e-01, norm = 2.294402e+01, t = 1953.256230ms
+step = 13, stepsize = 6.155367e-02, norm = 2.163447e+01, t = 2964.757941ms
+step = 14, stepsize = 2.486108e-02, norm = 2.093209e+01, t = 3228.901172ms
+step = 15, stepsize = 6.331788e-03, norm = 2.076402e+01, t = 2394.063199ms
+step = 16, stepsize = 1.346096e-01, norm = 1.904908e+01, t = 2302.357382ms
+step = 17, stepsize = 3.032565e-01, norm = 6.095812e+00, t = 1895.454808ms
+step = 18, stepsize = 7.216404e-03, norm = 5.827087e+00, t = 3833.650329ms
+step = 19, stepsize = 7.265316e-02, norm = 5.516537e+00, t = 2692.500444ms
+step = 20, stepsize = 2.902889e-02, norm = 4.996507e+00, t = 3229.991506ms
+step = 21, stepsize = 6.052413e-02, norm = 4.491235e+00, t = 2912.505761ms
+step = 22, stepsize = 3.708830e-02, norm = 1.620449e+00, t = 2176.644001ms
+step = 23, stepsize = 1.720965e-02, norm = 8.710670e-01, t = 2981.011994ms
+step = 24, stepsize = 2.344162e-04, norm = 6.878076e-01, t = 2225.951334ms
+step = 25, stepsize = 2.013209e-02, norm = 6.659337e-01, t = 3024.919245ms
+step = 26, stepsize = 1.904259e-03, norm = 5.346769e-01, t = 3027.840856ms
+step = 27, stepsize = 2.230858e-02, norm = 5.174884e-01, t = 2302.194388ms
+step = 28, stepsize = 1.140950e-08, norm = 5.157310e-01, t = 7353.847167ms
+step = 29, stepsize = 6.013962e-05, norm = 5.051576e-01, t = 6188.820043ms
+step = 30, stepsize = 3.176117e-12, norm = 5.044014e-01, t = 7539.988191ms
+step = 31, stepsize = 2.384937e-02, norm = 4.974135e-01, t = 2500.228888ms
+step = 32, stepsize = 1.859753e-07, norm = 4.929143e-01, t = 7261.619144ms
+step = 33, stepsize = 7.833460e-11, norm = 4.924527e-01, t = 6659.883226ms
+step = 34, stepsize = 5.815690e-12, norm = 4.921199e-01, t = 8037.322470ms
+step = 35, stepsize = 6.093697e-12, norm = 4.918873e-01, t = 7362.257996ms
+step = 36, stepsize = 1.202234e-02, norm = 4.882251e-01, t = 3382.454541ms
+step = 37, stepsize = 2.621559e-04, norm = 4.865063e-01, t = 4205.161548ms
+step = 38, stepsize = 3.351806e-12, norm = 4.864946e-01, t = 8769.327412ms
+step = 39, stepsize = 1.628383e-11, norm = 4.862749e-01, t = 9087.319043ms
+step = 40, stepsize = 1.381312e-11, norm = 4.858978e-01, t = 8423.507534ms
+step = 41, stepsize = 4.886849e-12, norm = 4.858951e-01, t = 7718.400248ms
+step = 42, stepsize = 1.462748e-12, norm = 4.858917e-01, t = 8827.793067ms
+step = 43, stepsize = 2.427878e-12, norm = 4.858892e-01, t = 7642.875312ms
+step = 44, stepsize = 0.000000e+00, norm = 4.858892e-01, t = 8019.568237ms
+=========================================================================================
+Finished Newton's method after 44 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 4.858892e-01
+=========================================================================================
+
+ .... Time: 1.992330e+02 seconds.
+
+ .. Step 27: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.397903e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.766265e-01, norm = 9.459514e+02, t = 1418.306337ms
+step = 2, stepsize = 2.767383e-01, norm = 7.224183e+02, t = 1784.153433ms
+step = 3, stepsize = 1.359990e-01, norm = 6.502137e+02, t = 2133.508556ms
+step = 4, stepsize = 1.339492e-01, norm = 6.030739e+02, t = 2110.636849ms
+step = 5, stepsize = 1.368637e-01, norm = 5.365476e+02, t = 2155.466449ms
+step = 6, stepsize = 2.860417e-01, norm = 3.051048e+02, t = 1770.242782ms
+step = 7, stepsize = 5.618923e-01, norm = 6.772994e+01, t = 1416.569761ms
+step = 8, stepsize = 1.344883e-01, norm = 6.127025e+01, t = 2069.354332ms
+step = 9, stepsize = 1.362032e-01, norm = 5.516033e+01, t = 2129.507708ms
+step = 10, stepsize = 1.354323e-01, norm = 5.052406e+01, t = 2202.645265ms
+step = 11, stepsize = 1.343333e-01, norm = 4.654729e+01, t = 2105.321882ms
+step = 12, stepsize = 2.753520e-01, norm = 3.898144e+01, t = 1733.553252ms
+step = 13, stepsize = 5.431217e-01, norm = 2.557322e+01, t = 1433.179730ms
+step = 14, stepsize = 5.465956e-01, norm = 1.239070e+01, t = 1435.161165ms
+step = 15, stepsize = 1.413914e-01, norm = 1.026867e+01, t = 2157.108235ms
+step = 16, stepsize = 5.791142e-01, norm = 4.442365e+00, t = 1429.473011ms
+step = 17, stepsize = 6.053615e-01, norm = 9.192402e-01, t = 1402.999845ms
+step = 18, stepsize = 3.056636e-01, norm = 5.696086e-01, t = 1749.663614ms
+step = 19, stepsize = 2.014700e-01, norm = 3.649025e-01, t = 2069.857009ms
+step = 20, stepsize = 2.949725e-03, norm = 3.199265e-01, t = 4062.850149ms
+step = 21, stepsize = 1.570303e-02, norm = 2.121888e-01, t = 3523.355933ms
+step = 22, stepsize = 1.709244e-09, norm = 2.036524e-01, t = 6049.316883ms
+step = 23, stepsize = 2.096126e-01, norm = 1.419765e-01, t = 2141.021780ms
+step = 24, stepsize = 8.277209e-02, norm = 1.250946e-01, t = 1750.554122ms
+step = 25, stepsize = 2.412719e-09, norm = 1.127427e-01, t = 5206.482718ms
+step = 26, stepsize = 2.186489e-02, norm = 6.789622e-02, t = 2528.783035ms
+step = 27, stepsize = 2.396927e-09, norm = 4.012903e-02, t = 4626.621319ms
+step = 28, stepsize = 5.633755e-09, norm = 1.735173e-02, t = 3740.354582ms
+step = 29, stepsize = 3.451959e-09, norm = 1.139369e-02, t = 4813.280996ms
+step = 30, stepsize = 1.617719e-09, norm = 1.105548e-02, t = 3530.003347ms
+step = 31, stepsize = 3.923921e-10, norm = 4.146399e-03, t = 3990.591050ms
+step = 32, stepsize = 5.159471e-11, norm = 4.146398e-03, t = 3530.923958ms
+step = 33, stepsize = 1.750510e-12, norm = 4.146390e-03, t = 5255.021318ms
+step = 34, stepsize = 3.089761e-10, norm = 4.017328e-03, t = 3656.349279ms
+step = 35, stepsize = 3.564750e-10, norm = 3.982890e-03, t = 3422.853196ms
+step = 36, stepsize = 5.487259e-11, norm = 3.982886e-03, t = 3894.465736ms
+step = 37, stepsize = 9.729905e-11, norm = 3.966080e-03, t = 5170.453916ms
+step = 38, stepsize = 8.863428e-10, norm = 3.889088e-03, t = 3528.591405ms
+step = 39, stepsize = 2.367222e-11, norm = 3.808865e-03, t = 4736.359316ms
+step = 40, stepsize = 0.000000e+00, norm = 3.808865e-03, t = 3968.642071ms
+=========================================================================================
+Finished Newton's method after 40 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 3.808865e-03
+=========================================================================================
+
+ .... Time: 1.178556e+02 seconds.
+
+ .. Step 28: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.425758e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.432650e-01, norm = 1.185514e+03, t = 2107.264822ms
+step = 2, stepsize = 1.395585e-01, norm = 5.045109e+02, t = 2489.384592ms
+step = 3, stepsize = 1.527102e-01, norm = 3.467706e+02, t = 2091.746456ms
+step = 4, stepsize = 1.240932e-02, norm = 3.442488e+02, t = 3113.423806ms
+step = 5, stepsize = 1.148510e-01, norm = 1.518869e+02, t = 2451.725484ms
+step = 6, stepsize = 1.632213e-01, norm = 8.107900e+01, t = 2131.379834ms
+step = 7, stepsize = 1.526142e-01, norm = 5.894606e+01, t = 2159.078060ms
+step = 8, stepsize = 3.057118e-02, norm = 5.745107e+01, t = 2830.331363ms
+step = 9, stepsize = 1.371542e-01, norm = 5.154687e+01, t = 2090.118121ms
+step = 10, stepsize = 1.431636e-02, norm = 4.998568e+01, t = 3462.780316ms
+step = 11, stepsize = 6.721983e-02, norm = 4.704618e+01, t = 2480.813552ms
+step = 12, stepsize = 1.019174e-01, norm = 2.869676e+01, t = 2480.863837ms
+step = 13, stepsize = 2.624812e-02, norm = 2.816914e+01, t = 2870.055852ms
+step = 14, stepsize = 2.975162e-02, norm = 2.767253e+01, t = 2876.123262ms
+step = 15, stepsize = 5.975283e-02, norm = 2.668811e+01, t = 2419.560585ms
+step = 16, stepsize = 3.588698e-03, norm = 2.626825e+01, t = 3209.247462ms
+step = 17, stepsize = 1.148222e-02, norm = 2.601908e+01, t = 3418.494690ms
+step = 18, stepsize = 1.205360e-02, norm = 2.559191e+01, t = 3114.485387ms
+step = 19, stepsize = 2.663110e-02, norm = 2.506459e+01, t = 2752.218335ms
+step = 20, stepsize = 2.897930e-02, norm = 2.459970e+01, t = 2707.300706ms
+step = 21, stepsize = 1.056171e-02, norm = 2.430468e+01, t = 3276.737867ms
+step = 22, stepsize = 1.344557e-02, norm = 2.411445e+01, t = 3182.525113ms
+step = 23, stepsize = 1.308981e-02, norm = 2.371823e+01, t = 3252.794846ms
+step = 24, stepsize = 2.399869e-02, norm = 2.294846e+01, t = 2576.440824ms
+step = 25, stepsize = 1.559254e-02, norm = 2.245489e+01, t = 3112.421659ms
+step = 26, stepsize = 2.913765e-02, norm = 2.166838e+01, t = 2811.228940ms
+step = 27, stepsize = 1.275001e-02, norm = 2.137751e+01, t = 3260.987155ms
+step = 28, stepsize = 1.350690e-03, norm = 2.099544e+01, t = 3869.628194ms
+step = 29, stepsize = 1.474779e-01, norm = 1.743636e+01, t = 2140.603765ms
+step = 30, stepsize = 2.275715e-02, norm = 1.658642e+01, t = 2884.931146ms
+step = 31, stepsize = 2.080414e-02, norm = 1.589278e+01, t = 2844.203914ms
+step = 32, stepsize = 3.340439e-02, norm = 1.405251e+01, t = 2143.403333ms
+step = 33, stepsize = 5.933247e-02, norm = 1.360677e+01, t = 2493.092320ms
+step = 34, stepsize = 1.507162e-01, norm = 1.220620e+01, t = 2083.447637ms
+step = 35, stepsize = 6.564968e-02, norm = 1.074179e+01, t = 2433.634066ms
+step = 36, stepsize = 3.165841e-02, norm = 1.038380e+01, t = 2858.426742ms
+step = 37, stepsize = 6.126081e-02, norm = 9.852440e+00, t = 2545.993598ms
+step = 38, stepsize = 2.673209e-02, norm = 9.655222e+00, t = 2747.890206ms
+step = 39, stepsize = 7.065306e-02, norm = 8.837679e+00, t = 2577.629245ms
+step = 40, stepsize = 6.083643e-02, norm = 8.362456e+00, t = 2509.483832ms
+step = 41, stepsize = 1.426462e-01, norm = 7.042552e+00, t = 2210.952294ms
+step = 42, stepsize = 5.939410e-02, norm = 6.666760e+00, t = 2460.417330ms
+step = 43, stepsize = 6.205003e-02, norm = 6.327591e+00, t = 2580.897087ms
+step = 44, stepsize = 2.714465e-02, norm = 6.238345e+00, t = 2983.282887ms
+step = 45, stepsize = 5.978447e-02, norm = 5.973420e+00, t = 2458.224785ms
+step = 46, stepsize = 1.286941e-01, norm = 5.185185e+00, t = 2076.411011ms
+step = 47, stepsize = 1.571835e-02, norm = 4.964343e+00, t = 3434.633759ms
+step = 48, stepsize = 3.190813e-03, norm = 4.955677e+00, t = 3324.405647ms
+step = 49, stepsize = 6.177740e-02, norm = 4.635249e+00, t = 2532.643754ms
+step = 50, stepsize = 2.487398e-02, norm = 4.527078e+00, t = 2989.671808ms
+step = 51, stepsize = 1.382676e-01, norm = 3.876539e+00, t = 2486.879063ms
+step = 52, stepsize = 9.712906e-03, norm = 3.823840e+00, t = 3009.186313ms
+step = 53, stepsize = 5.674513e-02, norm = 3.702962e+00, t = 2554.029086ms
+step = 54, stepsize = 6.292727e-02, norm = 3.358401e+00, t = 2606.833545ms
+step = 55, stepsize = 1.263862e-01, norm = 2.879882e+00, t = 2257.966904ms
+step = 56, stepsize = 1.391088e-01, norm = 2.488682e+00, t = 2187.123514ms
+step = 57, stepsize = 1.332800e-01, norm = 2.164307e+00, t = 2170.738925ms
+step = 58, stepsize = 5.387495e-01, norm = 1.434256e+00, t = 1421.055117ms
+step = 59, stepsize = 1.762176e-01, norm = 1.050794e+00, t = 2128.009409ms
+step = 60, stepsize = 2.596495e-01, norm = 7.460630e-01, t = 1726.633003ms
+step = 61, stepsize = 4.687556e-02, norm = 6.810199e-01, t = 2532.206842ms
+step = 62, stepsize = 3.491511e-01, norm = 4.291663e-01, t = 2303.595173ms
+step = 63, stepsize = 4.920949e-02, norm = 4.003061e-01, t = 2610.132427ms
+step = 64, stepsize = 2.125622e-03, norm = 3.694656e-01, t = 4011.511473ms
+step = 65, stepsize = 5.372683e-02, norm = 3.515833e-01, t = 2541.654674ms
+step = 66, stepsize = 2.860882e-10, norm = 3.499525e-01, t = 5549.593645ms
+step = 67, stepsize = 3.092640e-11, norm = 3.499499e-01, t = 7497.581321ms
+step = 68, stepsize = 6.484858e-02, norm = 3.374410e-01, t = 2489.774193ms
+step = 69, stepsize = 8.308027e-03, norm = 3.270624e-01, t = 3091.552806ms
+step = 70, stepsize = 1.825485e-01, norm = 2.762052e-01, t = 2101.305511ms
+step = 71, stepsize = 9.318454e-10, norm = 2.641551e-01, t = 6158.705690ms
+step = 72, stepsize = 5.670708e-11, norm = 2.630870e-01, t = 6289.493395ms
+step = 73, stepsize = 2.466772e-11, norm = 2.621486e-01, t = 5953.580501ms
+step = 74, stepsize = 4.424675e-10, norm = 2.614788e-01, t = 5669.480407ms
+step = 75, stepsize = 6.705931e-12, norm = 2.614788e-01, t = 6832.482386ms
+step = 76, stepsize = 8.569911e-11, norm = 2.614746e-01, t = 6004.395479ms
+step = 77, stepsize = 7.545580e-11, norm = 2.614703e-01, t = 5934.957538ms
+step = 78, stepsize = 2.706149e-10, norm = 2.614702e-01, t = 5950.832409ms
+step = 79, stepsize = 1.682719e-11, norm = 2.614702e-01, t = 6158.710483ms
+step = 80, stepsize = 4.797831e-11, norm = 2.614691e-01, t = 6020.972741ms
+step = 81, stepsize = 8.680463e-11, norm = 2.614509e-01, t = 6731.110218ms
+step = 82, stepsize = 3.430918e-11, norm = 2.614460e-01, t = 6588.434121ms
+step = 83, stepsize = 4.223768e-12, norm = 2.614460e-01, t = 6674.346437ms
+step = 84, stepsize = 8.129214e-03, norm = 2.592641e-01, t = 3276.384900ms
+step = 85, stepsize = 1.623511e-11, norm = 2.592641e-01, t = 6350.352707ms
+step = 86, stepsize = 7.717784e-12, norm = 2.592641e-01, t = 6291.775646ms
+step = 87, stepsize = 2.549794e-02, norm = 2.543833e-01, t = 2092.509486ms
+step = 88, stepsize = 5.308740e-11, norm = 2.543542e-01, t = 7109.374367ms
+step = 89, stepsize = 1.560295e-01, norm = 2.285351e-01, t = 1950.010754ms
+step = 90, stepsize = 1.162962e-10, norm = 2.271703e-01, t = 6562.964743ms
+step = 91, stepsize = 9.638337e-04, norm = 2.169871e-01, t = 4299.578742ms
+step = 92, stepsize = 1.534497e-11, norm = 2.169871e-01, t = 5987.162739ms
+step = 93, stepsize = 3.570849e-12, norm = 2.169871e-01, t = 6396.134688ms
+step = 94, stepsize = 3.210669e-11, norm = 2.169871e-01, t = 5810.231708ms
+step = 95, stepsize = 1.492800e-11, norm = 2.169871e-01, t = 6281.039661ms
+step = 96, stepsize = 2.704113e-02, norm = 2.120018e-01, t = 2431.391858ms
+step = 97, stepsize = 7.705967e-12, norm = 2.120018e-01, t = 6411.788709ms
+step = 98, stepsize = 2.447730e-11, norm = 2.120018e-01, t = 6008.356979ms
+step = 99, stepsize = 6.696145e-10, norm = 2.108757e-01, t = 6357.854700ms
+step = 100, stepsize = 1.179254e-11, norm = 2.108757e-01, t = 6105.962872ms
+=========================================================================================
+Finished Newton's method after 100 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 1.179254e-11, final norm = 2.108757e-01
+=========================================================================================
+
+ .... Time: 3.639085e+02 seconds.
+
+ .. Step 29: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.454415e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 5.657671e-01, norm = 2.888382e+02, t = 1472.228522ms
+step = 2, stepsize = 1.353358e-01, norm = 2.616173e+02, t = 2121.789740ms
+step = 3, stepsize = 1.355096e-01, norm = 2.357745e+02, t = 2074.793686ms
+step = 4, stepsize = 1.798987e-01, norm = 1.634833e+02, t = 2096.570354ms
+step = 5, stepsize = 2.939219e-02, norm = 1.609186e+02, t = 2938.365370ms
+step = 6, stepsize = 1.515810e-02, norm = 1.589052e+02, t = 3130.577882ms
+step = 7, stepsize = 3.054531e-02, norm = 1.559422e+02, t = 2936.210110ms
+step = 8, stepsize = 6.431345e-02, norm = 1.506100e+02, t = 2520.225000ms
+step = 9, stepsize = 1.401640e-02, norm = 1.490466e+02, t = 3132.874727ms
+step = 10, stepsize = 3.134728e-02, norm = 1.450726e+02, t = 2788.927308ms
+step = 11, stepsize = 2.958018e-02, norm = 1.425163e+02, t = 2785.289122ms
+step = 12, stepsize = 3.177021e-02, norm = 1.396448e+02, t = 2892.426248ms
+step = 13, stepsize = 7.137660e-02, norm = 1.245210e+02, t = 2475.096920ms
+step = 14, stepsize = 6.718206e-02, norm = 1.176070e+02, t = 2446.357065ms
+step = 15, stepsize = 6.696465e-02, norm = 1.108299e+02, t = 2670.147900ms
+step = 16, stepsize = 6.666832e-02, norm = 1.051307e+02, t = 2648.545000ms
+step = 17, stepsize = 1.347528e-01, norm = 9.589143e+01, t = 2118.417760ms
+step = 18, stepsize = 6.387344e-02, norm = 9.277406e+01, t = 2444.928562ms
+step = 19, stepsize = 6.602200e-02, norm = 8.895965e+01, t = 2513.519747ms
+step = 20, stepsize = 2.229403e-04, norm = 8.886769e+01, t = 2823.411775ms
+step = 21, stepsize = 1.409936e-03, norm = 8.850416e+01, t = 3996.875274ms
+step = 22, stepsize = 6.538016e-02, norm = 8.426839e+01, t = 3120.608742ms
+step = 23, stepsize = 6.490849e-02, norm = 8.127219e+01, t = 2662.559382ms
+step = 24, stepsize = 1.338574e-01, norm = 7.516431e+01, t = 2217.941269ms
+step = 25, stepsize = 6.711006e-02, norm = 7.176589e+01, t = 2552.430175ms
+step = 26, stepsize = 6.444465e-02, norm = 6.797024e+01, t = 2517.459558ms
+step = 27, stepsize = 1.362798e-01, norm = 6.245376e+01, t = 2144.729290ms
+step = 28, stepsize = 1.349466e-01, norm = 5.724647e+01, t = 2428.822359ms
+step = 29, stepsize = 1.350351e-01, norm = 5.080859e+01, t = 2243.873034ms
+step = 30, stepsize = 2.710422e-01, norm = 4.270304e+01, t = 1855.060450ms
+step = 31, stepsize = 1.361691e-01, norm = 3.959115e+01, t = 2086.309622ms
+step = 32, stepsize = 2.805837e-01, norm = 3.237428e+01, t = 1839.916743ms
+step = 33, stepsize = 5.487137e-01, norm = 2.321752e+01, t = 1419.481472ms
+step = 34, stepsize = 5.536480e-01, norm = 1.204096e+01, t = 1433.086798ms
+step = 35, stepsize = 5.835115e-01, norm = 4.418323e+00, t = 1406.467557ms
+step = 36, stepsize = 5.309834e-01, norm = 2.360513e+00, t = 1454.962587ms
+step = 37, stepsize = 5.138959e-01, norm = 1.581911e+00, t = 1425.680991ms
+step = 38, stepsize = 3.365142e-01, norm = 5.952658e-01, t = 1730.568676ms
+step = 39, stepsize = 1.335782e-01, norm = 3.479545e-01, t = 1697.911491ms
+step = 40, stepsize = 2.224424e-03, norm = 1.545558e-01, t = 3922.257990ms
+step = 41, stepsize = 2.420763e-05, norm = 1.273790e-01, t = 4963.883943ms
+step = 42, stepsize = 6.215777e-08, norm = 1.188629e-01, t = 4503.684716ms
+step = 43, stepsize = 8.748430e-04, norm = 1.035365e-01, t = 3683.771098ms
+step = 44, stepsize = 1.032449e-03, norm = 1.005779e-01, t = 3621.651730ms
+step = 45, stepsize = 6.305803e-02, norm = 6.842636e-02, t = 2060.093892ms
+step = 46, stepsize = 1.842403e-09, norm = 6.839647e-02, t = 3890.836885ms
+step = 47, stepsize = 4.661027e-09, norm = 6.839081e-02, t = 3460.013117ms
+step = 48, stepsize = 1.163246e-09, norm = 6.839081e-02, t = 3777.596642ms
+step = 49, stepsize = 9.727828e-10, norm = 6.839080e-02, t = 4239.856187ms
+step = 50, stepsize = 1.391682e-09, norm = 6.808550e-02, t = 3758.804749ms
+step = 51, stepsize = 7.844688e-09, norm = 6.808494e-02, t = 3858.336153ms
+step = 52, stepsize = 4.589780e-10, norm = 6.808395e-02, t = 4298.686860ms
+step = 53, stepsize = 0.000000e+00, norm = 6.808395e-02, t = 3963.934012ms
+=========================================================================================
+Finished Newton's method after 53 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 6.808395e-02
+=========================================================================================
+
+ .... Time: 1.452914e+02 seconds.
+
+ .. Step 30: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.483902e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.497471e-01, norm = 1.095233e+03, t = 2106.422529ms
+step = 2, stepsize = 5.628532e-01, norm = 2.099364e+02, t = 1510.470126ms
+step = 3, stepsize = 1.338636e-01, norm = 1.947356e+02, t = 2203.099442ms
+step = 4, stepsize = 2.952371e-01, norm = 1.058722e+02, t = 1819.329821ms
+step = 5, stepsize = 2.894489e-01, norm = 5.144092e+01, t = 1913.366977ms
+step = 6, stepsize = 3.323311e-02, norm = 4.985868e+01, t = 3126.364077ms
+step = 7, stepsize = 2.973622e-01, norm = 9.300065e+00, t = 1992.830506ms
+step = 8, stepsize = 1.820064e-01, norm = 7.327508e+00, t = 2115.065291ms
+step = 9, stepsize = 1.379709e-01, norm = 6.227829e+00, t = 2138.829921ms
+step = 10, stepsize = 2.879311e-01, norm = 5.153583e+00, t = 1704.207902ms
+step = 11, stepsize = 6.091790e-03, norm = 4.874415e+00, t = 3155.879225ms
+step = 12, stepsize = 6.156314e-02, norm = 4.253801e+00, t = 2389.776212ms
+step = 13, stepsize = 2.649742e-02, norm = 4.118223e+00, t = 2940.258244ms
+step = 14, stepsize = 1.108760e-01, norm = 3.848677e+00, t = 2179.116017ms
+step = 15, stepsize = 2.545507e-01, norm = 2.850430e+00, t = 1755.042372ms
+step = 16, stepsize = 5.713687e-02, norm = 2.764688e+00, t = 2467.766777ms
+step = 17, stepsize = 1.580564e-01, norm = 1.939482e+00, t = 2120.267344ms
+step = 18, stepsize = 3.284813e-01, norm = 1.317857e+00, t = 1850.984205ms
+step = 19, stepsize = 3.054146e-01, norm = 9.396315e-01, t = 1806.744995ms
+step = 20, stepsize = 2.444837e-02, norm = 7.257948e-01, t = 2999.097465ms
+step = 21, stepsize = 1.259580e-01, norm = 6.240508e-01, t = 2146.345565ms
+step = 22, stepsize = 1.062341e-01, norm = 5.092988e-01, t = 2064.626826ms
+step = 23, stepsize = 4.293215e-03, norm = 4.924371e-01, t = 3529.075471ms
+step = 24, stepsize = 3.161067e-09, norm = 4.845506e-01, t = 6385.636255ms
+step = 25, stepsize = 7.654190e-09, norm = 4.816372e-01, t = 6553.612647ms
+step = 26, stepsize = 2.774142e-09, norm = 4.772747e-01, t = 6557.447210ms
+step = 27, stepsize = 1.894008e-01, norm = 4.290792e-01, t = 1827.733624ms
+step = 28, stepsize = 3.383207e-06, norm = 4.003348e-01, t = 6809.043854ms
+step = 29, stepsize = 4.956055e-08, norm = 3.985643e-01, t = 5833.977433ms
+step = 30, stepsize = 4.924127e-10, norm = 3.985308e-01, t = 6273.280004ms
+step = 31, stepsize = 5.615053e-11, norm = 3.956076e-01, t = 7613.851014ms
+step = 32, stepsize = 2.392963e-09, norm = 3.926286e-01, t = 7164.004973ms
+step = 33, stepsize = 1.362156e-10, norm = 3.901390e-01, t = 5847.116192ms
+step = 34, stepsize = 8.403454e-11, norm = 3.856342e-01, t = 7777.307732ms
+step = 35, stepsize = 1.592930e-10, norm = 3.856306e-01, t = 6519.747379ms
+step = 36, stepsize = 1.317846e-01, norm = 3.542245e-01, t = 1730.841240ms
+step = 37, stepsize = 3.699392e-03, norm = 3.526931e-01, t = 3830.529736ms
+step = 38, stepsize = 3.477096e-04, norm = 3.482107e-01, t = 5034.671022ms
+step = 39, stepsize = 2.522552e-04, norm = 3.358627e-01, t = 4989.893222ms
+step = 40, stepsize = 2.661452e-10, norm = 3.358101e-01, t = 5877.887022ms
+step = 41, stepsize = 1.377911e-09, norm = 3.350241e-01, t = 6013.296485ms
+step = 42, stepsize = 1.914557e-10, norm = 3.350003e-01, t = 6100.216890ms
+step = 43, stepsize = 1.835321e-01, norm = 2.925932e-01, t = 1819.566249ms
+step = 44, stepsize = 1.421986e-11, norm = 2.872331e-01, t = 7419.690894ms
+step = 45, stepsize = 3.525976e-10, norm = 2.872316e-01, t = 5851.348771ms
+step = 46, stepsize = 1.715699e-09, norm = 2.843592e-01, t = 5521.546996ms
+step = 47, stepsize = 1.053321e-01, norm = 2.460823e-01, t = 1744.029163ms
+step = 48, stepsize = 1.206021e-10, norm = 2.460005e-01, t = 5409.900567ms
+step = 49, stepsize = 2.992005e-10, norm = 2.459698e-01, t = 6390.538142ms
+step = 50, stepsize = 1.005080e-10, norm = 2.459278e-01, t = 5389.057681ms
+step = 51, stepsize = 2.598537e-10, norm = 2.459084e-01, t = 5922.398395ms
+step = 52, stepsize = 1.560702e-10, norm = 2.440493e-01, t = 6383.466437ms
+step = 53, stepsize = 8.917311e-11, norm = 2.435428e-01, t = 5194.291786ms
+step = 54, stepsize = 2.023506e-10, norm = 2.435410e-01, t = 5637.769918ms
+step = 55, stepsize = 1.121360e-09, norm = 2.435403e-01, t = 5566.262047ms
+step = 56, stepsize = 7.982126e-10, norm = 2.435397e-01, t = 4856.932771ms
+step = 57, stepsize = 5.192233e-10, norm = 2.435369e-01, t = 5207.299623ms
+step = 58, stepsize = 2.614373e-10, norm = 2.435357e-01, t = 5610.281497ms
+step = 59, stepsize = 2.260431e-10, norm = 2.435327e-01, t = 5159.339274ms
+step = 60, stepsize = 1.954709e-10, norm = 2.435326e-01, t = 5974.227913ms
+step = 61, stepsize = 1.192135e-09, norm = 2.434682e-01, t = 5584.403243ms
+step = 62, stepsize = 0.000000e+00, norm = 2.434682e-01, t = 7681.244436ms
+=========================================================================================
+Finished Newton's method after 62 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 2.434682e-01
+=========================================================================================
+
+ .... Time: 2.691243e+02 seconds.
+
+ .. Step 31: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.514232e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.581722e-01, norm = 8.907974e+02, t = 2161.056240ms
+step = 2, stepsize = 1.408922e-01, norm = 7.573654e+02, t = 2108.926179ms
+step = 3, stepsize = 2.827193e-01, norm = 5.505787e+02, t = 2209.519567ms
+step = 4, stepsize = 7.084208e-02, norm = 4.638470e+02, t = 2612.442180ms
+step = 5, stepsize = 3.062754e-02, norm = 4.531379e+02, t = 2990.271366ms
+step = 6, stepsize = 1.362053e-01, norm = 4.111216e+02, t = 2211.175453ms
+step = 7, stepsize = 1.588823e-01, norm = 2.995701e+02, t = 2196.883234ms
+step = 8, stepsize = 6.565888e-02, norm = 2.860465e+02, t = 2515.759015ms
+step = 9, stepsize = 1.507447e-01, norm = 2.390877e+02, t = 2187.700873ms
+step = 10, stepsize = 2.733249e-01, norm = 1.973683e+02, t = 1792.321234ms
+step = 11, stepsize = 5.530498e-01, norm = 1.331492e+02, t = 1440.363183ms
+step = 12, stepsize = 5.560917e-01, norm = 6.849567e+01, t = 1374.184920ms
+step = 13, stepsize = 1.346824e-01, norm = 6.215474e+01, t = 2106.679447ms
+step = 14, stepsize = 2.761644e-01, norm = 5.108466e+01, t = 1743.120537ms
+step = 15, stepsize = 5.611359e-01, norm = 1.537419e+01, t = 1383.809603ms
+step = 16, stepsize = 5.380231e-01, norm = 1.090026e+01, t = 1448.252070ms
+step = 17, stepsize = 5.108616e-01, norm = 7.948706e+00, t = 1429.331900ms
+step = 18, stepsize = 5.472347e-01, norm = 5.188238e+00, t = 1397.313882ms
+step = 19, stepsize = 5.426843e-01, norm = 2.569191e+00, t = 1408.608052ms
+step = 20, stepsize = 1.244243e-01, norm = 2.135405e+00, t = 2095.629000ms
+step = 21, stepsize = 7.615147e-02, norm = 1.775635e+00, t = 2535.105705ms
+step = 22, stepsize = 8.549901e-01, norm = 6.697582e-01, t = 1640.780519ms
+step = 23, stepsize = 1.243680e-01, norm = 3.588736e-02, t = 1949.598879ms
+step = 24, stepsize = 3.555210e-10, norm = 2.512899e-02, t = 4919.429929ms
+step = 25, stepsize = 4.697612e-10, norm = 2.507085e-02, t = 4455.471536ms
+step = 26, stepsize = 3.092688e-10, norm = 2.455358e-02, t = 4482.727843ms
+step = 27, stepsize = 4.465704e-11, norm = 2.455358e-02, t = 4213.172145ms
+step = 28, stepsize = 1.821101e-10, norm = 2.437610e-02, t = 4818.382924ms
+step = 29, stepsize = 2.639193e-10, norm = 2.418480e-02, t = 5014.442048ms
+step = 30, stepsize = 7.039520e-10, norm = 2.389826e-02, t = 5129.344111ms
+step = 31, stepsize = 1.680726e-10, norm = 2.351630e-02, t = 4669.972176ms
+step = 32, stepsize = 5.306484e-10, norm = 1.648596e-02, t = 4240.637025ms
+step = 33, stepsize = 3.475209e-10, norm = 1.628151e-02, t = 3891.975079ms
+step = 34, stepsize = 8.341042e-11, norm = 1.094316e-02, t = 4624.112093ms
+step = 35, stepsize = 5.424620e-10, norm = 6.690143e-03, t = 3438.236349ms
+step = 36, stepsize = 6.806715e-11, norm = 6.582089e-03, t = 3611.259699ms
+step = 37, stepsize = 7.363235e-11, norm = 6.342600e-03, t = 5433.607850ms
+step = 38, stepsize = 8.491133e-11, norm = 6.175972e-03, t = 3814.026072ms
+step = 39, stepsize = 1.819636e-10, norm = 6.061724e-03, t = 3933.124603ms
+step = 40, stepsize = 1.350043e-10, norm = 5.930144e-03, t = 3487.063092ms
+step = 41, stepsize = 5.522972e-10, norm = 5.882653e-03, t = 4656.229357ms
+step = 42, stepsize = 3.075262e-10, norm = 5.776545e-03, t = 4624.321819ms
+step = 43, stepsize = 4.081142e-10, norm = 5.668998e-03, t = 4337.995280ms
+step = 44, stepsize = 3.528053e-11, norm = 5.668060e-03, t = 4183.022363ms
+step = 45, stepsize = 3.410739e-11, norm = 5.667373e-03, t = 4561.664033ms
+step = 46, stepsize = 6.926245e-11, norm = 5.556671e-03, t = 4284.594394ms
+step = 47, stepsize = 2.058149e-10, norm = 5.524887e-03, t = 3221.670538ms
+step = 48, stepsize = 5.897060e-11, norm = 5.479413e-03, t = 5099.000584ms
+step = 49, stepsize = 2.306351e-11, norm = 5.479410e-03, t = 5287.313463ms
+step = 50, stepsize = 6.983414e-12, norm = 5.475062e-03, t = 5625.039489ms
+step = 51, stepsize = 1.845803e-11, norm = 5.474079e-03, t = 3907.747246ms
+step = 52, stepsize = 2.297403e-12, norm = 5.474072e-03, t = 5266.799553ms
+step = 53, stepsize = 1.020138e-12, norm = 5.474070e-03, t = 6042.326575ms
+step = 54, stepsize = 1.997582e-10, norm = 5.149636e-03, t = 3977.290585ms
+step = 55, stepsize = 6.561418e-10, norm = 4.922405e-03, t = 3414.592675ms
+step = 56, stepsize = 3.681990e-10, norm = 4.681497e-03, t = 3962.111179ms
+step = 57, stepsize = 0.000000e+00, norm = 4.681497e-03, t = 3407.612064ms
+=========================================================================================
+Finished Newton's method after 57 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 4.681497e-03
+=========================================================================================
+
+ .... Time: 1.949988e+02 seconds.
+
+ .. Step 32: 
+=========================================================================================
+Start Newton method with 100 iterations and eps = 1.000000e-08.
+step = 0, stepsize = 1.000000e+00, norm = 1.545520e+03, t = 0.000000ms
+=========================================================================================
+step = 1, stepsize = 1.742991e-01, norm = 4.943653e+02, t = 2897.463035ms
+step = 2, stepsize = 2.862327e-01, norm = 3.009001e+02, t = 1987.057489ms
+step = 3, stepsize = 1.302165e-02, norm = 2.976133e+02, t = 3309.910793ms
+step = 4, stepsize = 3.803980e-03, norm = 2.967283e+02, t = 3642.510012ms
+step = 5, stepsize = 1.782935e-01, norm = 2.020646e+02, t = 2122.977484ms
+step = 6, stepsize = 6.780047e-02, norm = 1.899617e+02, t = 2490.695856ms
+step = 7, stepsize = 2.973108e-01, norm = 1.292605e+02, t = 1794.412186ms
+step = 8, stepsize = 6.548405e-02, norm = 1.244478e+02, t = 2498.876926ms
+step = 9, stepsize = 1.854099e-01, norm = 6.860334e+01, t = 2093.130322ms
+step = 10, stepsize = 4.994147e-03, norm = 6.841206e+01, t = 3379.951754ms
+step = 11, stepsize = 2.088787e-01, norm = 5.205478e+01, t = 2336.137543ms
+step = 12, stepsize = 6.205150e-02, norm = 4.991620e+01, t = 2501.889924ms
+step = 13, stepsize = 8.360800e-02, norm = 3.733865e+01, t = 2529.803707ms
+step = 14, stepsize = 1.430728e-01, norm = 3.047806e+01, t = 2067.446881ms
+step = 15, stepsize = 1.564555e-01, norm = 2.320952e+01, t = 2114.313770ms
+step = 16, stepsize = 3.489534e-03, norm = 2.244177e+01, t = 3790.391252ms
+step = 17, stepsize = 7.845777e-03, norm = 2.152309e+01, t = 3799.011817ms
+step = 18, stepsize = 2.520915e-02, norm = 2.058683e+01, t = 2885.112230ms
+step = 19, stepsize = 1.435168e-02, norm = 1.952053e+01, t = 3227.639676ms
+step = 20, stepsize = 9.575984e-02, norm = 1.318237e+01, t = 2457.020156ms
+step = 21, stepsize = 7.172890e-02, norm = 1.150142e+01, t = 2573.016407ms
+step = 22, stepsize = 2.883695e-02, norm = 1.082787e+01, t = 2831.423909ms
+step = 23, stepsize = 1.349389e-01, norm = 9.639311e+00, t = 2152.778263ms
+step = 24, stepsize = 5.293510e-02, norm = 8.553580e+00, t = 2513.811521ms
+step = 25, stepsize = 5.551114e-02, norm = 8.269007e+00, t = 2493.572314ms
+step = 26, stepsize = 5.891739e-02, norm = 7.975851e+00, t = 2458.097736ms
+step = 27, stepsize = 2.929930e-02, norm = 7.714750e+00, t = 3008.408258ms
+step = 28, stepsize = 2.749945e-01, norm = 6.268724e+00, t = 1900.249265ms
+step = 29, stepsize = 3.823145e-03, norm = 5.959346e+00, t = 2819.356364ms
+step = 30, stepsize = 5.578084e-02, norm = 5.197765e+00, t = 2469.889131ms
+step = 31, stepsize = 5.772834e-02, norm = 4.851009e+00, t = 2502.384423ms
+step = 32, stepsize = 1.455930e-02, norm = 4.716932e+00, t = 2880.495450ms
+step = 33, stepsize = 3.050430e-02, norm = 4.637360e+00, t = 3226.769296ms
+step = 34, stepsize = 1.804856e-01, norm = 3.242400e+00, t = 2191.491443ms
+step = 35, stepsize = 6.794535e-02, norm = 2.113126e+00, t = 2893.073767ms
+step = 36, stepsize = 6.075929e-02, norm = 1.200748e+00, t = 2493.892097ms
+step = 37, stepsize = 2.647485e-02, norm = 1.018069e+00, t = 2966.814855ms
+step = 38, stepsize = 2.637978e-02, norm = 6.459659e-01, t = 2162.122656ms
+step = 39, stepsize = 1.796218e-02, norm = 6.011021e-01, t = 2452.766095ms
+step = 40, stepsize = 3.877899e-02, norm = 5.228547e-01, t = 2110.239297ms
+step = 41, stepsize = 5.670423e-06, norm = 5.055140e-01, t = 6791.779385ms
+step = 42, stepsize = 2.504225e-08, norm = 4.765083e-01, t = 7085.974785ms
+step = 43, stepsize = 9.768406e-12, norm = 4.765059e-01, t = 7010.798149ms
+step = 44, stepsize = 2.959042e-11, norm = 4.764993e-01, t = 7292.007751ms
+step = 45, stepsize = 6.426931e-12, norm = 4.764992e-01, t = 7181.989864ms
+step = 46, stepsize = 1.517578e-12, norm = 4.764759e-01, t = 8212.405431ms
+step = 47, stepsize = 0.000000e+00, norm = 4.764759e-01, t = 7413.966667ms
+=========================================================================================
+Finished Newton's method after 47 steps (max. steps = 100, tol = 1.000000e-08).
+Final stepsize = 0.000000e+00, final norm = 4.764759e-01
+=========================================================================================
+
+ .... Time: 1.560372e+02 seconds.
+ - outputPrefix: ./output/20260619_105035_AugmentedSurfaceExtrapolation/

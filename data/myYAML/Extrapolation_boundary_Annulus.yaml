@@ -1,0 +1,42 @@
+Data:
+  startFile: ./data/myBoundary/AnnulusExtrapolation/annulus_flat.ply
+  secondFile: ./data/myBoundary/AnnulusExtrapolation/annulus_inner_close_010.ply
+  dirichletVertices: [960, 980, 1000, 1020]
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 32
+
+TPE:
+  # Type: Scary
+  Type: Spooky
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-5
+  theta: 0.5
+  thetaNear: 10.
+  # useAdaptivity: False
+  useAdaptivity: True 
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 10.
+  tpeWeight: 1.
+  barycenterWeight: 1.
+  dirichletWeight: 1
+
+# BoundaryTPE:
+#   enabled: true
+#   weight: 1.e-6
+#   useInObjective: true
+#   alpha: 6
+#   beta: 12
+
+Optimization:
+  maxNumIterations: 100
+  minStepsize: 1.e-12
+  maxStepsize: 10.
+

@@ -102,6 +102,14 @@ include_directories(include)
 ################################################################################
 # own targets
 ################################################################################
+add_executable(BoundaryInspector src/BoundaryInspector.cpp)
+target_link_libraries(BoundaryInspector PUBLIC GOAST::All)
+target_link_libraries(BoundaryInspector PUBLIC Boost::boost Boost::filesystem)
+target_link_libraries(BoundaryInspector PUBLIC yaml-cpp)
+target_link_libraries(BoundaryInspector PUBLIC MKL::MKL)
+target_link_libraries(BoundaryInspector PUBLIC Repulsion::Repulsion)
+target_link_libraries(BoundaryInspector PUBLIC pqp)
+
 add_executable(EvaluateTPE src/EvaluateTPE.cpp)
 target_link_libraries(EvaluateTPE PUBLIC GOAST::All)
 target_link_libraries(EvaluateTPE PUBLIC Boost::boost Boost::filesystem)

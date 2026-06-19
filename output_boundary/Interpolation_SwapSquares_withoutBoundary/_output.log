@@ -1,0 +1,129 @@
+ .. numVertices = 50
+ .. [BoundaryTPE] enabled        = 0
+ .. [BoundaryTPE] weight         = 0
+ .. [BoundaryTPE] available      = 0
+ .. [BoundaryTPE] useInObjective = 0
+ .. [BoundaryTPE] active         = 0
+ .. [BoundaryTPE] checkGradient   = 0
+ .. [BoundaryTPE] checkCurveIndex = -1
+ .. [BoundaryTPE] fdStep         = 1e-06
+ .. dirichletIndices = {25, 29, 45, 49, }
+ .. Wmem = 4.26464e-14
+ .. Wbend = 0
+ .. W = 4.26464e-14
+
+ --- Level 0 --- 
+Warning: OperatorL2PathMetric lacks scaling!
+Warning: OperatorL2PathMetric lacks scaling!
+ .. Profiling: 
+ .... Energy evaluation: 13.4748ms
+ ...... Elastic: 0.884238ms
+ ...... TPE: 0.021635ms
+ ...... RBM: 0.024882ms
+ ...... Obstacle: 0.016661ms
+ ...... Barycenter: 0.034205ms
+ ...... Rotation: 0.041204ms
+ .... Gradient evaluation: 2.99515ms
+ ...... Elastic: 8.39589ms
+ ...... TPE: 0.09834ms
+ ...... RBM: 0.045807ms
+ ...... Obstacle: 0.085866ms
+ ...... Barycenter: 2.44041ms
+ ...... Rotation: 0.757502ms
+ .... Hessian (operator) evaluation: 36.5688ms
+ ...... Elastic: 28.2611ms
+ ...... TPE: 2.86671ms
+ ...... RBM: 0.00469ms
+ ...... Obstacle: 3.8274ms
+ ...... Barycenter: 0.017764ms
+ .... Hessian * grad evaluation: 7.32023ms
+ .... Hessian * grad evaluation: 6.97806ms
+ .... Preconditioner (operator) evaluation: 12.6812ms
+ .... Pre * grad evaluation: 1.09997ms
+ .... Pre * grad evaluation: 0.770384ms
+ ................................................ 
+ .. TPE          = ( 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 )
+ ................................................ 
+ .. E            = 1.597353e-01
+ .. Eelast       = 6.259437e-13
+ .. Etpe         = 0.000000e+00
+ .. Eobs         = 0.000000e+00
+ .. Edir         = 0.000000e+00
+ .. Ebary        = 1.597353e+01
+ .. Erot         = 1.349764e+01
+ ................................................ 
+ .. DE.norm      = 3.333470e-02
+ .. DEelast.norm = 7.356286e-06
+ .. DEtpe.norm   = 0.000000e+00
+ .. DEobs.norm   = 0.000000e+00
+ .. DEdir.norm   = 0.000000e+00
+ .. DEbary.norm  = 3.333470e+00
+ .. DErot.norm   = 3.281385e+00
+ ................................................ 
+ -- TRN -- Iter   0: Cutoff active in rho-computation: 2.268547e-02 vs 2.268547e-02
+ .. Saved intermediate path: ./output/20260602_064422_AugmentedSurfaceInterpolation/intermediate/level_0/iter_0
+ -- TRN -- Iter   0: 1.370499e-01 || 2.832115e-02 ||===||  1.000000e+00 || 1.000000e-01 || 2.000000e+00 ||===|| 2.457535e+01 ||  2 ||    1 ||===||  59.64 ||   1.07 ||  13.67 ||  44.74
+ -- TRN -- Iter   1: 1.021689e-01 || 1.965114e-02 ||===||  1.000000e+00 || 1.991785e-01 || 4.000000e+00 ||===|| 2.088008e+01 ||  2 ||    1 ||===||  81.97 ||   9.87 ||  14.99 ||  57.04
+ -- TRN -- Iter   2: 6.446790e-02 || 1.055523e-02 ||===||  1.000000e+00 || 3.756007e-01 || 8.000000e+00 ||===|| 1.448948e+01 ||  2 ||    1 ||===||  87.66 ||   5.92 ||  15.65 ||  66.03
+ -- TRN -- Iter   3: 3.496541e-02 || 6.335420e-03 ||===||  1.000000e+00 || 5.684458e-01 || 1.600000e+01 ||===|| 8.370687e+00 ||  2 ||    2 ||===||  65.19 ||   3.12 ||  14.86 ||  47.14
+ -- TRN -- Iter   4: 1.996692e-02 || 1.380445e-05 ||===||  1.000001e+00 || 1.091716e+00 || 1.600000e+01 ||===|| 2.977824e-04 ||  0 ||    7 ||===||  75.82 ||  11.89 ||  15.46 ||  48.38
+ -- TRN -- Iter   5: Value reduction too small.
+ -- TRN -- Final   : 1.996692e-02 || 1.380445e-05 ||===|| -6.468335e+00 || 8.365515e-05 || 4.000000e+00 ||===|| 471.73 || 128.79
+ .. Total time: 0.55 seconds.
+ .. Result: 8,50,5,5.458411e-01,92,1.287919e+02,7.462893e+01,2.675209e+02,
+ ................................................ 
+ | Timings for N6NewOpt16SteihaugCGMethodI19DefaultConfiguratorEE
+ | solve                                         |      6 |     0.13s |    21.46ms | 
+ | solve::evaluateOperatorProduct                |     92 |     0.09s |     0.97ms | 
+ | solve::evaluatePreconditioner                 |     94 |     0.03s |     0.30ms | 
+ | Timings for 27InverseOperatorL2PathMetricI19DefaultConfiguratorE
+ | AssembleBlocks                                |     42 |     0.47s |    11.26ms | 
+ | FactorizeBlocks                               |     41 |     0.02s |     0.44ms | 
+ | Timings for 20DifferencePathEnergyI19DefaultConfiguratorN8ScaryTPE18TangentPointEnergyEE
+ | HessOp                                        |      6 |     0.01s |     1.17ms | 
+ | evaluate                                      |     12 |     0.01s |     1.16ms | 
+ | evaluateEnergiesAndGradients                  |     24 |     0.01s |     0.59ms | 
+ | evaluateGradient                              |      6 |     0.00s |     0.07ms | 
+ | Timings for 20DifferencePathEnergyI19DefaultConfiguratorN8ScaryTPE26TangentPointObstacleEnergyEE
+ | HessOp                                        |      6 |     0.02s |     2.71ms | 
+ | evaluate                                      |     12 |     0.01s |     0.50ms | 
+ | evaluateEnergiesAndGradients                  |     24 |     0.01s |     0.26ms | 
+ | evaluateGradient                              |      6 |     0.00s |     0.07ms | 
+ | Timings for 18DiscretePathEnergyI19DefaultConfiguratorE
+ | apply                                         |     12 |     0.01s |     1.04ms | 
+ | Timings for 26DiscretePathEnergyGradientI19DefaultConfiguratorE
+ | apply                                         |      6 |     0.02s |     3.47ms | 
+ | Timings for 25DiscretePathEnergyHessianI19DefaultConfiguratorE
+ | Timings for 25OperatorPathEnergyHessianI19DefaultConfiguratorE
+ | evaluate                                      |      6 |     0.21s |    34.96ms | 
+ ................................................ 
+
+ .. TPE          = ( 0.000000e+00 -1.291161e-53 1.080950e-52 -1.451012e-52 -7.327836e-37 -6.306555e-52 -8.542710e-53 1.827816e-54 0.000000e+00 )
+ ................................................ 
+ .. E            = 3.119833e-04 3.119830e-04 3.119831e-04 3.119830e-04 3.119832e-04 3.119830e-04 3.119831e-04 3.119833e-04
+ .. Eelast       = 2.430264e-12 7.911033e-14 8.446716e-14 8.460593e-14 8.454348e-14 8.456430e-14 8.049117e-14 1.803328e-12
+ .. Emem         = 2.430264e-12 7.911033e-14 8.446716e-14 8.460593e-14 8.454348e-14 8.456430e-14 8.049117e-14 1.803328e-12
+ .. Ebend        = 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+ .. Etpe         = 1.667098e-106 1.464260e-104 6.410834e-104  5.369717e-73  5.369717e-73 2.972740e-103 7.613420e-105 3.340913e-108
+ .. Eobs         = 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+ .. Edir         = 2.235401e-08 8.541007e-10 9.155509e-10 9.131128e-10 9.131515e-10 9.163427e-10 8.530905e-10 2.235296e-08
+ .. Ebary        = 3.119831e-02 3.119830e-02 3.119831e-02 3.119830e-02 3.119832e-02 3.119830e-02 3.119831e-02 3.119831e-02
+ .. Erot         = 2.593168e-09 1.703516e-10 1.638082e-10 1.646073e-10 1.646304e-10 1.640287e-10 1.699591e-10 2.583064e-09
+ ................................................ 
+ .. E            = 1.996692e-02
+ .. Eelast       = 3.785100e-11
+ .. Etpe         = 8.591548e-72
+ .. Eobs         = 0.000000e+00
+ .. Edir         = 4.005786e-07
+ .. Ebary        = 1.996692e+00
+ .. Erot         = 4.938894e-08
+ ................................................ 
+ .. DE.norm      = 1.380445e-05
+ .. DEelast.norm = 3.025158e-05
+ .. DEtpe.norm   = 1.078378e-66
+ .. DEobs.norm   = 0.000000e+00
+ .. DEdir.norm   = 2.691206e-03
+ .. DEbary.norm  = 3.998811e-07
+ .. DErot.norm   = 1.575360e-04
+ ................................................ 
+ - outputPrefix: ./output/20260602_064422_AugmentedSurfaceInterpolation/

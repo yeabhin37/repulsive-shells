@@ -1,0 +1,42 @@
+Data:
+  startFile: ./data/myBoundary/SlitDisk/slit_disk_mid.ply
+  secondFile: ./data/myBoundary/SlitDisk/slit_disk_wide.ply
+  dirichletVertices: [11, 1255, 1308, 2487] 
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 32
+
+TPE:
+  Type: Scary
+  # Type: Spooky
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-5
+  theta: 0.5
+  thetaNear: 10.
+  useAdaptivity: False
+  # useAdaptivity: True 
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 10.
+  tpeWeight: 1.
+  barycenterWeight: 1.
+  dirichletWeight: 1
+
+BoundaryTPE:
+  enabled: true
+  weight: 1.e-5
+  useInObjective: true
+  alpha: 6
+  beta: 12
+  
+Optimization:
+  maxNumIterations: 100
+  minStepsize: 1.e-12
+  maxStepsize: 10.
+

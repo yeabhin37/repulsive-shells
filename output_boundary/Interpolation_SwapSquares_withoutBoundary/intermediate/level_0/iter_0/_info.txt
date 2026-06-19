@@ -1,0 +1,4 @@
+level: 0
+iteration: 0
+energy: 0.13705
+gradient_norm: 0.0283212

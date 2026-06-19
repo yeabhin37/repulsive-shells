@@ -3,5 +3,6 @@
   "python.terminal.activateEnvironment": false,
   "python.analysis.disabled": true,
   "code-runner.runInTerminal": false,
-  "code-runner.executorMap": {}
+  "code-runner.executorMap": {},
+  "C_Cpp.default.compileCommands": "/home/yebhin/repulsive-shells/build/compile_commands.json"
 }
